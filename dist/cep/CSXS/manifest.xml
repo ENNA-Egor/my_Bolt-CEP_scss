@@ -3,7 +3,7 @@
 Version="6.0"
 ExtensionBundleId="com.Bolt-CEP_Test.cep"
 ExtensionBundleVersion="0.0.1"
-ExtensionBundleName="Bolt Cep Test"
+ExtensionBundleName="Bolt Cep scss"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 >
 <ExtensionList>
@@ -36,7 +36,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       </Lifecycle>
       <UI>
         <Type>Panel</Type>
-        <Menu>Bolt Cep Test</Menu>
+        <Menu>Bolt Cep scss</Menu>
         <Geometry>
           <Size>
             <Width>600</Width>

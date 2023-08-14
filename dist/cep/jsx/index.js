@@ -3,7 +3,7 @@
 var config = {
   version: version,
   id: "com.Bolt-CEP_Test.cep",
-  displayName: "Bolt Cep Test",
+  displayName: "Bolt Cep scss",
   symlink: "local",
   port: 3000,
   servePort: 5000,
@@ -25,7 +25,7 @@ var config = {
   panels: [{
     mainPath: "./main/index.html",
     name: "main",
-    panelDisplayName: "Bolt Cep Test",
+    panelDisplayName: "Bolt Cep scss",
     autoVisible: true,
     width: 600,
     height: 650

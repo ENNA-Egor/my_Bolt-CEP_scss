@@ -10,9 +10,13 @@ import {
 } from "../lib/utils/bolt";
 
 // import bolt from "../assets/bolt-cep.svg";
+import circle from "../assets/png/Circle-01.png";
+import polygon from "../assets/png/Polygon-01.png";
+import color from "../assets/png/Color.png";
+import setting from "../assets/png/Help.png";
 
-// import "../main/scss/main.scss";
-import "../main/scss/main.css";
+import "../main/scss/main.scss";
+// import "../main/scss/main.css";
 
 const Main = () => {
   const [bgColor, setBgColor] = useState("#282c34");
@@ -27,16 +31,24 @@ const Main = () => {
        <div className="app" style={{ backgroundColor: bgColor }}> 
         {/* <div className="tabs"> */}
          <div className="tabs-head">
-            <div className="tab-h">1</div>
+            <div className="tab-h tab-c">
+            {/* <img src={circle} className="tab-c"/> */}
+            </div>
           </div>
          <div className="tabs-head">
-            <div className="tab-h">2</div>
+            <div className="tab-h tab-p">
+              {/* <img src={polygon}/> */}
+            </div>
           </div>
          <div className="tabs-head">
-            <div className="tab-h">3</div>
+            <div className="tab-h tab-col">
+            {/* <img src={color}/> */}
+            </div>
           </div>
          <div className="tabs-head">
-            <div className="tab-h">4</div>
+            <div className="tab-h   tab-s">
+            {/* <img src={setting}/> */}
+            </div>
           </div>
         {/* </div> */}
      </div> 

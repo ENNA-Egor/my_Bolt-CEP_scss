@@ -71,9 +71,46 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*--------------------*/
+.tab-s {
+  background: url("../../assets/png/Help.png") no-repeat;
+  background-size: 100%;
+}
+.tab-s:hover {
+  background: url("../../assets/png/Help-1.png") no-repeat;
+  background-size: 100%;
+}
+
+.tab-c {
+  background: url("../../assets/png/Circle.png") no-repeat;
+  background-size: 100%;
+}
+.tab-c:hover {
+  background: url("../../assets/png/Circle-01.png") no-repeat;
+  background-size: 100%;
+}
+
+.tab-p {
+  background: url("../../assets/png/Polygon.png") no-repeat;
+  background-size: 100%;
+}
+.tab-p:hover {
+  background: url("../../assets/png/Polygon-01.png") no-repeat;
+  background-size: 100%;
+}
+
+.tab-col {
+  background: url("../../assets/png/Color.png") no-repeat;
+  background-size: 100%;
+}
+.tab-col:hover {
+  background: url("../../assets/png/Color-1.png") no-repeat;
+  background-size: 100%;
+}
+
 .app {
   display: flex;
   justify-content: center;
+  max-width: 350px;
 }
 
 .tabs {
@@ -91,6 +128,4 @@ h1, h2, h3, h4, h5, h6 {
 .tabs-head .tab-h {
   height: 25px;
   width: 25px;
-  background-color: #00ed67;
-  color: #037235;
 }
