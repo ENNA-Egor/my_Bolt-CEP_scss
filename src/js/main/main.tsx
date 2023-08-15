@@ -15,8 +15,8 @@ import polygon from "../assets/png/Polygon-01.png";
 import color from "../assets/png/Color.png";
 import setting from "../assets/png/Help.png";
 
-import "../main/scss/main.scss";
-// import "../main/scss/main.css";
+// import "../main/scss/main.scss";
+import "../main/scss/main.css";
 
 const Main = () => {
   const [bgColor, setBgColor] = useState("#282c34");
@@ -27,7 +27,11 @@ const Main = () => {
     }
   }, []);
 
+  // const Tabs = require('../main/htmlModule/tabs');
+  // import Tabs from "../main/htmlModule/tabs";
+
   return (
+    <>
        <div className="app" style={{ backgroundColor: bgColor }}>
          <div className="tabs-head">
             <div className="tab-h tab-c">
@@ -45,7 +49,14 @@ const Main = () => {
             <div className="tab-h   tab-s">
             </div>
       </div>
+      {/* <div>
+        <Tabs/>
+      </div> */}
      </div> 
+           <div className="text">
+           <p>Hello</p>
+         </div>
+     </>
   );
 };
 
