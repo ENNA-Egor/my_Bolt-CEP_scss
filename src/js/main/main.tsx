@@ -28,29 +28,23 @@ const Main = () => {
   }, []);
 
   return (
-       <div className="app" style={{ backgroundColor: bgColor }}> 
-        {/* <div className="tabs"> */}
+       <div className="app" style={{ backgroundColor: bgColor }}>
          <div className="tabs-head">
             <div className="tab-h tab-c">
-            {/* <img src={circle} className="tab-c"/> */}
             </div>
           </div>
          <div className="tabs-head">
             <div className="tab-h tab-p">
-              {/* <img src={polygon}/> */}
             </div>
           </div>
          <div className="tabs-head">
             <div className="tab-h tab-col">
-            {/* <img src={color}/> */}
             </div>
           </div>
          <div className="tabs-head">
             <div className="tab-h   tab-s">
-            {/* <img src={setting}/> */}
             </div>
-          </div>
-        {/* </div> */}
+      </div>
      </div> 
   );
 };
