@@ -18,12 +18,12 @@
 .tabs{
   display:flex;
   justify-content: center;
-  border: 1px solid r$highlight;
+  border: 1px solid rgb(180, 180, 180);
   margin: 5px;
 }
 
 .tabs-head{
-  border: 1px solid $highlight;
+  border: 1px solid rgb(180, 180, 180);
   margin: 2px;
   .tab-h{
     height : 25px;
@@ -32,9 +32,8 @@
 }
 
 p{
-  font-size: 10px;
-  color: $font;
-  text-align: center;
+  font-size: 15px;
+  color: red;
 }
 
 .text{
@@ -43,59 +42,38 @@ p{
   max-width: 350px;
 }
 
-.circle-blok, .polygon-blok{
+.circle-blok{
   display: flex;
   justify-content: center;
   max-width: 350px
 }
 
 .button{
-  min-width: 25px;
-  height: 25px;
-  // background-color: rgb(163, 163, 163);
-  color: $font;
-  margin:  2px 10px;
-  border: 1px solid $highlight;
+  width: 50px;
+  height: 40px;
+  background-color: rgb(163, 163, 163);
+  color: rgb(255, 1, 1);
+  margin:  2px ;
+  border: 1px solid rgb(224, 224, 224);
   border-radius: 3px;
-  font-size: 12px;
-  &:hover{
-    border: 2px solid $hover;
-  }
 }
 
 .linecap_blok, .add_end_blok{
   display: flex;
   justify-content:center;
   max-width: 350px;
-  // border: 1px solid $highlight;
 }
 
-.tab-circle , .tab-polygon{
-  background-color: $darkest;
+.tab-circle{
+  background-color: rgb(37, 37, 37);
   max-width: 350px;
  
 
 legend{
-  color: $font;
-  font-size: 10px;
+  color: red;
 }
 .field{
-  border: 1px solid $highlight;
+  border: 1px solid white;
   margin: 3px;
 }
-}
-
-
-.point-blok{
-  display: flex;
-  justify-content:center;
-}
-
-.n_points{
-  margin: 2px 5px;
-}
-
-.inp{
-  background-color: $darkest;
-  color: $font;
 }

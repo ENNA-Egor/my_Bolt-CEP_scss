@@ -30,3 +30,33 @@
      background-size: 100%;
    }
  }
+ .but{
+   background: url('../../assets/png/Butt.png') no-repeat;
+   background-size: 100%;
+   &:hover{
+    border: 2px solid $hover;
+   }
+ }
+ .round{
+   background: url('../../assets/png/Round.png') no-repeat;
+   background-size: 100%;
+   &:hover{
+    border: 2px solid $hover;
+   }
+ }
+
+ .button_plus{
+   background: url('../../assets/png/Plus.png') no-repeat;
+   background-size: 100%;
+   &:hover{
+    border: 2px solid $hover;
+   }
+ }
+
+ .button_minus{
+   background: url('../../assets/png/Minus.png') no-repeat;
+   background-size: 100%;
+   &:hover{
+    border: 2px solid $hover;
+   }
+ }
