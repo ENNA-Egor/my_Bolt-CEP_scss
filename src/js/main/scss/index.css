@@ -130,8 +130,47 @@ h1, h2, h3, h4, h5, h6 {
   width: 25px;
 }
 
+p {
+  font-size: 15px;
+  color: red;
+}
+
 .text {
   display: flex;
   justify-content: center;
   max-width: 350px;
+}
+
+.circle-blok {
+  display: flex;
+  justify-content: center;
+  max-width: 350px;
+}
+
+.button {
+  width: 50px;
+  height: 40px;
+  background-color: rgb(163, 163, 163);
+  color: rgb(255, 1, 1);
+  margin: 2px;
+  border: 1px solid rgb(224, 224, 224);
+  border-radius: 3px;
+}
+
+.linecap_blok, .add_end_blok {
+  display: flex;
+  justify-content: center;
+  max-width: 350px;
+}
+
+.tab-circle {
+  background-color: rgb(37, 37, 37);
+  max-width: 350px;
+}
+.tab-circle legend {
+  color: red;
+}
+.tab-circle .field {
+  border: 1px solid white;
+  margin: 3px;
 }/*# sourceMappingURL=index.css.map */
