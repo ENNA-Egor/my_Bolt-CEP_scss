@@ -5,6 +5,7 @@ import { initBolt } from "../lib/utils/bolt";
 // import "../../../css/index.css";
 import "../main/scss/index.css";
 import Main from "./main";
+import Tabs from '../main/htmlModule/tabs'
 
 
 initBolt();
@@ -12,5 +13,6 @@ initBolt();
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <Main />
+    <Tabs/>
   </React.StrictMode>
 );

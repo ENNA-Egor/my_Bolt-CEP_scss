@@ -31,7 +31,6 @@ const Main = () => {
   // import Tabs from "../main/htmlModule/tabs";
 
   return (
-    <>
        <div className="app" style={{ backgroundColor: bgColor }}>
          <div className="tabs-head">
             <div className="tab-h tab-c">
@@ -49,14 +48,7 @@ const Main = () => {
             <div className="tab-h   tab-s">
             </div>
       </div>
-      {/* <div>
-        <Tabs/>
-      </div> */}
      </div> 
-           <div className="text">
-           <p>Hello</p>
-         </div>
-     </>
   );
 };
 

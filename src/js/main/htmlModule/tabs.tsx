@@ -1,4 +1,6 @@
-module.exports = function(){
+import React from "react";
+
+ function Tabs(){
     return (
     <div className="tabs-body">
         <div className="tab-circle tab-b">
@@ -23,6 +25,4 @@ module.exports = function(){
         );
      }  
 
-    //  export default Tabs;
-
-    // module.exports = <div>Hello</div>
+     export default Tabs;
