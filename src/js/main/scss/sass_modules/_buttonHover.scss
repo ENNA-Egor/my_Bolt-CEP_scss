@@ -45,7 +45,7 @@
    }
  }
 
- .button_plus{
+ .button_plus, .bt1{
    background: url('../../assets/png/Plus.png') no-repeat;
    background-size: 100%;
    &:hover{
@@ -53,7 +53,7 @@
    }
  }
 
- .button_minus{
+ .button_minus, .bt2{
    background: url('../../assets/png/Minus.png') no-repeat;
    background-size: 100%;
    &:hover{

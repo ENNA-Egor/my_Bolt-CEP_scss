@@ -36,7 +36,7 @@
 
 p{
   font-size: 10px;
-  color: $font;
+  color: $yellowfont;
   text-align: center;
 }
 
@@ -46,7 +46,7 @@ p{
   max-width: 350px;
 }
 
-.circle-blok, .polygon-blok{
+.circle-blok, .polygon-blok, .bloc_palets{
   display: flex;
   justify-content: center;
   max-width: 350px
@@ -56,14 +56,19 @@ p{
   min-width: 25px;
   height: 25px;
   // background-color: rgb(163, 163, 163);
-  color: $font;
-  margin:  2px 10px;
+  color: $yellowfont;
+  margin:  3px 10px 10px 3px;
   border: 1px solid $highlight;
   border-radius: 3px;
   font-size: 12px;
   &:hover{
     border: 2px solid $hover;
   }
+}
+
+.buttons{
+  display: flex;
+  justify-content: center;
 }
 
 .linecap_blok, .add_end_blok{
@@ -73,13 +78,13 @@ p{
   // border: 1px solid $highlight;
 }
 
-.tab-circle , .tab-polygon{
+.tab-circle , .tab-polygon, .tab-color, .settings{
   background-color: $darkest;
   max-width: 350px;
  
 
 legend{
-  color: $font;
+  color: $yellowfont;
   font-size: 12px;
 }
 .field{
@@ -95,10 +100,32 @@ legend{
 }
 
 .n_points{
-  margin: 2px 5px;
+  margin: 2px 10px;
 }
 
 .inp{
   background-color: $darkest;
   color: $font;
 }
+
+.colorP{
+  display: flex;
+  justify-content:center;
+}
+
+.blok_palet{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 350px;
+  .palette{
+    width: 25px;
+    height: 25px;
+    border: 1px solid $highlight;
+    margin: 3px;
+    background-color: rgb(161, 255, 255);
+    color: rgb(161, 255, 255);
+    border-radius: 3px;
+  }
+}
+
