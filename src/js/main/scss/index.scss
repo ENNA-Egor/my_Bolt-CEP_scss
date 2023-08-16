@@ -3,7 +3,9 @@
 @import "../scss/sass_modules/buttonHover";
 
 
-
+#root{
+  background-color: $darkest;
+}
 
 
 .app{
@@ -11,6 +13,7 @@
   justify-content: center;
   max-width: 350px;
   flex-wrap: wrap;
+  background-color: $darkest;
 }
 
 
@@ -77,11 +80,11 @@ p{
 
 legend{
   color: $font;
-  font-size: 10px;
+  font-size: 12px;
 }
 .field{
   border: 1px solid $highlight;
-  margin: 3px;
+  margin: 6px;
 }
 }
 

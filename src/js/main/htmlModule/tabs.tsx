@@ -1,10 +1,20 @@
 
-import React from "react";
+// import React from "react";
 
  function Tabs(){
     return (
     <div className="tabs-body">
-        <div className="tab-circle tab-b">
+        <Tab_circle/>
+        <Tab_polygon/>
+    </div> 
+
+        );
+     }  
+
+
+     function Tab_circle(){
+        return(
+            <div className="tab-circle tab-b">
             <fieldset className="field">
             <legend>Circle</legend>
                 <div className="circle-blok">
@@ -21,8 +31,13 @@ import React from "react";
                     <div className="button button_minus"></div>
                 </div>
             </fieldset>   
+        </div>   
+        );
+     }
 
-        <div className="tab-polygon tab-b">
+     function Tab_polygon(){
+        return(
+            <div className="tab-polygon tab-b">
             <fieldset className="field">
                <legend>Polygon</legend>
                <div className="polygon-blok point-blok">
@@ -44,10 +59,9 @@ import React from "react";
                </div>
             </fieldset>
          </div>
-        </div>   
-    </div> 
-
         );
-     }  
+     }
+
+
 
      export default Tabs;
