@@ -70,7 +70,7 @@
          <fieldset className="field">
             <legend>Color</legend>
             <div className="colorP">
-            <p className="inp">ColorPicker_AE</p>
+            <p>ColorPicker_AE</p>
             <input type="checkbox" checked className="n_points  check" name="check_color_pick"/>
             </div>
             <div className="blok_palet">
@@ -109,26 +109,28 @@
          <div className="settings tab-b">
             <fieldset className="field">
                <legend>Settings</legend>
-               <div className="sett">
-                  <p  className="inp">Numb element</p>
-                  <input type="number" className="n_elem inp" name="num-element" min="2" max="15" value="5"/>
-               </div>
-               <div className="sett">
-                  <p  className="inp">Res</p>
-                  <input type="number" className="resol resol-w  inp" name="resolution" value="1920"/>
-                  <input type="number" className="resol resol-h  inp" name="resolution" value="1080"/>
-               </div>
-               <div className="sett">
-                  <p  className="inp">Frame Rate   </p>
-                  <input type="number" className="framerate n_points inp" name="framerate" value="25"/>
-               </div>
-               <div className="sett">
-                  <p className="inp">Duranion (sek)</p>
-                  <input type="number" className="duration n_points inp" name="duration" value="6"/>
-               </div>
-               <div className="sett">
-                  <p  className="inp">Influence ( % )</p>
-                  <input type="number" className="influ n_points inp" name="influence" value="90"/>
+               <div className="sett-bloc">
+                  <div className="sett">
+                     <p>Numb element</p>
+                     <input type="number" className="n_elem inp" name="num-element" min="2" max="15" value="5"/>
+                  </div>
+                  <div className="sett">
+                     <p>Res</p>
+                     <input type="number" className="resol resol-w  inp" name="resolution" value="1920"/>
+                     <input type="number" className="resol resol-h  inp" name="resolution" value="1080"/>
+                  </div>
+                  <div className="sett">
+                     <p>Frame Rate   </p>
+                     <input type="number" className="framerate n_points inp" name="framerate" value="25"/>
+                  </div>
+                  <div className="sett">
+                     <p>Duranion (sek)</p>
+                     <input type="number" className="duration n_points inp" name="duration" value="6"/>
+                  </div>
+                  <div className="sett">
+                     <p>Influence ( % )</p>
+                     <input type="number" className="influ n_points inp" name="influence" value="90"/>
+                  </div>
                </div>
             </fieldset>
          </div>
