@@ -126,10 +126,14 @@
                   <div className="sett">
                      <p>Duranion (sek)</p>
                      <input type="number" className="duration n_points inp" name="duration" value="6"/>
+                     <input type="checkbox" checked className="n_points one_dur" name="check_color_pick"/>
                   </div>
                   <div className="sett">
                      <p>Influence ( % )</p>
                      <input type="number" className="influ n_points inp" name="influence" value="90"/>
+                  </div>
+                  <div className="sett">
+                  <div className="button bt7">Setting Comp</div>
                   </div>
                </div>
             </fieldset>
