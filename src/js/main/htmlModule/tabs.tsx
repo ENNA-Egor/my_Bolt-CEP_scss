@@ -110,7 +110,7 @@
             <fieldset className="field">
                <legend>Settings</legend>
                <div className="sett-bloc">
-                  <div className="sett">
+                  <div className="sett1">
                      <p>Numb element</p>
                      <input type="number" className="n_elem inp" name="num-element" min="2" max="15" value="5"/>
                   </div>

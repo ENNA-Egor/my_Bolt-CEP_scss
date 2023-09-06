@@ -16,7 +16,8 @@ import color from "../assets/png/Color.png";
 import setting from "../assets/png/Help.png";
 
 // import "../main/scss/main.scss";
-import "../main/scss/main.css";
+// import "../main/scss/main.css";
+import "../../../css/index.css";
 
 const Main = () => {
   const [bgColor, setBgColor] = useState("#282c34");

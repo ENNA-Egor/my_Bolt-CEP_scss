@@ -12,7 +12,7 @@
 .app{
   display: flex;
   justify-content: center;
-  max-width: 350px;
+  max-width: $max_width;
   flex-wrap: wrap;
   background-color: $darkest;
 }
@@ -39,13 +39,13 @@
 .text{
   display:flex ;
   justify-content: center;
-  max-width: 350px;
+  max-width: $max_width;
 }
 
 .circle-blok, .polygon-blok, .bloc_palets{
   display: flex;
   justify-content: center;
-  max-width: 350px
+  max-width: $max_width;
 }
 
 .button{
@@ -70,13 +70,13 @@
 .linecap_blok, .add_end_blok{
   display: flex;
   justify-content:center;
-  max-width: 350px;
+  max-width: $max_width;
   // border: 1px solid $highlight;
 }
 
 .tab-circle , .tab-polygon, .tab-color, .settings{
   background-color: $darkest;
-  max-width: 350px;
+  max-width: $max_width;
  
 
 legend{
@@ -116,7 +116,7 @@ legend{
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 350px;
+  max-width: $max_width;
   .palette{
     width: 25px;
     height: 25px;
@@ -132,15 +132,16 @@ legend{
   display: flex;
   justify-content: center;
   flex-direction: column;
-  max-width: 350px;
+  max-width: $max_width;
 }
 
-.sett{
+.sett {
   display:flex;
   justify-content: center;
-  max-width: 350px;
+  max-width: $max_width;
   margin: 2px 10px;
 }
+
 
 p{
   font-size: 12px;
