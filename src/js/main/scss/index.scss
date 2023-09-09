@@ -11,10 +11,11 @@
 
 .app{
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   max-width: $max_width;
   flex-wrap: wrap;
   background-color: $darkest;
+  margin: 0 2px;
 }
 
 
@@ -28,7 +29,9 @@
 
 .tabs-head{
   border: 1px solid $highlight;
-  margin: 2px;
+  border-bottom:0 ;
+  margin: 2px 2px 0 2px;
+  background-color: rgb(0, 249, 133);
   .tab-h{
     height : 25px;
     width: 25px;
@@ -77,6 +80,7 @@
 .tab-circle , .tab-polygon, .tab-color, .settings{
   background-color: $darkest;
   max-width: $max_width;
+  border: 1px solid $highlight;
  
 
 legend{
@@ -85,7 +89,7 @@ legend{
 }
 .field{
   border: 1px solid $highlight;
-  margin: 6px;
+  margin:  6px;
 }
 }
 
@@ -150,3 +154,6 @@ p{
   margin: 2px 10px;
 }
 
+.tab-polygon, .tab-circle, .settings{
+  display: none;
+}
