@@ -16,7 +16,7 @@
 
      function Tab_circle(){
         return(
-            <div className="tab-circle tab-b">
+            <div className="tab-circle tab-b hide">
             <fieldset className="field">
             <legend>Circle</legend>
                 <div className="circle-blok">
@@ -39,7 +39,7 @@
 
      function Tab_polygon(){
         return(
-            <div className="tab-polygon tab-b">
+            <div className="tab-polygon tab-b  hide">
             <fieldset className="field">
                <legend>Polygon</legend>
                <div className="polygon-blok point-blok">
@@ -66,7 +66,7 @@
 
      function Tab_color(){
         return(
-         <div className="bloc_palets tab-color tab-b ">
+         <div className="bloc_palets tab-color tab-b">
          <fieldset className="field">
             <legend>Color</legend>
             <div className="colorP">
@@ -106,7 +106,7 @@
      }
      function Tab_setting(){
         return(
-         <div className="settings tab-b">
+         <div className="settings tab-b hide">
             <fieldset className="field">
                <legend>Settings</legend>
                <div className="sett-bloc">

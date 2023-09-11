@@ -28,8 +28,7 @@ const Main = () => {
     }
   }, []);
 
-  // const Tabs = require('../main/htmlModule/tabs');
-  // import Tabs from "../main/htmlModule/tabs";
+
 
   return (
        <div className="app" >
@@ -41,7 +40,7 @@ const Main = () => {
             <div className="tab-h tab-p">
             </div>
           </div>
-         <div className="tabs-head">
+         <div className="tabs-head active">
             <div className="tab-h tab-col">
             </div>
           </div>
