@@ -1,4 +1,9 @@
 function Tab_color(){
+
+   function proba(){
+      alert('Ok');
+   }
+
     return(
      <div className="bloc_palets tab-color tab-b">
      <fieldset className="field">
@@ -31,7 +36,7 @@ function Tab_color(){
            <div className="button bt4" id="btn_reset">Res</div>
         </div>
         <div className="buttons">
-           <div className="button bt5">Save</div>
+           <div onClick={proba} className="button bt5" >Save</div>
            <div className="button bt6">ColorPal</div>
         </div>
    </fieldset>
