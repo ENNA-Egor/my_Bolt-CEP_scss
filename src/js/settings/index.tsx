@@ -13,8 +13,8 @@ initBolt();
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <div className="boddy">
-      <h1>Color Palette</h1>
-      <div className="button_1">Click</div>
+      <p>Color Palette</p>
+      <div className="button">Click</div>
     </div>
   </React.StrictMode>
 );
