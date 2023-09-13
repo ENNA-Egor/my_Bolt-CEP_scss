@@ -33,14 +33,14 @@ const config: CEP_Config = {
       width: 600,
       height: 650,
     },
-    // {
-    //   mainPath: "./colorsett/index.html",
-    //   name: "main",
-    //   panelDisplayName: "Color Palette",
-    //   autoVisible: false,
-    //   width: 300,
-    //   height: 650,
-    // },
+    {
+      mainPath: "./settings/index.html",
+      name: "settings",
+      panelDisplayName: "Color Palette",
+      autoVisible: false,
+      width: 300,
+      height: 650,
+    },
 
   ],
   build: {
