@@ -172,3 +172,30 @@ p{
 .hide{
   display: none;
 }
+
+
+//// это просто пробноая разметка страницы ////
+h1{
+  color: $yellowfont;
+  margin: 15px;
+}
+
+.boddy{
+  background-color: $darkest;
+  margin: 0 2px;
+  max-width: 350px;
+  min-height: 300px;
+  border: 5px solid $yellowfont;
+  border-radius: 15px;
+}
+
+.button_1{
+  margin: 15px;
+  width: 55px;
+  height: 25px;
+  background-color: aqua;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
