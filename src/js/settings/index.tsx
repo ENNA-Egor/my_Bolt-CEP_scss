@@ -14,7 +14,9 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <div className="boddy">
       <p>Color Palette</p>
+      <div className="buttons">
       <div className="button">Click</div>
+      </div>
     </div>
   </React.StrictMode>
 );
