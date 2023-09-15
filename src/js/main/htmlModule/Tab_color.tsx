@@ -1,7 +1,20 @@
+import {
+   csi,
+   evalES,
+   evalFile,
+   openLinkInBrowser,
+   subscribeBackgroundColor,
+   evalTS,
+ } from "../../lib/utils/bolt";
+
+
 function Tab_color(){
 
    function proba(){
       alert('Ok');
+   }
+   function openPanel(){
+      csi.requestOpenExtension('com.Bolt-CEP_Test.cep.settings',0);
    }
 
     return(
@@ -37,7 +50,7 @@ function Tab_color(){
         </div>
         <div className="buttons">
            <div onClick={proba} className="button bt5" >Save</div>
-           <div className="button bt6">ColorPal</div>
+           <div onClick={openPanel} className="button bt6">ColorPal</div>
         </div>
    </fieldset>
   </div>
