@@ -94,6 +94,7 @@
   max-width: $max_width;
   border: 1px solid $highlight;
   border-radius: 3px;
+  display: none;
  
 
 legend{
@@ -173,10 +174,12 @@ p{
   z-index: 2;
 }
 
-.hide{
-  display: none;
+// .hide{
+//   display: none;
+// }
+.tab-color{
+  display: block;
 }
-
 
 //// это просто пробноая разметка страницы ////
 h1{

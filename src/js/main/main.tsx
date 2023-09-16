@@ -27,7 +27,9 @@ const Main = () => {
     }
   }, []);
 
-
+  function activeButt (){
+    alert ('Ok Click')
+  }
 
   return (
        <div className="app" >
@@ -36,7 +38,7 @@ const Main = () => {
             </div>
           </div>
          <div className="tabs-head">
-            <div className="tab-h tab-p">
+            <div className="tab-h tab-p" onClick={activeButt}>
             </div>
           </div>
          <div className="tabs-head active">
