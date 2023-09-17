@@ -27,26 +27,45 @@ const Main = () => {
     }
   }, []);
 
-  function activeButt (){
-    alert ('Ok Click')
-  }
+  function activeButt (event: any){
+    let evValue = (event.target.className).slice(0,5);
+    if (evValue =='tab-h') {
+      let dataTab = event.target.getAttribute('data-tab');
+      let tabH = document.getElementsByClassName('tab-h');
+      for (let i = 0; i < tabH.length; i++) {
+        tabH[i].classList.remove('active');
+      }
+      event.target.classList.add('active');
+      var tabBody = document.getElementsByClassName('tab-b');
+      for (var i = 0; i < tabBody.length; i++) {
+        if (dataTab == i) {
+          tabBody[i].classList.remove('hide');
+          tabBody[i].classList.add('visible');
+        } else {
+          tabBody[i].classList.remove('visible');
+          tabBody[i].classList.add('hide');
+        }
+      }
+    }
+  
+};
 
   return (
        <div className="app" >
          <div className="tabs-head">
-            <div className="tab-h tab-c">
+            <div className="tab-h tab-c" data-tab ="0" onClick={activeButt}>
             </div>
           </div>
          <div className="tabs-head">
-            <div className="tab-h tab-p" onClick={activeButt}>
+            <div className="tab-h tab-p" data-tab ="1" onClick={activeButt}>
             </div>
           </div>
-         <div className="tabs-head active">
-            <div className="tab-h tab-col">
+         <div className="tabs-head ">
+            <div className="tab-h tab-col active" data-tab ="2" onClick={activeButt}>
             </div>
           </div>
          <div className="tabs-head">
-            <div className="tab-h   tab-s">
+            <div className="tab-h tab-s" data-tab ="3" onClick={activeButt}>
             </div>
       </div>
      </div> 

@@ -18,7 +18,7 @@ function Tab_color(){
    }
 
     return(
-     <div className="bloc_palets tab-color tab-b">
+     <div className="bloc_palets tab-color tab-b visible">
      <fieldset className="field">
         <legend>Color</legend>
         <div className="colorP">
