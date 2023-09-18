@@ -28,6 +28,8 @@ const Main = () => {
     }
   }, []);
 
+
+
   function activeButt (event: any){
     let evValue = (event.target.className).slice(0,5);
     if (evValue =='tab-h') {

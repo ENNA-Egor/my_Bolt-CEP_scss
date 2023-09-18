@@ -9,6 +9,14 @@ import Tabs from '../main/htmlModule/tabs'
 
 
 initBolt();
+// Start();
+
+//   function Start(){
+//     alert('Start');
+//     let currentPal = document.getElementsByClassName('pai_1');
+//     currentPal.style.backgroundColor = 'red';
+
+//   };
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
