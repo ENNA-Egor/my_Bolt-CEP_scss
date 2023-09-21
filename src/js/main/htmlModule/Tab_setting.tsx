@@ -17,12 +17,12 @@ function Tab_setting(){
                  <p>F/R   </p>
                  <input type="number" className="framerate n_points inp" name="framerate" value="25"/>
               </div>
-              <div className="sett">
+              <div className="sett dur_set">
                  <p>Dur(sek)</p>
                  <input type="number" className="duration n_points inp" name="duration" value="6"/>
-                 <input type="checkbox" checked className="n_points one_dur" name="check_color_pick"/>
+                 <input type="checkbox" checked className="n_points one_dur" name="check_one-dur"/>
               </div>
-              <div className="sett">
+              <div className="sett ">
                  <p>Inf( % )</p>
                  <input type="number" className="influ n_points inp" name="influence" value="90"/>
               </div>
