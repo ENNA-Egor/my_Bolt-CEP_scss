@@ -1,0 +1,321 @@
+@charset "UTF-8";
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+/*--------------------*/
+.tab-s {
+  background: url("../../assets/png/Help.png") no-repeat;
+  background-size: 100%;
+}
+.tab-s:hover {
+  background: url("../../assets/png/Help-1.png") no-repeat;
+  background-size: 100%;
+}
+
+.tab-c {
+  background: url("../../assets/png/Circle.png") no-repeat;
+  background-size: 100%;
+}
+.tab-c:hover {
+  background: url("../../assets/png/Circle-01.png") no-repeat;
+  background-size: 100%;
+}
+
+.tab-p {
+  background: url("../../assets/png/Polygon.png") no-repeat;
+  background-size: 100%;
+}
+.tab-p:hover {
+  background: url("../../assets/png/Polygon-01.png") no-repeat;
+  background-size: 100%;
+}
+
+.tab-col {
+  background: url("../../assets/png/Color.png") no-repeat;
+  background-size: 100%;
+}
+.tab-col:hover {
+  background: url("../../assets/png/Color-1.png") no-repeat;
+  background-size: 100%;
+}
+
+.but {
+  background: url("../../assets/png/Butt.png") no-repeat;
+  background-size: 100%;
+}
+.but:hover {
+  border: 2px solid #0f5365;
+}
+
+.round {
+  background: url("../../assets/png/Round.png") no-repeat;
+  background-size: 100%;
+}
+.round:hover {
+  border: 2px solid #0f5365;
+}
+
+.button_plus, .bt1 {
+  background: url("../../assets/png/Plus.png") no-repeat;
+  background-size: 100%;
+}
+.button_plus:hover, .bt1:hover {
+  border: 2px solid #0f5365;
+}
+
+.button_minus, .bt2 {
+  background: url("../../assets/png/Minus.png") no-repeat;
+  background-size: 100%;
+}
+.button_minus:hover, .bt2:hover {
+  border: 2px solid #0f5365;
+}
+
+#root {
+  background-color: #232323;
+  padding: 2px;
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+  max-width: 480px;
+  flex-wrap: wrap;
+  background-color: #232323;
+  margin: 0 2px;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  border: 1px solid r #aaaaaa;
+  margin: 5px;
+}
+
+.tabs-head {
+  border: 1px solid #aaaaaa;
+  border-bottom: 0;
+  margin: 2px 2px 0 2px;
+  background-color: rgb(0, 249, 133);
+}
+.tabs-head .tab-h {
+  height: 25px;
+  width: 25px;
+}
+
+.tabs-body {
+  position: relative;
+  top: -1px;
+}
+
+.text {
+  display: flex;
+  justify-content: center;
+  max-width: 480px;
+}
+
+.circle-blok, .polygon-blok, .bloc_palets {
+  display: flex;
+  justify-content: center;
+  max-width: 480px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 25px;
+  height: 25px;
+  padding: 2px;
+  color: #ffff00;
+  margin: 3px 10px 10px 3px;
+  border: 1px solid #aaaaaa;
+  border-radius: 3px;
+  font-size: 12px;
+}
+.button:hover {
+  border: 1px solid #0f5365;
+  background-color: #002c49;
+  color: #b9dcf3;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.linecap_blok, .add_end_blok {
+  display: flex;
+  justify-content: center;
+  max-width: 480px;
+}
+
+.tab-circle, .tab-polygon, .tab-color, .settings {
+  background-color: #232323;
+  max-width: 480px;
+  border: 1px solid #aaaaaa;
+  border-radius: 3px;
+}
+.tab-circle legend, .tab-polygon legend, .tab-color legend, .settings legend {
+  color: #ffff00;
+  font-size: 12px;
+}
+.tab-circle .field, .tab-polygon .field, .tab-color .field, .settings .field {
+  border: 1px solid #aaaaaa;
+  border-radius: 3px;
+  margin: 6px;
+}
+
+.point-blok {
+  display: flex;
+  justify-content: center;
+}
+
+.inp, .inp2 {
+  background-color: #232323;
+  font-size: 10px;
+  color: #bbbbbb;
+  width: 25px;
+  margin: 2px;
+}
+
+.inp2 {
+  width: 40px;
+}
+
+.colorP {
+  display: flex;
+  justify-content: center;
+}
+
+.blok_palet {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 480px;
+}
+.blok_palet .palette {
+  width: 25px;
+  height: 25px;
+  border: 1px solid #aaaaaa;
+  margin: 3px;
+  background-color: rgb(161, 255, 255);
+  color: rgb(161, 255, 255);
+  border-radius: 3px;
+}
+
+.sett-bloc {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 480px;
+}
+
+.sett {
+  display: flex;
+  justify-content: center;
+  max-width: 480px;
+  margin: 2px 10px;
+}
+
+p {
+  font-size: 12px;
+  color: #ffff00;
+  text-align: center;
+  margin: 2px 10px;
+}
+
+.active {
+  position: relative;
+  z-index: 2;
+}
+
+.hide {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+h1 {
+  color: #ffff00;
+  margin: 15px;
+}
+
+.boddy {
+  background-color: #232323;
+  margin: 0 2px;
+  max-width: 100px;
+  min-height: 200px;
+  border: 1px solid #aaaaaa;
+  border-radius: 3px;
+}/*# sourceMappingURL=index.css.map */

@@ -10,8 +10,8 @@ function Tab_setting(){
               </div>
               <div className="sett">
                  <p>Res</p>
-                 <input type="number" className="resol resol-w  inp" name="resolution" value="1920"/>
-                 <input type="number" className="resol resol-h  inp" name="resolution" value="1080"/>
+                 <input type="number" className="resol resol-w  inp2" name="resolution" value="1920"/>
+                 <input type="number" className="resol resol-h  inp2" name="resolution" value="1080"/>
               </div>
               <div className="sett">
                  <p>F/R   </p>

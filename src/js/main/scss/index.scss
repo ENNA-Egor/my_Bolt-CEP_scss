@@ -118,13 +118,17 @@ legend{
 //   margin: 2px 10px;
 // }
 
-.inp{
+.inp, .inp2{
   background-color: $darkest;
   font-size: 10px;
   color: $font;
-  width: 41px;
+  width: 25px;
   margin: 2px;
 }
+.inp2{
+  width: 40px;
+}
+
 
 .colorP{
   display: flex;
