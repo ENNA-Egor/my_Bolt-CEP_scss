@@ -2,6 +2,13 @@
 @import "../scss/sass_modules/innulstyle";
 @import "../scss/sass_modules/buttonHover";
 
+@mixin style_inp{
+  background-color: $darkest;
+  font-size: 10px;
+  color: $font;
+  margin: 2px;
+}
+
 
 #root{
   background-color: $darkest;
@@ -118,15 +125,13 @@ legend{
 //   margin: 2px 10px;
 // }
 
-.inp, .inp2{
-  background-color: $darkest;
-  font-size: 10px;
-  color: $font;
+.inp{
   width: 25px;
-  margin: 2px;
+  @include style_inp;
 }
 .inp2{
   width: 40px;
+  @include style_inp;
 }
 
 
