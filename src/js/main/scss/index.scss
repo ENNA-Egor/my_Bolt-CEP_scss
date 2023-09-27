@@ -13,6 +13,7 @@
 #root{
   background-color: $darkest;
   padding: 2px;
+  min-width: $min_width;
 }
 
 
@@ -21,6 +22,7 @@
   // justify-content: flex-end;
   justify-content: center;
   max-width: $max_width;
+  min-width: $min_width;
   flex-wrap: wrap;
   background-color: $darkest;
   margin: 0 2px;
@@ -63,6 +65,7 @@
   display: flex;
   justify-content: center;
   max-width: $max_width;
+  min-width: $min_width;
 }
 
 .button{
@@ -102,6 +105,7 @@
   border: 1px solid $highlight;
   border-radius: 3px;
   // display: none;
+  overflow: hidden;
  
 
 legend{
