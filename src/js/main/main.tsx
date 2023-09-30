@@ -59,18 +59,18 @@ const Main = () => {
             <div className="tab-h tab-c" data-tab ="0" onClick={activeButt}>
             </div>
           </div>
-         <div className="tabs-head">
+          <div className="tabs-head">
             <div className="tab-h tab-p" data-tab ="1" onClick={activeButt}>
             </div>
           </div>
-         <div className="tabs-head ">
+          <div className="tabs-head ">
             <div className="tab-h tab-col active" data-tab ="2" onClick={activeButt}>
             </div>
           </div>
-         <div className="tabs-head">
+          <div className="tabs-head">
             <div className="tab-h tab-s" data-tab ="3" onClick={activeButt}>
             </div>
-      </div>
+          </div>
      </div> 
   );
 };

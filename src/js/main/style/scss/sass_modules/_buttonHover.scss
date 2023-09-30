@@ -1,38 +1,41 @@
+@import "./variables";
+
+
 .tab-s{
-   background: url('../../assets/png/Help.png') no-repeat;
+   background: url('../../../../assets/png/Help.png') no-repeat;
    background-size: 100%;
-   transition: 1s;
+   transition: $animate-time;
    &:hover{
-     background: url('../../assets/png/Help-1.png') no-repeat;
+     background: url('../../../../assets/png/Help-1.png') no-repeat;
      background-size: 100%;
    }
  }
  .tab-c{
-   background: url('../../assets/png/Circle.png') no-repeat;
+   background: url('../../../../assets/png/Circle.png') no-repeat;
    background-size: 100%;
-   transition: 1s;
+   transition: $animate-time;
    &:hover{
-     background: url('../../assets/png/Circle-01.png') no-repeat;
+     background: url('../../../../assets/png/Circle-01.png') no-repeat;
      background-size: 100%;
    }
  }
  
  
  .tab-p{
-   background: url('../../assets/png/Polygon.png') no-repeat;
+   background: url('../../../../assets/png/Polygon.png') no-repeat;
    background-size: 100%;
-   transition: 1s;
+   transition: $animate-time;
    &:hover{
-     background: url('../../assets/png/Polygon-01.png') no-repeat;
+     background: url('../../../../assets/png/Polygon-1.png') no-repeat;
      background-size: 100%;
    }
  }
  .tab-col{
-   background: url('../../assets/png/Color.png') no-repeat;
+   background: url('../../../../assets/png/Color.png') no-repeat;
    background-size: 100%;
-   transition: 1s;
+   transition: $animate-time;
    &:hover{
-     background: url('../../assets/png/Color-1.png') no-repeat;
+     background: url('../../../../assets/png/Color-1.png') no-repeat;
      background-size: 100%;
    }
 
