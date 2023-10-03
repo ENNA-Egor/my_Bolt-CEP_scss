@@ -16,7 +16,7 @@ import color from "../assets/png/Color.png";
 import setting from "../assets/png/Help.png";
 
 
-import "../main/style/css/min/main.min.css";
+// import "../main/style/css/min/main.min.css";
 // import "../main/scss/main.scss";
 
 const Main = () => {
