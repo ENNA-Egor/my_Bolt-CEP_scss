@@ -8,16 +8,10 @@ import {
   subscribeBackgroundColor,
   evalTS,
 } from "../lib/utils/bolt";
-
-// import bolt from "../assets/bolt-cep.svg";
 import circle from "../assets/png/Circle-01.png";
 import polygon from "../assets/png/Polygon-01.png";
 import color from "../assets/png/Color.png";
 import setting from "../assets/png/Help.png";
-
-
-// import "../main/style/css/main.css";
-// import "../main/scss/main.scss";
 
 const Main = () => {
   const [bgColor, setBgColor] = useState("#282c34");
