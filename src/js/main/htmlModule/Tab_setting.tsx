@@ -1,3 +1,16 @@
+import { os, path } from "../../lib/cep/node";
+import {
+  csi,
+  evalES,
+  evalTS,
+} from "../../lib/utils/bolt";
+
+
+const jsxTest = () => {
+   console.log(evalES(`helloWorld("${csi.getApplicationID()}")`));
+ };
+
+
 function Tab_setting(){
     return(
      <div className="settings tab-b hide">
@@ -27,7 +40,7 @@ function Tab_setting(){
                  <input type="text" className="influ n_points inp" name="influence" value="90"/>
               </div>
               <div className="sett">
-              <div className="button bt7">SetComp</div>
+              <div className="button bt7" onClick={jsxTest}>SetComp</div>
               </div>
            </div>
         </fieldset>
