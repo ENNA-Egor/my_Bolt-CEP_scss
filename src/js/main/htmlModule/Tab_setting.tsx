@@ -8,7 +8,7 @@ import {
 
 
 const jsxTest = () => {
-   console.log(evalES(`helloWorld("${csi.getApplicationID()}")`));
+   console.log(evalES(`customSettingsComp("${csi.getApplicationID()}")`));
  };
 
 //  type MyProps = { ... };
@@ -23,22 +23,24 @@ const jsxTest = () => {
          res_w: '1920',
          res_h: '1080',
          frrate: '35',
-         dur : '3',
+         dur : '6',
          infl : '60',
       }
    }
 
    changeInput=(e:any) => {
          console.log (e.target.value)
-         let vall = Number(e.target.value);
-         if (vall >15){
-            this.setState({ num_el: '15'})
-         }else if 
-            (vall < 1){
-               this.setState({ num_el: '1'})
-         }else {
-            this.setState({ num_el: e.target.value});
-         }
+         let etar = e.target;
+         this.setState({ [e.target.name]: e.target.value});
+         // let vall = Number(e.target.value);
+         // if (vall >15){
+         //    this.setState({ num_el: '15'})
+         // }else if 
+         //    (vall < 1){
+         //       this.setState({ num_el: '1'})
+         // }else {
+         //    this.setState({ num_el: e.target.value});
+         // }
       }  
    
 
@@ -57,21 +59,21 @@ const jsxTest = () => {
                    </div>
                    <div className="sett">
                       <p>Res</p>
-                      <input type="text" className="resol resol-w  inp2" name="resolution" defaultValue={this.state.res_w}/>
-                      <input type="text" className="resol resol-h  inp2" name="resolution" defaultValue={this.state.res_h}/>
+                      <input  onChange={this.changeInput} type="text" className="resol resol-w  inp2" name="resolution" defaultValue={this.state.res_w}/>
+                      <input  onChange={this.changeInput} type="text" className="resol resol-h  inp2" name="resolution" defaultValue={this.state.res_h}/>
                    </div>
                    <div className="sett">
                       <p>F/R   </p>
-                      <input type="text" className="framerate n_points inp" name="framerate" defaultValue={this.state.frrate}/>
+                      <input  onChange={this.changeInput} type="text" className="framerate n_points inp" name="framerate" defaultValue={this.state.frrate}/>
                    </div>
                    <div className="sett dur_set">
                       <p>Dur(sek)</p>
-                      <input type="text" className="duration n_points inp" name="duration" defaultValue={this.state.dur}/>
-                      <input type="checkbox" checked className="n_points one_dur" name="check_one-dur"/>
+                      <input  onChange={this.changeInput} type="text" className="duration n_points inp" name="duration" defaultValue={this.state.dur}/>
+                      <input  onChange={this.changeInput} type="checkbox" checked className="n_points one_dur" name="check_one-dur"/>
                    </div>
                    <div className="sett ">
                       <p>Inf( % )</p>
-                      <input type="text" className="influ n_points inp" name="influence" defaultValue={this.state.infl}/>
+                      <input  onChange={this.changeInput} type="text" className="influ n_points inp" name="influence" defaultValue={this.state.infl}/>
                    </div>
                    <div className="sett">
                    <div className="button bt7" onClick={jsxTest}>SetComp</div>
