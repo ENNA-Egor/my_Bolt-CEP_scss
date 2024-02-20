@@ -63,7 +63,7 @@ const jsxTest = () => {
                       <input type="text" className="influ n_points inp" name="influence" defaultValue={this.state.infl}/>
                    </div>
                    <div className="sett">
-                   <div className="button bt7">SetComp</div>
+                   <div className="button bt7" onClick={jsxTest}>SetComp</div>
                    </div>
                 </div>
              </fieldset>
