@@ -1,0 +1,225 @@
+@import "../scss/sass_modules/variables";
+@import "../scss/sass_modules/innulstyle";
+@import "../scss/sass_modules/buttonHover";
+
+@mixin style_inp{
+  background-color: $darkest;
+  font-size: 10px;
+  color: $font;
+  margin: 2px;
+}
+
+
+#root{
+  background-color: $darkest;
+  padding: 2px;
+  min-width: $min_width;
+}
+
+
+.app{
+  display: flex;
+  // justify-content: flex-end;
+  justify-content: center;
+  max-width: $max_width;
+  min-width: $min_width;
+  flex-wrap: wrap;
+  background-color: $darkest;
+  margin: 0 2px;
+}
+
+
+
+.tabs{
+  display:flex;
+  justify-content: center;
+  border: 1px solid r$highlight;
+  margin: 5px;
+}
+
+.tabs-head{
+  border: 1px solid $highlight;
+  border-bottom:0 ;
+  margin: 1px 1px 0 1px;
+  background-color: rgb(0, 249, 133);
+  .tab-h{
+    height : $size_elem;
+    width: $size_elem;
+  }
+}
+
+
+.tabs-body{
+  position: relative;
+  top: -1px;
+}
+
+
+.text{
+  display:flex ;
+  justify-content: center;
+  max-width: $max_width;
+}
+
+.circle-blok, .polygon-blok, .bloc_palets{
+  display: flex;
+  justify-content: center;
+  max-width: $max_width;
+  // min-width: $min_width;
+}
+
+.button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: $size_elem;
+  height: $size_elem;
+  padding: 2px;
+  color: $yellowfont;
+  margin:  1px 2px 2px 1px;
+  border: 1px solid $highlight;
+  border-radius: 3px;
+  font-size: 12px;
+  &:hover{
+    border: 1px solid $hover;
+    background-color: #002c49;
+    color: #b9dcf3;
+  }
+}
+
+.buttons{
+  display: flex;
+  justify-content: center;
+}
+
+.linecap_blok, .add_end_blok{
+  display: flex;
+  justify-content:center;
+  max-width: $max_width;
+  // min-width: $min_width;
+  // border: 1px solid $highlight;
+}
+
+.tab-circle , .tab-polygon, .tab-color, .settings{
+  background-color: $darkest;
+  max-width: $max_width;
+  min-width: $min_width;
+  border: 1px solid $highlight;
+  border-radius: 3px;
+  // display: none;
+  overflow: hidden;
+ 
+
+legend{
+  color: $yellowfont;
+  font-size: 12px;
+}
+.field{
+  border: 1px solid $highlight;
+  border-radius: 3px;
+  margin:  2px;
+}
+}
+
+
+.point-blok{
+  display: flex;
+  justify-content:center;
+}
+
+// .n_points{
+//   margin: 2px 10px;
+// }
+
+.inp{
+  width: 15px;
+  @include style_inp;
+
+}
+.inp2{
+  width: 25px;
+  @include style_inp;
+}
+
+
+.colorP{
+  display: flex;
+  justify-content:center;
+}
+
+.blok_palet{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: $max_width;
+  .palette{
+    width: $size_elem;
+    height: $size_elem;
+    border: 1px solid $highlight;
+    margin: 1px;
+    background-color: rgb(161, 255, 255);
+    color: rgb(161, 255, 255);
+    border-radius: 3px;
+  }
+}
+
+.sett-bloc{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: $max_width;
+}
+
+.sett {
+  display:flex;
+  justify-content: center;
+  max-width: $max_width;
+  margin: 2px 0;
+}
+
+
+p{
+  font-size: 12px;
+  color: $yellowfont;
+  text-align: center;
+  margin: 2px 5px;
+}
+
+.active{
+  position: relative;
+  z-index: 2;
+}
+
+.hide{
+  display: none;
+}
+.visible{
+  display: block;
+}
+
+.dur_set{
+  position: relative;
+}
+
+.one_dur{
+  position:absolute;
+  right: 30px;
+  top: 2px;
+}
+
+//// это просто пробноая разметка страницы ////
+h1{
+  color: $yellowfont;
+  margin: 15px;
+}
+
+.boddy{
+  background-color: $darkest;
+  margin: 0 2px;
+  max-width: 100px;
+  min-height: 200px;
+  border: 1px solid $highlight;
+  border-radius: 3px;
+}
+
+

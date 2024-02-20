@@ -1,0 +1,72 @@
+@import "./variables";
+
+
+.tab-s{
+   background: url('../../../../assets/png/Help.png') no-repeat;
+   background-size: 100%;
+   transition: $animate-time;
+   &:hover{
+     background: url('../../../../assets/png/Help-1.png') no-repeat;
+     background-size: 100%;
+   }
+ }
+ .tab-c{
+   background: url('../../../../assets/png/Circle.png') no-repeat;
+   background-size: 100%;
+   transition: $animate-time;
+   &:hover{
+     background: url('../../../../assets/png/Circle-01.png') no-repeat;
+     background-size: 100%;
+   }
+ }
+ 
+ 
+ .tab-p{
+   background: url('../../../../assets/png/Polygon.png') no-repeat;
+   background-size: 100%;
+   transition: $animate-time;
+   &:hover{
+     background: url('../../../../assets/png/Polygon-1.png') no-repeat;
+     background-size: 100%;
+   }
+ }
+ .tab-col{
+   background: url('../../../../assets/png/Color.png') no-repeat;
+   background-size: 100%;
+   transition: $animate-time;
+   &:hover{
+     background: url('../../../../assets/png/Color-1.png') no-repeat;
+     background-size: 100%;
+   }
+
+ }
+ .but{
+   background: url('../../assets/png/Butt.png') no-repeat;
+   background-size: 100%;
+   &:hover{
+    border: 2px solid $hover;
+   }
+ }
+ .round{
+   background: url('../../assets/png/Round.png') no-repeat;
+   background-size: 100%;
+   &:hover{
+    border: 2px solid $hover;
+   }
+ }
+
+ .button_plus, .bt1{
+   background: url('../../assets/png/Plus.png') no-repeat;
+   background-size: 100%;
+   &:hover{
+    border: 2px solid $hover;
+   }
+ }
+
+ .button_minus, .bt2{
+   background: url('../../assets/png/Minus.png') no-repeat;
+   background-size: 100%;
+   &:hover{
+    border: 2px solid $hover;
+   }
+ }
