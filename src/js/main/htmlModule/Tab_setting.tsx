@@ -27,6 +27,23 @@ const jsxTest = () => {
          infl : '60',
       }
    }
+
+   changeInput=(e:any) => {
+         console.log (e.target.value)
+         let vall = Number(e.target.value);
+         if (vall >15){
+            this.setState({ num_el: '15'})
+         }else if 
+            (vall < 1){
+               this.setState({ num_el: '1'})
+         }else {
+            this.setState({ num_el: e.target.value});
+         }
+      }  
+   
+
+
+
       render() {
          
          return(
@@ -36,7 +53,7 @@ const jsxTest = () => {
                 <div className="sett-bloc">
                    <div className="sett">
                       <p>N_element</p>
-                      <input type="text" className="n_elem inp" name="num-element" min="2" max="15" defaultValue={this.state.num_el}/>
+                      <input  onChange={this.changeInput} className="n_elem inp" name="num-element" min='2' max='15'  defaultValue={this.state.num_el} />
                    </div>
                    <div className="sett">
                       <p>Res</p>
