@@ -11,18 +11,12 @@ const jsxTest = () => {
    console.log(evalES(`helloWorld("${csi.getApplicationID()}")`));
  };
 
-
- class Tab_setting extends React.Component {
+//  type MyProps = { ... };
+// type MyState = { value: string };
+ class Tab_setting extends React.Component <{}, { [key: string]: string }> {
 
    constructor (props:string) {
-      // interface State {
-      //    num_el: number,
-      //       res_w: number,
-      //       res_h: number,
-      //       frrate: number,
-      //       dur : number,
-      //       infl : number,
-      // }
+
       super(props);
       this.state = {
          num_el: '5',
