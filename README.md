@@ -363,5 +363,6 @@ ReactDOM.render(
   4. `cep.config.ts` - Check if any new properties have been added that don't exist in your config.
   5. `src/js/lib` - Update this entire folder.
   6. `src/jsx/index.ts` - Check if any new properties have been added that don't exist in your config.
-#   m y _ B o l t - S E P _ s c s s  
+#   m y _ B o l t - S E P _ s c s s 
+ 
  
