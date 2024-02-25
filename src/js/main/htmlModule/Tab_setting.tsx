@@ -7,9 +7,15 @@ import {
 } from "../../lib/utils/bolt";
 
 
-const jsxTest = () => {
+const jsxTestt = () => {
    console.log(evalES(`customSettingsComp("${csi.getApplicationID()}")`));
  };
+
+ const compCustomSettings = ()=>{
+   evalTS("helloObj", { height: 90, width: 100 }).then((res) => {
+      alert (JSON.stringify(res))
+    });
+ }
 
 //  type MyProps = { ... };
 // type MyState = { value: string };
