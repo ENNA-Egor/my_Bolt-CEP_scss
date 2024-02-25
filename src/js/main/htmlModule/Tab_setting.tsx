@@ -7,7 +7,7 @@ import {
 } from "../../lib/utils/bolt";
 
 
-const jsxTestt = () => {
+const jsxTest = () => {
    console.log(evalES(`customSettingsComp("${csi.getApplicationID()}")`));
  };
 
@@ -82,7 +82,7 @@ const jsxTestt = () => {
                       <input  onChange={this.changeInput} type="text" className="influ n_points inp" name="influence" defaultValue={this.state.infl}/>
                    </div>
                    <div className="sett">
-                   <div className="button bt7" onClick={jsxTest}>SetComp</div>
+                   <div className="button bt7" onClick={compCustomSettings}>SetComp</div>
                    </div>
                 </div>
              </fieldset>

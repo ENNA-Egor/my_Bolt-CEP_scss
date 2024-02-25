@@ -23,15 +23,20 @@ export const helloArrayStr = (arr: string[]) => {
 };
 export const helloObj = (obj: { height: number; width: number }) => {
   alert(`ExtendScript received an object: ${JSON.stringify(obj)}`);
-  let a: number= obj.height *2;
-  let n: number= obj.width *3;
-  //   const retnObj = {
-  //     height: y, 
-  //     width: x,
-  //   } 
+  
+  var newComp =app.project.activeItem;
+            if (newComp){
+            if (newComp instanceof CompItem){
+                var Custom_w=newComp.width;
+                var Custom_h =newComp.height;
+                
+            }
+          } else{
+            alert('Pleace select composition')
+          }
 
   return {
-   rHeight: a,
-   rWidth: n,
+    height: Custom_h,
+   width: Custom_w,
   };
 };
