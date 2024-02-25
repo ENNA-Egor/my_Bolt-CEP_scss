@@ -21,8 +21,8 @@ export const helloArrayStr = (arr: string[]) => {
   );
   return arr;
 };
-export const  = (obj: { Custom_h: number; Custom_w: number; Custom_Nam: string; Custom_Dur: number; Custom_FR: number}) => {
-  // alert(`ExtendScript received an object: ${JSON.stringify(obj)}`);
+export const helloObj = (obj: { Custom_h: number; Custom_w: number; Custom_Nam: string; Custom_Dur: number; Custom_FR: number}) => {
+  alert(`ExtendScript received an object: ${JSON.stringify(obj)}`);
     var obj1 = JSON.stringify(obj);
                 var Custom_w;
                 var Custom_h;
