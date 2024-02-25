@@ -7,7 +7,7 @@ import {
   helloNum,
   helloArrayStr,
   helloObj,
-} from "../utils/samples";
+} from "./samples";
 
 
 export { helloError, helloStr, helloNum, helloArrayStr, helloObj, helloVoid };

@@ -21,22 +21,33 @@ export const helloArrayStr = (arr: string[]) => {
   );
   return arr;
 };
-export const helloObj = (obj: { height: number; width: number }) => {
-  alert(`ExtendScript received an object: ${JSON.stringify(obj)}`);
-  
+export const helloObj = (obj: { Custom_h: number; Custom_w: number; Custom_Nam: string; Custom_Dur: number; Custom_FR: number}) => {
+  // alert(`ExtendScript received an object: ${JSON.stringify(obj)}`);
+    var obj1 = JSON.stringify(obj);
+                var Custom_w;
+                var Custom_h;
+                var Custom_Nam;
+                var Custom_Dur;
+                var Custom_FR;
   var newComp =app.project.activeItem;
             if (newComp){
             if (newComp instanceof CompItem){
-                var Custom_w=newComp.width;
-                var Custom_h =newComp.height;
-                
+                Custom_w=newComp.width;
+                Custom_h =newComp.height;
+                Custom_Nam =newComp.name;
+                Custom_Dur =newComp.duration;
+                Custom_FR =1/(newComp.frameDuration);
             }
           } else{
             alert('Pleace select composition')
+            return JSON.parse(obj1);
           }
 
   return {
-    height: Custom_h,
-   width: Custom_w,
+    Custom_h: Custom_h,
+    Custom_w: Custom_w,
+    Custom_Nam: Custom_Nam,
+    Custom_Dur: Custom_Dur,
+    Custom_FR: Custom_FR
   };
 };
