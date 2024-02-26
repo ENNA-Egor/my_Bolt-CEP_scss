@@ -23,7 +23,7 @@
 // };
 export const customSettingsTS = (obj: { Custom_h: number; Custom_w: number; Custom_Nam: string; Custom_Dur: number; Custom_FR: number}) => {
   alert(`ExtendScript received an object: ${JSON.stringify(obj)}`);
-    var obj1 = JSON.stringify(obj);
+    // var obj1 = JSON.parse(obj);
                 var Custom_w;
                 var Custom_h;
                 var Custom_Nam;
@@ -40,7 +40,7 @@ export const customSettingsTS = (obj: { Custom_h: number; Custom_w: number; Cust
             }
           } else{
             alert('Pleace select composition')
-            return JSON.parse(obj1);
+            return JSON.stringify(obj);
           }
 
   return {

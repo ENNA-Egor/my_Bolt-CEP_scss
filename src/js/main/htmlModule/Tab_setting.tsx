@@ -18,7 +18,7 @@ import {
     
     compCustomSettings = ()=>{
        evalTS("customSettingsTS", { Custom_h: Number(`{this.state.resolution_h}`), Custom_w: 1920, Custom_Nam: 'newComp', Custom_Dur: 6, Custom_FR: 30}).then((res) => {
-          alert (JSON.stringify(res))
+          alert (res)
          });
       };
       
