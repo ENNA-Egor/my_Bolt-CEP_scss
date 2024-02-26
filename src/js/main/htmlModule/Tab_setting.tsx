@@ -6,6 +6,8 @@ import {
   evalTS,
 } from "../../lib/utils/bolt";
 
+// const fs = require('fs');
+
 
 // const jsxTest = () => {
 //    console.log(evalES(`customSettingsComp("${csi.getApplicationID()}")`));
@@ -18,7 +20,8 @@ import {
     
     compCustomSettings = ()=>{
        evalTS("customSettingsTS", { Custom_h: Number(`{this.state.resolution_h}`), Custom_w: 1920, Custom_Nam: 'newComp', Custom_Dur: 6, Custom_FR: 30}).then((res) => {
-          alert (res)
+          alert (res);
+         //  fs.writeFileSync('../data_module/data_01.json', JSON.stringify(res), {encoding: 'utf8', flag: 'w'});
          });
       };
       
