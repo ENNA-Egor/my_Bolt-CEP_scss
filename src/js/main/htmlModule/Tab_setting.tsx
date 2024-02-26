@@ -5,8 +5,9 @@ import {
   evalES,
   evalTS,
 } from "../../lib/utils/bolt";
+import { pathToFileURL } from "url";
 
-// const fs = require('fs');
+const fs = require('fs');
 
 
 // const jsxTest = () => {
@@ -19,9 +20,10 @@ import {
  class Tab_setting extends React.Component <{}, { [key: string]: string }> {
     
     compCustomSettings = ()=>{
-       evalTS("customSettingsTS", { Custom_h: Number(`{this.state.resolution_h}`), Custom_w: 1920, Custom_Nam: 'newComp', Custom_Dur: 6, Custom_FR: 30}).then((res) => {
-          alert (res);
-         //  fs.writeFileSync('../data_module/data_01.json', JSON.stringify(res), {encoding: 'utf8', flag: 'w'});
+       evalTS("customSettingsTS", { Custom_h: Number(this.state.resolution_h), Custom_w: Number(this.state.resolution_w), Custom_Nam: 'newComp', Custom_Dur: Number(this.state.duration), Custom_FR:  Number(this.state.framerate)}).then((res) => {
+          alert (typeof res);
+          alert (res.Custom_w);
+         //  fs.writeFileSync('./data_01.json', JSON.stringify(res), {encoding: 'utf8', flag: 'w'});
          });
       };
       
@@ -35,7 +37,7 @@ import {
          resolution_w: '1920',
          resolution_h: '1080',
          framerate: '25',
-         duration : '6',
+         duration : '3',
          influence : '60',
       }
    }

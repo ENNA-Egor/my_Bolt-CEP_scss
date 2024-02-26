@@ -40,7 +40,8 @@ export const customSettingsTS = (obj: { Custom_h: number; Custom_w: number; Cust
             }
           } else{
             alert('Pleace select composition')
-            return JSON.stringify(obj);
+            // return JSON.stringify(obj);
+            return obj;
           }
 
   return {
