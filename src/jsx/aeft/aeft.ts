@@ -6,11 +6,11 @@ import {
   helloStr,
   helloNum,
   helloArrayStr,
-  helloObj,
+  customSettingsTS,
 } from "./samples";
 
 
-export { helloError, helloStr, helloNum, helloArrayStr, helloObj, helloVoid };
+export { helloError, helloStr, helloNum, helloArrayStr, customSettingsTS, helloVoid };
 
 
 
