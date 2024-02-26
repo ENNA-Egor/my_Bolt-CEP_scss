@@ -11,16 +11,19 @@ const jsxTest = () => {
    console.log(evalES(`customSettingsComp("${csi.getApplicationID()}")`));
  };
 
- const compCustomSettings = ()=>{
-   evalTS("helloObj", { Custom_h:1020, Custom_w: 1920, Custom_Nam: 'newComp', Custom_Dur: 6, Custom_FR: 30}).then((res) => {
-      alert (JSON.stringify(res))
-    });
- }
  
  //  type MyProps = { ... };
  // type MyState = { value: string };
  class Tab_setting extends React.Component <{}, { [key: string]: string }> {
     
+    compCustomSettings = ()=>{
+       evalTS("helloObj", { Custom_h: Number(`{this.state.resolution_h}`), Custom_w: 1920, Custom_Nam: 'newComp', Custom_Dur: 6, Custom_FR: 30}).then((res) => {
+          alert (JSON.stringify(res))
+         });
+      };
+      
+      //   res_h = Number({this.state.resolution_h});
+
    constructor (props:string) {
 
       super(props);
@@ -82,7 +85,7 @@ const jsxTest = () => {
                       <input  onChange={this.changeInput} type="text" className="influ n_points inp" name="influence" defaultValue={this.state.influence}/>
                    </div>
                    <div className="sett">
-                   <div className="button bt7" onClick={compCustomSettings}>SetComp</div>
+                   <div className="button bt7" onClick={this.compCustomSettings}>SetComp</div>
                    </div>
                 </div>
              </fieldset>
