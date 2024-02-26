@@ -1,16 +1,17 @@
 // export const example = () => {
 // };
 import {
-  helloVoid,
-  helloError,
-  helloStr,
-  helloNum,
-  helloArrayStr,
+  // helloVoid,
+  // helloError,
+  // helloStr,
+  // helloNum,
+  // helloArrayStr,
   customSettingsTS,
 } from "./samples";
 
 
-export { helloError, helloStr, helloNum, helloArrayStr, customSettingsTS, helloVoid };
+// export { helloError, helloStr, helloNum, helloArrayStr, customSettingsTS, helloVoid };
+export {customSettingsTS };
 
 
 

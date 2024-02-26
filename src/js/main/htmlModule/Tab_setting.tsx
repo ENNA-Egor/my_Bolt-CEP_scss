@@ -7,9 +7,9 @@ import {
 } from "../../lib/utils/bolt";
 
 
-const jsxTest = () => {
-   console.log(evalES(`customSettingsComp("${csi.getApplicationID()}")`));
- };
+// const jsxTest = () => {
+//    console.log(evalES(`customSettingsComp("${csi.getApplicationID()}")`));
+//  };
 
  
  //  type MyProps = { ... };
