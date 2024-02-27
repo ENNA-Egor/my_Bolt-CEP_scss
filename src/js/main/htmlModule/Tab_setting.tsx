@@ -1,5 +1,5 @@
 import React from "react";
-import { os, path } from "../../lib/cep/node";
+import { os, path, fs } from "../../lib/cep/node";
 import {
   csi,
   evalES,
@@ -7,7 +7,7 @@ import {
 } from "../../lib/utils/bolt";
 import { pathToFileURL } from "url";
 
-const fs = require('fs');
+// const fsSet = require('fs');
 
 
 // const jsxTest = () => {
@@ -23,7 +23,7 @@ const fs = require('fs');
        evalTS("customSettingsTS", { Custom_h: Number(this.state.resolution_h), Custom_w: Number(this.state.resolution_w), Custom_Nam: 'newComp', Custom_Dur: Number(this.state.duration), Custom_FR:  Number(this.state.framerate)}).then((res) => {
           alert (typeof res);
           alert (res.Custom_w);
-         //  fs.writeFileSync('./data_01.json', JSON.stringify(res), {encoding: 'utf8', flag: 'w'});
+          fs.writeFileSync('./data_01.json', JSON.stringify(res), {encoding: 'utf8', flag: 'w'});
          });
       };
       
