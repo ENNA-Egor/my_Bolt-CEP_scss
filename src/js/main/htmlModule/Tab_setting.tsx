@@ -6,24 +6,17 @@ import {
   evalTS,
 } from "../../lib/utils/bolt";
 import { pathToFileURL } from "url";
+import {SystemPath} from '../../lib/cep/csinterface'
 
-// const fsSet = require('fs');
 
-
-// const jsxTest = () => {
-//    console.log(evalES(`customSettingsComp("${csi.getApplicationID()}")`));
-//  };
-
- 
- //  type MyProps = { ... };
- // type MyState = { value: string };
  class Tab_setting extends React.Component <{}, { [key: string]: string }> {
     
     compCustomSettings = ()=>{
        evalTS("customSettingsTS", { Custom_h: Number(this.state.resolution_h), Custom_w: Number(this.state.resolution_w), Custom_Nam: 'newComp', Custom_Dur: Number(this.state.duration), Custom_FR:  Number(this.state.framerate)}).then((res) => {
           alert (typeof res);
           alert (res.Custom_w);
-          fs.writeFileSync('./data_01.json', JSON.stringify(res), {encoding: 'utf8', flag: 'w'});
+          SystemPath.USER_DATA = "userData";
+          fs.writeFileSync('userData/data_01.json', JSON.stringify(res), {encoding: 'utf8', flag: 'w'});
          });
       };
       
