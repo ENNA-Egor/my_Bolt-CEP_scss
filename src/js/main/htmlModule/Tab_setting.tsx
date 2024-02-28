@@ -16,7 +16,7 @@ import {SystemPath} from '../../lib/cep/csinterface'
           alert (typeof res);
           alert (res.Custom_w);
           SystemPath.USER_DATA = "userData";
-          fs.writeFileSync('userData/data_01.json', JSON.stringify(res), {encoding: 'utf8', flag: 'w'});
+          fs.writeFileSync('SystemPath.USER_DATA/data_01.json', JSON.stringify(res), {encoding: 'utf8', flag: 'w'});
          });
       };
       
