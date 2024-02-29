@@ -11,14 +11,17 @@ import {SystemPath} from '../../lib/cep/csinterface'
 
  class Tab_setting extends React.Component <{}, { [key: string]: string }> {
     
-    compCustomSettings = ()=>{
-       evalTS("customSettingsTS", { Custom_h: Number(this.state.resolution_h), Custom_w: Number(this.state.resolution_w), Custom_Nam: 'newComp', Custom_Dur: Number(this.state.duration), Custom_FR:  Number(this.state.framerate)}).then((res) => {
-          alert (typeof res);
-          alert (res.Custom_w);
-          SystemPath.USER_DATA = "userData";
-          fs.writeFileSync('SystemPath.USER_DATA/data_01.json', JSON.stringify(res), {encoding: 'utf8', flag: 'w'});
-         });
-      };
+   compCustomSettings = ()=>{
+      evalTS("customSettingsTS", { Custom_h: Number(this.state.resolution_h), Custom_w: Number(this.state.resolution_w), Custom_Nam: 'newComp', Custom_Dur: Number(this.state.duration), Custom_FR:  Number(this.state.framerate)}).then((res) => {
+         alert (typeof res);
+         alert (res.Custom_w);
+         SystemPath.USER_DATA = "userData";
+         alert (SystemPath.USER_DATA);
+         let saveFile = path.join('SystemPath.USER_DATA', '/data_01.json')
+         alert (saveFile);
+         fs.writeFileSync(saveFile, JSON.stringify(res), {encoding: 'utf8', flag: 'w'});
+        });
+     };
       
       //   res_h = Number({this.state.resolution_h});
 
