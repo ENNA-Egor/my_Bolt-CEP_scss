@@ -1,29 +1,6 @@
-// export const helloVoid = (): void => {
-//   alert("test");
-// };
-// export const helloError = (str: string) => {
-//   // Intentional Error for Error Handling Demonstration
-//   //@ts-ignore
-//   str = strr;
-// };
 
-// export const helloStr = (str: string) => {
-//   alert(`ExtendScript received a string: ${str}`);
-//   return (str.toUpperCase()+'  '+'text');
-// };
-// export const helloNum = (n: number) => {
-//   alert(`ExtendScript received a number: ${n.toString()}`);
-//   return n;
-// };
-// export const helloArrayStr = (arr: string[]) => {
-//   alert(
-//     `ExtendScript received an array of ${arr.length} strings: ${arr.toString()}`
-//   );
-//   return arr;
-// };
 export const customSettingsTS = (obj: { Custom_h: number; Custom_w: number; Custom_Nam: string; Custom_Dur: number; Custom_FR: number}) => {
   alert(`ExtendScript received an object: ${JSON.stringify(obj)}`);
-    // var obj1 = JSON.parse(obj);
                 var Custom_w;
                 var Custom_h;
                 var Custom_Nam;
@@ -40,7 +17,6 @@ export const customSettingsTS = (obj: { Custom_h: number; Custom_w: number; Cust
             }
           } else{
             alert('Pleace select composition')
-            // return JSON.stringify(obj);
             return obj;
           }
 

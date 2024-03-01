@@ -5,8 +5,6 @@ import {
   evalES,
   evalTS,
 } from "../../lib/utils/bolt";
-import { pathToFileURL } from "url";
-// import {SystemPath} from '../../lib/cep/csinterface'
 
 
  class Tab_setting extends React.Component <{}, { [key: string]: string }> {
@@ -21,7 +19,7 @@ import { pathToFileURL } from "url";
         });
      };
       
-      //   res_h = Number({this.state.resolution_h});
+      
 
    constructor (props:string) {
 
@@ -38,21 +36,9 @@ import { pathToFileURL } from "url";
 
    changeInput=(e:any) => {
          console.log (e.target.value)
-         // let etar = e.target;
          this.setState({ [e.target.name]: e.target.value});
-         // let vall = Number(e.target.value);
-         // if (vall >15){
-         //    this.setState({ num_el: '15'})
-         // }else if 
-         //    (vall < 1){
-         //       this.setState({ num_el: '1'})
-         // }else {
-         //    this.setState({ num_el: e.target.value});
-         // }
       }  
    
-
-
 
       render() {
          

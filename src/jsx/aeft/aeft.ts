@@ -1,16 +1,11 @@
-// export const example = () => {
-// };
+
 import {
-  // helloVoid,
-  // helloError,
-  // helloStr,
-  // helloNum,
-  // helloArrayStr,
+
   customSettingsTS,
 } from "./samples";
 
 
-// export { helloError, helloStr, helloNum, helloArrayStr, customSettingsTS, helloVoid };
+
 export {customSettingsTS };
 
 
@@ -36,10 +31,7 @@ export const customSettingsComp = () => {
                 alert(Custom_Dur.toString());
                 var Custom_FR =newComp.frameDuration;
                 alert(Custom_FR.toString());
-                // ResW.text = Custom_w;
-                // ResH.text = Custom_h;
-        // if (checkbox.value==1){Dur.text = Custom_Dur;}
-        //         FrRate.text = 1/Custom_FR;
+
             }
           } else{
             alert('Pleace select composition')
