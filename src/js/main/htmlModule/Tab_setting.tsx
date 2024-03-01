@@ -13,9 +13,22 @@ import {
       evalTS("customSettingsTS", { Custom_h: Number(this.state.resolution_h), Custom_w: Number(this.state.resolution_w), Custom_Nam: 'newComp', Custom_Dur: Number(this.state.duration), Custom_FR:  Number(this.state.framerate)}).then((res) => {
          alert (typeof res);
          alert (res.Custom_w);
-         let saveFile = path.join(__dirname, '/data_01.json')
-         alert (saveFile);
-         fs.writeFileSync(saveFile, JSON.stringify(res), {encoding: 'utf8', flag: 'w'});
+         const saveFolderPath = path.join(__dirname, '/settingsData');
+         alert (saveFolderPath);
+
+         if(!fs.existsSync(saveFolderPath)){
+
+            fs.mkdir(saveFolderPath, { recursive: true }, (err) => {
+               if (err) {
+                   console.log('Ошибка при создании папки:', err);
+                   return;
+               } 
+           });
+         } 
+
+         const saveFilePath = path.join(__dirname, '/settingsData/customSettigsData_01.json');
+         alert (saveFilePath);
+         fs.writeFileSync(saveFilePath, JSON.stringify(res), {encoding: 'utf8', flag: 'w'});
         });
      };
       
