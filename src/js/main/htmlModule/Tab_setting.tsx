@@ -13,6 +13,8 @@ import {
       evalTS("customSettingsTS", { Custom_h: Number(this.state.resolution_h), Custom_w: Number(this.state.resolution_w), Custom_Nam: 'newComp', Custom_Dur: Number(this.state.duration), Custom_FR:  Number(this.state.framerate)}).then((res) => {
          alert (typeof res);
          alert (res.Custom_w);
+         // this.setState({ resolution_h: res.Custom_h});
+         // this.setState({ resolution_w: res.Custom_w});
          const saveFolderPath = path.join(__dirname, '/settingsData');
          alert (saveFolderPath);
 
@@ -42,12 +44,13 @@ import {
          resolution_w: '1920',
          resolution_h: '1080',
          framerate: '25',
-         duration : '3',
+         duration : '6',
          influence : '60',
       }
    }
 
    changeInput=(e:any) => {
+         console.log (e.target.name)
          console.log (e.target.value)
          this.setState({ [e.target.name]: e.target.value});
       }  
