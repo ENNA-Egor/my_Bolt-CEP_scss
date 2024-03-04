@@ -8,6 +8,18 @@ import {
 
 
  class Tab_setting extends React.Component <{}, { [key: string]: string | number }> {
+    // constructor (props:string) {
+ 
+       // super(props);
+       state = {
+          num_element: '5',
+          resolution_w: '1920',
+          resolution_h: '1080',
+          framerate: '25',
+          duration : '6',
+          influence : '60',
+       }
+    // }
     
    compCustomSettings = ()=>{
       evalTS("customSettingsTS", { Custom_h: Number(this.state.resolution_h), Custom_w: Number(this.state.resolution_w), Custom_Nam: 'newComp', Custom_Dur: Number(this.state.duration), Custom_FR:  Number(this.state.framerate)}).then((res) => {
@@ -49,18 +61,6 @@ import {
       
       
 
-   // constructor (props:string) {
-
-      // super(props);
-      state = {
-         num_element: '5',
-         resolution_w: '1920',
-         resolution_h: '1080',
-         framerate: '25',
-         duration : '6',
-         influence : '60',
-      }
-   // }
 
    changeInput=(e:any) => {
          console.log (e.target.name)
