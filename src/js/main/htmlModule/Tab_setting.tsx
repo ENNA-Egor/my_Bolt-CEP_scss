@@ -26,7 +26,7 @@ import {
          //   });
 
 
-         // this.setState({ resolution_h: res.Custom_h});
+         // this.setState({ resolution_h: res.Custom_h}); //это надо заключить в функцию и присваивать через цикл. См. выше.
          // this.setState({ resolution_w: res.Custom_w});
          const saveFolderPath = path.join(__dirname, '/settingsData');
          alert (saveFolderPath);
