@@ -78,7 +78,7 @@ import {
                 <div className="sett-bloc">
                    <div className="sett">
                       <p>N_element</p>
-                      <input  onChange={this.changeInput} className="n_elem inp" name="num_element" min='2' max='15'  defaultValue={this.state.num_element} />
+                      <input  onChange={this.changeInput} className="n_elem inp" name="num_element" min='2' max='15'  value={this.state.num_element} />
                    </div>
                    <div className="sett">
                       <p>Res</p>
