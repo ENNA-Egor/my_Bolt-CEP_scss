@@ -49,10 +49,10 @@ import {
       
       
 
-   constructor (props:string) {
+   // constructor (props:string) {
 
-      super(props);
-      this.state = {
+      // super(props);
+      state = {
          num_element: '5',
          resolution_w: '1920',
          resolution_h: '1080',
@@ -60,7 +60,7 @@ import {
          duration : '6',
          influence : '60',
       }
-   }
+   // }
 
    changeInput=(e:any) => {
          console.log (e.target.name)
