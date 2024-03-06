@@ -22,10 +22,10 @@ import {
     // }
     
    compCustomSettings = ()=>{
-      evalTS("customSettingsTS", { Custom_h: this.state.resolution_h, Custom_w: this.state.resolution_w, Custom_Nam: 'newComp', Custom_Dur: this.state.duration, Custom_FR:  this.state.framerate}).then((res) => {
+      evalTS("customSettingsTS", { custom_h: this.state.resolution_h, custom_w: this.state.resolution_w, custom_Nam: 'newComp', custom_Dur: this.state.duration, custom_FR:  this.state.framerate}).then((res) => {
          alert (typeof res);
-         alert (res.Custom_w);
-         alert (typeof res.Custom_w);
+         alert (res.custom_w);
+         alert (typeof res.custom_w);
          // for (let key in res) {
          //    if(res.hasOwnProperty(key)){
          //      console.log(`${key}`)

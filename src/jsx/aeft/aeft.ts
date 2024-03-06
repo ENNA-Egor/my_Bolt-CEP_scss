@@ -22,7 +22,7 @@ export const customSettingsComp = () => {
             if (newComp){
             if (newComp instanceof CompItem){
                 var Custom_w=newComp.width;
-                // alert(typeof Custom_w);
+                alert(typeof Custom_w);
                 alert(Custom_w.toString());
                 var Custom_h =newComp.height;
                 alert(Custom_h.toString());

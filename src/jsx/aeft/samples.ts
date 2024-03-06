@@ -1,5 +1,5 @@
 
-export const customSettingsTS = (obj: { Custom_h: number; Custom_w: number; Custom_Nam: string; Custom_Dur: number; Custom_FR: number}) => {
+export const customSettingsTS = (obj: { custom_h: number; custom_w: number; custom_Nam: string; custom_Dur: number; custom_FR: number}) => {
   alert(`ExtendScript received an object: ${JSON.stringify(obj)}`);
                 var Custom_w;
                 var Custom_h;
@@ -10,6 +10,7 @@ export const customSettingsTS = (obj: { Custom_h: number; Custom_w: number; Cust
             if (newComp){
             if (newComp instanceof CompItem){
                 Custom_w=newComp.width;
+                alert (typeof Custom_w);
                 Custom_h =newComp.height;
                 Custom_Nam =newComp.name;
                 Custom_Dur =newComp.duration;
@@ -21,10 +22,10 @@ export const customSettingsTS = (obj: { Custom_h: number; Custom_w: number; Cust
           }
 
   return {
-    Custom_h: Custom_h,
-    Custom_w: Custom_w,
-    Custom_Nam: Custom_Nam,
-    Custom_Dur: Custom_Dur,
-    Custom_FR: Custom_FR
+    custom_h: Custom_h,
+    custom_w: Custom_w,
+    custom_Nam: Custom_Nam,
+    custom_Dur: Custom_Dur,
+    custom_FR: Custom_FR
   };
 };
