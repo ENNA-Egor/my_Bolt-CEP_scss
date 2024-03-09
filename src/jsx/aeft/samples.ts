@@ -10,7 +10,7 @@ export const customSettingsTS = (obj: { custom_h: number; custom_w: number; cust
             if (newComp){
             if (newComp instanceof CompItem){
                 Custom_w=newComp.width;
-                alert (typeof Custom_w);
+                // alert (typeof Custom_w);
                 Custom_h =newComp.height;
                 Custom_Nam =newComp.name;
                 Custom_Dur =newComp.duration;

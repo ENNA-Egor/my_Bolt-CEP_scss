@@ -15,26 +15,3 @@ export const helloWorld = () => {
   app.project.activeItem;
 };
 
-
-export const customSettingsComp = () => {
-    
-            var newComp =app.project.activeItem;
-            if (newComp){
-            if (newComp instanceof CompItem){
-                var Custom_w=newComp.width;
-                alert(typeof Custom_w);
-                alert(Custom_w.toString());
-                var Custom_h =newComp.height;
-                alert(Custom_h.toString());
-                var Custom_Nam =newComp.name;
-                alert(Custom_Nam);
-                var Custom_Dur =newComp.duration;
-                alert(Custom_Dur.toString());
-                var Custom_FR =newComp.frameDuration;
-                alert(Custom_FR.toString());
-
-            }
-          } else{
-            alert('Pleace select composition')
-          }
- };

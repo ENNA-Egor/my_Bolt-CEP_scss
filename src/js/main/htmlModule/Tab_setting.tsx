@@ -20,25 +20,26 @@ import {
           influence : 60,
        }
     // }
+
     
-   compCustomSettings = ()=>{
-      evalTS("customSettingsTS", { custom_h: this.state.resolution_h, custom_w: this.state.resolution_w, custom_Nam: 'newComp', custom_Dur: this.state.duration, custom_FR:  this.state.framerate}).then((res) => {
+    compCustomSettings = ()=>{
+
+      evalTS("customSettingsTS", { custom_h: 1080, custom_w: 1920, custom_Nam: 'newComp', custom_Dur: 6, custom_FR:  25}).then((res) => {
          alert (typeof res);
          alert (res.custom_w);
          alert (typeof res.custom_w);
-         // for (let key in res) {
-         //    if(res.hasOwnProperty(key)){
-         //      console.log(`${key}`)
-         //      alert(`${key}`)
-         //      alert(`${res.key}`)
-         //    }
-         //  }
-
-         // const keys = Object.keys(res);
-         //   keys.forEach(key => {
-         //     console.log(`${key} : ${res[key]}`);
-         //   });
-
+         for (let key in res) {
+            if(res.hasOwnProperty(key)){
+            //   console.log(`${key}`)
+            //   alert(res.resKey)
+            //   alert(`${res.key}`)
+              alert(`${key}`)
+              alert(typeof `${key}`)
+              alert(`${key} : ${res[key]}`)
+              alert(`${res[key]}`)
+              alert(typeof `${res[key]}`)
+            }
+          }
 
          // this.setState({ resolution_h: res.Custom_h}); //это надо заключить в функцию и присваивать через цикл. См. выше.
          // this.setState({ resolution_w: res.Custom_w});
