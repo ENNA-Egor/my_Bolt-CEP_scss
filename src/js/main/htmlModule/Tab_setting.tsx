@@ -23,6 +23,13 @@ import {
 
     
     compCustomSettings = ()=>{
+      // interface MyCustomTypes {
+      //    custom_h?: number;
+      //    custom_w?: number;
+      //    custom_Nam?: string;
+      //    custom_Dur?: number;
+      //    custom_FR?: number;
+      //  }
 
       evalTS("customSettingsTS", { custom_h: 1080, custom_w: 1920, custom_Nam: 'newComp', custom_Dur: 6, custom_FR:  25}).then((res) => {
          alert (typeof res);
@@ -41,8 +48,8 @@ import {
             }
           }
 
-         // this.setState({ resolution_h: res.Custom_h}); //это надо заключить в функцию и присваивать через цикл. См. выше.
-         // this.setState({ resolution_w: res.Custom_w});
+         // this.setState({ resolution_h: res.Real_h}); //это надо заключить в функцию и присваивать через цикл. См. выше.
+         // this.setState({ resolution_w: res.Real_w});
          const saveFolderPath = path.join(__dirname, '/settingsData');
          alert (saveFolderPath);
 
