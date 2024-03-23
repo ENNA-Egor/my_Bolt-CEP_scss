@@ -10,7 +10,6 @@ export const customSettingsTS = (obj: { custom_h: number; custom_w: number; cust
             if (newComp){
             if (newComp instanceof CompItem){
                 Real_w=newComp.width;
-                // alert (typeof Custom_w);
                 Real_h =newComp.height;
                 Real_Nam =newComp.name;
                 Real_Dur =newComp.duration;
@@ -18,14 +17,7 @@ export const customSettingsTS = (obj: { custom_h: number; custom_w: number; cust
             }
           } else{
             alert('Pleace select composition')
-             return {
-               obj
-            //   custom_h : obj.custom_h,
-            //   custom_w : obj.custom_w,
-            //   custom_Nam : obj.custom_Nam,
-            //   custom_Dur : obj.custom_Dur,
-            //   custom_FR : obj.custom_FR,
-             };
+             return obj;
           }
 
   return {
