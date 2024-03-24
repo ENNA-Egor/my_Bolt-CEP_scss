@@ -33,7 +33,6 @@ import {
          this.setState({ duration: res.custom_Dur});
 
          const saveFolderPath = path.join(__dirname, '/settingsData');
-         alert (saveFolderPath);
 
          if(!fs.existsSync(saveFolderPath)){
 
@@ -46,7 +45,6 @@ import {
          } 
 
          const saveFilePath = path.join(__dirname, '/settingsData/customSettigsData_01.json');
-         alert (saveFilePath);
          fs.writeFileSync(saveFilePath, JSON.stringify(res), {encoding: 'utf8', flag: 'w'});
         });
      };
@@ -54,9 +52,7 @@ import {
       
 
 
-   changeInput=(e:any) => {
-         console.log (e.target.name)
-         console.log (e.target.value)
+   changeInput=(e:any ) => {
          this.setState({ [e.target.name]: e.target.value});
       }  
    
