@@ -23,33 +23,15 @@ import {
 
     
     compCustomSettings = ()=>{
-      // interface MyCustomTypes {
-      //    custom_h?: number;
-      //    custom_w?: number;
-      //    custom_Nam?: string;
-      //    custom_Dur?: number;
-      //    custom_FR?: number;
-      //  }
+
 
       evalTS("customSettingsTS", { custom_h: 1080, custom_w: 1920, custom_Nam: 'newComp', custom_Dur: 6, custom_FR:  25}).then((res) => {
-         alert (typeof res);
-         alert (res.custom_w);
-         alert (typeof res.custom_w);
-         for (let key in res) {
-            if(res.hasOwnProperty(key)){
-            //   console.log(`${key}`)
-            //   alert(res.resKey)
-            //   alert(`${res.key}`)
-              alert(`${key}`)
-              alert(typeof `${key}`)
-              alert(`${key} : ${res[key]}`)
-              alert(`${res[key]}`)
-              alert(typeof `${res[key]}`)
-            }
-          }
 
-         // this.setState({ resolution_h: res.Real_h}); //это надо заключить в функцию и присваивать через цикл. См. выше.
-         // this.setState({ resolution_w: res.Real_w});
+         this.setState({ resolution_w: res.custom_w});
+         this.setState({ resolution_h: res.custom_h});
+         this.setState({ framerate: res.custom_FR});
+         this.setState({ duration: res.custom_Dur});
+
          const saveFolderPath = path.join(__dirname, '/settingsData');
          alert (saveFolderPath);
 
