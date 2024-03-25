@@ -25,8 +25,7 @@ import {
     
     compCustomSettings = ()=>{
 
-
-      evalTS("customSettingsTS", { custom_h: 1080, custom_w: 1920, custom_Nam: 'newComp', custom_Dur: 6, custom_FR:  25}).then((res) => {
+      evalTS("customSettingsTS", { custom_h: 1080, custom_w: 1920, custom_Nam: 'newComp', custom_Dur: 6, custom_FR:  25, lockDurations: this.state.durLock}).then((res) => {
 
          this.setState({ resolution_w: res.custom_w});
          this.setState({ resolution_h: res.custom_h});
@@ -67,7 +66,7 @@ import {
    
 
       render() {
-         
+         const {num_element, resolution_w, resolution_h, framerate, duration, influence, durLock} = this.state;
          return(
           <div className="settings tab-b hide">
              <fieldset className="field">
@@ -75,28 +74,28 @@ import {
                 <div className="sett-bloc">
                    <div className="sett">
                       <p>N_element</p>
-                      <input  onChange={this.changeInput} className="n_elem inp" name="num_element" min='2' max='15'  value={this.state.num_element} />
+                      <input  onChange={this.changeInput} className="n_elem inp" name="num_element" min='2' max='15'  value={num_element} />
                    </div>
                    <div className="sett">
                       <p>Res</p>
-                      <input  onChange={this.changeInput} type="text" className="resol resol-w  inp2" name="resolution_w" value={this.state.resolution_w}/>
-                      <input  onChange={this.changeInput} type="text" className="resol resol-h  inp2" name="resolution_h" value={this.state.resolution_h}/>
+                      <input  onChange={this.changeInput} type="text" className="resol resol-w  inp2" name="resolution_w" value={resolution_w}/>
+                      <input  onChange={this.changeInput} type="text" className="resol resol-h  inp2" name="resolution_h" value={resolution_h}/>
                    </div>
                    <div className="sett">
                       <p>F/R   </p>
-                      <input  onChange={this.changeInput} type="text" className="framerate n_points inp" name="framerate" value={this.state.framerate}/>
+                      <input  onChange={this.changeInput} type="text" className="framerate n_points inp" name="framerate" value={framerate}/>
                    </div>
                    <div className="sett dur_set">
                       <p>Dur(sek)</p>
-                      <input  onChange={this.changeInput} type="text" className="duration n_points inp" name="duration" value={this.state.duration}/>
+                      <input  onChange={this.changeInput} type="text" className="duration n_points inp" name="duration" value={duration}/>
                       {/* <label> */}
-                      <input   type="checkbox" checked={this.state.durLock} onChange={this.handleCheckboxChange} className="n_points one_dur" name="durLock"/>                      
+                      <input   type="checkbox" checked={durLock} onChange={this.handleCheckboxChange} className="n_points one_dur" name="durLock"/>                      
                       <p>lock</p>
                       {/* </label> */}
                    </div>
                    <div className="sett ">
                       <p>Inf( % )</p>
-                      <input  onChange={this.changeInput} type="text" className="influ n_points inp" name="influence" value={this.state.influence}/>
+                      <input  onChange={this.changeInput} type="text" className="influ n_points inp" name="influence" value={influence}/>
                    </div>
                    <div className="sett">
                    <div className="button bt7" onClick={this.compCustomSettings}>SetComp</div>
