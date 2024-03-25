@@ -90,7 +90,7 @@ import {
                       <input  onChange={this.changeInput} type="text" className="duration n_points inp" name="duration" value={duration}/>
                       {/* <label> */}
                       <input   type="checkbox" checked={durLock} onChange={this.handleCheckboxChange} className="n_points one_dur" name="durLock"/>                      
-                      <p>lock</p>
+                      <p className="lockCheck">lock</p>
                       {/* </label> */}
                    </div>
                    <div className="sett ">
