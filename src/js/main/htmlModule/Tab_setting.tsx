@@ -7,7 +7,7 @@ import {
 } from "../../lib/utils/bolt";
 
 
- class Tab_setting extends React.Component <{}, { [key: string]:  number }> {
+ class Tab_setting extends React.Component <{}, { [key: string]:  number | boolean }> {
     // constructor (props:string) {
  
        // super(props);
@@ -18,6 +18,7 @@ import {
           framerate: 25,
           duration : 6,
           influence : 60,
+          durLock: false,
        }
     // }
 
@@ -55,6 +56,14 @@ import {
    changeInput=(e:any ) => {
          this.setState({ [e.target.name]: e.target.value});
       }  
+
+   handleCheckboxChange=(e:any ) => {
+
+      this.setState({ [e.target.name]: e.target.checked!});
+      console.log ('Chekt');
+      console.log (e.target.name);
+      console.log (e.target.checked);
+   }  
    
 
       render() {
@@ -80,7 +89,10 @@ import {
                    <div className="sett dur_set">
                       <p>Dur(sek)</p>
                       <input  onChange={this.changeInput} type="text" className="duration n_points inp" name="duration" value={this.state.duration}/>
-                      <input  onChange={this.changeInput} type="checkbox" checked className="n_points one_dur" name="check_one-dur"/>
+                      {/* <label> */}
+                      <input   type="checkbox" checked={this.state.durLock} onChange={this.handleCheckboxChange} className="n_points one_dur" name="durLock"/>                      
+                      <p>lock</p>
+                      {/* </label> */}
                    </div>
                    <div className="sett ">
                       <p>Inf( % )</p>
