@@ -14,7 +14,11 @@ export const customSettingsTS = (obj: { custom_h: number; custom_w: number; cust
               Real_w=newComp.width;
               Real_h =newComp.height;
               Real_Nam =newComp.name;
-              Real_Dur =newComp.duration;
+              if(`${obj.lockDurations}`=== 'false') {
+                Real_Dur =newComp.duration
+              }else {
+                Real_Dur = +`${obj.custom_Dur}`;
+              };             
               Real_FR =1/(newComp.frameDuration);
             }
           } else{
