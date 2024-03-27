@@ -1,6 +1,7 @@
 import React from "react";
 import ColorPal from "./Color";
 
+const colorArr = ["d5e390","628f2e","14dcdc","fafa98","1f8a70","bedb39","ffff1a","7f7fff","c1faec","d5e390","628f2e","14dcdc","fafa98","1f8a70","bedb39"];
 
 const Colors = ()=> {
 
