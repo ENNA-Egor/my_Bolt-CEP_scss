@@ -1,5 +1,5 @@
 import React from "react";
-import {os, path, fs} from "../../lib/cep/node"
+import {os, path, fs} from "../../../lib/cep/node"
 import {
    csi,
    evalES,
@@ -7,8 +7,9 @@ import {
    openLinkInBrowser,
    subscribeBackgroundColor,
    evalTS,
- } from "../../lib/utils/bolt";
+ } from "../../../lib/utils/bolt";
 import { render } from "react-dom";
+import Colors from './Colors'
 
 
 class Tab_color extends React.Component <{}, {[key: string]: number| boolean}>{
@@ -38,7 +39,8 @@ class Tab_color extends React.Component <{}, {[key: string]: number| boolean}>{
           <input type="checkbox" checked={this.state.checkColorpicer} onChange={this.handleColorpickerChange} className="n_points  check" name="checkColorpicer"/>
           </div>
           <div className="blok_palet">
-          <div className="palette pal_1" id="color1">1</div>
+            <Colors />
+          {/* <div className="palette pal_1" id="color1">1</div>
           <div className="palette pal_2">2</div>
           <div className="palette pal_3">3</div>
           <div className="palette pal_4">4</div>
@@ -52,7 +54,7 @@ class Tab_color extends React.Component <{}, {[key: string]: number| boolean}>{
           <div className="palette pal_12">12</div>
           <div className="palette pal_13">13</div>
           <div className="palette pal_14">14</div>
-          <div className="palette pal_15">15</div>
+          <div className="palette pal_15">15</div> */}
           </div>
           <div className="buttons">
              <div className="button bt1 disableElement" id="btnPlus"></div>
