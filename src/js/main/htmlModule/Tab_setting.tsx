@@ -59,9 +59,6 @@ import {
    handleCheckboxChange=(e:any ) => {
 
       this.setState({ [e.target.name]: e.target.checked!});
-      // console.log ('Chekt');
-      // console.log (e.target.name);
-      // console.log (e.target.checked);
    }  
    
 
