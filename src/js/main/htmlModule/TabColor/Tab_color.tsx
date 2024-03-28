@@ -12,10 +12,12 @@ import { render } from "react-dom";
 import Colors from './Colors'
 
 
-class Tab_color extends React.Component <{}, {[key: string]: number| boolean}>{
+class Tab_color extends React.Component <{}, {[key: string]: string[]| boolean}>{
+
 
    state = {
       checkColorpicer: false,
+      colors: ["red","rgb(115, 209, 60)","white","yellow","1f8a70","bedb39","green","7f7fff","c1faec","d5e390","628f2e","14dcdc","fafa98","1f8a70","red"],
    }
 
    handleColorpickerChange = (e: any) => {
@@ -37,16 +39,20 @@ class Tab_color extends React.Component <{}, {[key: string]: number| boolean}>{
       function openPanel(): void{
          csi.requestOpenExtension('com.Bolt-CEP_Test.cep.settings',0);
       }
+
+      const {checkColorpicer, colors} = this.state
+
       return(
        <div className="bloc_palets tab-color tab-b visible">
        <fieldset className="field">
           <legend>Color</legend>
           <div className="colorP">
           <p>ColorPicker_AE</p>
-          <input type="checkbox" checked={this.state.checkColorpicer} onChange={this.handleColorpickerChange} className="n_points  check" name="checkColorpicer"/>
+          <input type="checkbox" checked={checkColorpicer} onChange={this.handleColorpickerChange} className="n_points  check" name="checkColorpicer"/>
           </div>
           <div className="blok_palet">
-            <Colors />
+            <Colors />   
+            {/* colors= {colors} */}
           {/* <div className="palette pal_1" id="color1">1</div>
           <div className="palette pal_2">2</div>
           <div className="palette pal_3">3</div>
