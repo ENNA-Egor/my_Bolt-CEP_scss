@@ -22,6 +22,13 @@ class Tab_color extends React.Component <{}, {[key: string]: number| boolean}>{
       this.setState({[e.target.name]: e.target.checked!});
    }
    
+   plusPal= ()=> {
+      alert ('PlusPal')
+   }
+   minusPal= ()=> {
+      alert ('MinusPal')
+   }
+
    render(){
       
       function proba(): void{
@@ -57,8 +64,8 @@ class Tab_color extends React.Component <{}, {[key: string]: number| boolean}>{
           <div className="palette pal_15">15</div> */}
           </div>
           <div className="buttons">
-             <div className="button bt1 disableElement" id="btnPlus"></div>
-             <div className="button bt2" id="btnMinus"></div>
+             <div onClick={this.plusPal} className="button bt1 disableElement" id="btnPlus"></div>
+             <div onClick={this.minusPal} className="button bt2" id="btnMinus"></div>
              <div className="button bt3" id="btnApp">App</div>
              <div className="button bt4" id="btn_reset">Res</div>
           </div>
