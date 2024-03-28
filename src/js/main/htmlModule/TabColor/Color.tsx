@@ -6,7 +6,7 @@ const ColorPal = (props:any) => {
 
     return(
       <div>
-         <div style ={{backgroundColor:props.color}} className= {'palette'} ></div>
+         <div style ={{backgroundColor:props.color}} className= {'palette'}  onClick={props.replaceColor}></div>
       </div>
     );
   };

@@ -27,8 +27,13 @@ class Tab_color extends React.Component <{}, {[key: string]: Array<string>| bool
    }
    
    plusPal= ()=> {
-      alert ('PlusPal')
+      alert ('PlusPal');
    }
+
+   replaceColor= ()=> {
+      alert ('replaceColor');
+   }
+   
    minusPal= ()=> {
       let arr = this.state.colors;
        arr.pop();
@@ -55,7 +60,7 @@ class Tab_color extends React.Component <{}, {[key: string]: Array<string>| bool
           <input type="checkbox" checked={checkColorpicer} onChange={this.handleColorpickerChange} className="n_points  check" name="checkColorpicer"/>
           </div>
           <div className="blok_palet">
-            <Colors colors= {colors}/>   
+            <Colors colors= {colors} replaceColor ={this.replaceColor}/>   
           </div>
           <div className="buttons">
              <div onClick={this.plusPal} className="button bt1 disableElement" id="btnPlus"></div>

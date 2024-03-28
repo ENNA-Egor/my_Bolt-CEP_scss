@@ -9,7 +9,8 @@ function Colors  (props: any) {
      <div className="blok_palet">
            {
              props.colors.map(color => (
-              <ColorPal color={color}/>
+              <ColorPal color={color}
+              replaceColor ={props.replaceColor}/>
              ))
            }
          
