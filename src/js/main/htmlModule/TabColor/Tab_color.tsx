@@ -39,6 +39,11 @@ class Tab_color extends React.Component <{}, {[key: string]: Array<string>| bool
       let arr = this.state.colors;
        arr.pop();
       this.setState({colors: arr});
+      // $('.el').on('click', function (event) { 
+      //    if (event.ctrlKey) {
+      //        // клавиша `Ctrl` нажата
+      //    }
+      //  })
    }
 
    render(){
