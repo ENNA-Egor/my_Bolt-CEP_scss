@@ -30,7 +30,9 @@ class Tab_color extends React.Component <{}, {[key: string]: Array<string>| bool
       alert ('PlusPal')
    }
    minusPal= ()=> {
-      alert ('MinusPal')
+      let arr = this.state.colors;
+       arr.pop();
+      this.setState({colors: arr});
    }
 
    render(){
