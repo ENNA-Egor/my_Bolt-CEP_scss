@@ -1,4 +1,4 @@
-import React from "react";
+import React  from "react";
 import {os, path, fs} from "../../../lib/cep/node"
 import {
    csi,
@@ -12,13 +12,15 @@ import { render } from "react-dom";
 import Colors from './Colors'
 
 
-class Tab_color extends React.Component <{}, {[key: string]: string[]| boolean}>{
+class Tab_color extends React.Component <{}, {[key: string]: Array<string>| boolean}>{
 
 
-   state = {
-      checkColorpicer: false,
-      colors: ["red","rgb(115, 209, 60)","white","yellow","1f8a70","bedb39","green","7f7fff","c1faec","d5e390","628f2e","14dcdc","fafa98","1f8a70","red"],
-   }
+    state = {
+         checkColorpicer: false,
+         colors: ["red","rgb(115, 209, 60)","white","yellow","1f8a70","bedb39","green","7f7fff","c1faec","d5e390","628f2e","14dcdc","fafa98","1f8a70","red"]
+      }
+
+
 
    handleColorpickerChange = (e: any) => {
       this.setState({[e.target.name]: e.target.checked!});
@@ -51,23 +53,7 @@ class Tab_color extends React.Component <{}, {[key: string]: string[]| boolean}>
           <input type="checkbox" checked={checkColorpicer} onChange={this.handleColorpickerChange} className="n_points  check" name="checkColorpicer"/>
           </div>
           <div className="blok_palet">
-            <Colors />   
-            {/* colors= {colors} */}
-          {/* <div className="palette pal_1" id="color1">1</div>
-          <div className="palette pal_2">2</div>
-          <div className="palette pal_3">3</div>
-          <div className="palette pal_4">4</div>
-          <div className="palette pal_5">5</div>
-          <div className="palette pal_6">6</div>
-          <div className="palette pal_7">7</div>
-          <div className="palette pal_8">8</div>
-          <div className="palette pal_9">9</div>
-          <div className="palette pal_10">10</div>
-          <div className="palette pal_11">11</div>
-          <div className="palette pal_12">12</div>
-          <div className="palette pal_13">13</div>
-          <div className="palette pal_14">14</div>
-          <div className="palette pal_15">15</div> */}
+            <Colors colors= {colors}/>   
           </div>
           <div className="buttons">
              <div onClick={this.plusPal} className="button bt1 disableElement" id="btnPlus"></div>
