@@ -27,11 +27,12 @@ class Tab_color extends React.Component <{}, {[key: string]: Array<string>| bool
    }
    
    plusPal= ()=> {
-      alert ('PlusPal');
+      alert ('PlusPal');  
    }
 
-   replaceColor= ()=> {
+   replaceColor= (e:any)=> {
       alert ('replaceColor');
+      alert ([e.target.id])
    }
    
    minusPal= ()=> {
