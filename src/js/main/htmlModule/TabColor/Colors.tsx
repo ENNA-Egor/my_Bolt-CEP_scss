@@ -1,4 +1,3 @@
-import React from "react";
 import ColorPal from "./Color";
 
 
@@ -11,7 +10,7 @@ function Colors  (props: any) {
              props.colors.map(color => (
               <ColorPal color={color}
               index = {index++}
-              replaceColor ={props.replaceColor}/>
+              replaceAndMinusColor ={props.replaceAndMinusColor}/>
              ))
            }
          

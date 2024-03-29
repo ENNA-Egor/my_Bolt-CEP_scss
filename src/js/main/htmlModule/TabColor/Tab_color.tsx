@@ -17,7 +17,7 @@ class Tab_color extends React.Component <{}, {[key: string]: Array<string>| bool
 
     state = {
          checkColorpicer: false,
-         colors: ["red","rgb(115, 209, 60)","white","yellow","1f8a70","bedb39","green","7f7fff","c1faec","d5e390","628f2e","14dcdc","fafa98","1f8a70","red"]
+         colors: ["red","rgb(115, 209, 60)","white","yellow","LightCoral","Cyan","green","Fuchsia","Lime","DodgerBlue","Khaki","DeepPink","YellowGreen","Gold","red"]
       }
 
 
@@ -27,24 +27,22 @@ class Tab_color extends React.Component <{}, {[key: string]: Array<string>| bool
    }
    
    plusPal= ()=> {
-      alert ('PlusPal');  
+      let newArr = this.state.colors;
+      newArr.push('rgb(0, 125, 255)');
+      this.setState({colors: newArr});
    }
 
-   replaceColor= (e:any)=> {
-      alert ('replaceColor');
-      alert ([e.target.id])
+   replaceAndMinusColor= (e:any)=> {     
+      let arrIndex = +[e.target.id];
+         if (e.ctrlKey) {
+             let newArr = this.state.colors;
+             newArr.splice(arrIndex, 1);
+             this.setState({colors: newArr});
+         }else{
+            alert('ReplaseColor')
+         }
    }
-   
-   minusPal= ()=> {
-      let arr = this.state.colors;
-       arr.pop();
-      this.setState({colors: arr});
-      // $('.el').on('click', function (event) { 
-      //    if (event.ctrlKey) {
-      //        // клавиша `Ctrl` нажата
-      //    }
-      //  })
-   }
+
 
    render(){
       
@@ -66,11 +64,10 @@ class Tab_color extends React.Component <{}, {[key: string]: Array<string>| bool
           <input type="checkbox" checked={checkColorpicer} onChange={this.handleColorpickerChange} className="n_points  check" name="checkColorpicer"/>
           </div>
           <div className="blok_palet">
-            <Colors colors= {colors} replaceColor ={this.replaceColor}/>   
+            <Colors colors= {colors} replaceAndMinusColor ={this.replaceAndMinusColor}/>   
           </div>
           <div className="buttons">
              <div onClick={this.plusPal} className="button bt1 disableElement" id="btnPlus"></div>
-             <div onClick={this.minusPal} className="button bt2" id="btnMinus"></div>
              <div className="button bt3" id="btnApp">App</div>
              <div className="button bt4" id="btn_reset">Res</div>
           </div>
