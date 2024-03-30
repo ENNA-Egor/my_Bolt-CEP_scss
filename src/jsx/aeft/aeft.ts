@@ -1,12 +1,23 @@
 
 import {
-
   customSettingsTS,
 } from "./samples";
 
 
 
 export {customSettingsTS };
+
+
+import {
+  colorSettingsTS,
+} from "./samples1";
+
+
+
+export {colorSettingsTS};
+
+
+
 
 
 

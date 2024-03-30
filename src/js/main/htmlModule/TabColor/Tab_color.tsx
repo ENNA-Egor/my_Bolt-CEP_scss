@@ -10,6 +10,7 @@ import {
  } from "../../../lib/utils/bolt";
 import { render } from "react-dom";
 import Colors from './Colors'
+import hexToRgb from '../../../functionModule/function'
 
 
 class Tab_color extends React.Component <{}, {[key: string]: Array<string>| boolean}>{
@@ -20,7 +21,30 @@ class Tab_color extends React.Component <{}, {[key: string]: Array<string>| bool
          colors: ["red","rgb(115, 209, 60)","white","yellow","LightCoral","Cyan","green","Fuchsia","Lime","DodgerBlue","Khaki","DeepPink","YellowGreen","Gold","red"]
       }
 
+      colorSettings = (arrIndex)=>{
 
+         evalTS("colorSettingsTS", {picker_check_value: this.state.checkColorpicer, picker_path: __dirname,}).then((res) => {
+               let colVal = hexToRgb(res);
+               let newArr = this.state.colors;
+               newArr.splice(arrIndex, 1, colVal);
+               this.setState({colors: newArr});
+            const saveFolderPath = path.join(__dirname, '/settingsData');
+   
+            if(!fs.existsSync(saveFolderPath)){
+   
+               fs.mkdir(saveFolderPath, { recursive: true }, (err) => {
+                  if (err) {
+                      console.log('Ошибка при создании папки:', err);
+                      return;
+                  } 
+              });
+            } 
+   
+            const saveFilePath = path.join(__dirname, '/settingsData/colorData_01.json');
+            fs.writeFileSync(saveFilePath, JSON.stringify(res), {encoding: 'utf8', flag: 'w'});
+           });
+        };
+   
 
    handleColorpickerChange = (e: any) => {
       this.setState({[e.target.name]: e.target.checked!});
@@ -39,7 +63,8 @@ class Tab_color extends React.Component <{}, {[key: string]: Array<string>| bool
              newArr.splice(arrIndex, 1);
              this.setState({colors: newArr});
          }else{
-            alert('ReplaseColor')
+            alert('ReplaseColor');
+            this.colorSettings(arrIndex)
          }
    }
 
