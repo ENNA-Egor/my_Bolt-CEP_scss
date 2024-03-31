@@ -10,7 +10,7 @@ export {customSettingsTS };
 
 import {
   colorSettingsTS,
-} from "./samples1";
+} from "./samplesColor";
 
 
 

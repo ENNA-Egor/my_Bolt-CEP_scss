@@ -23,7 +23,7 @@ class Tab_color extends React.Component <{}, {[key: string]: Array<string>| bool
 
       colorSettings = (arrIndex)=>{
 
-         evalTS("colorSettingsTS", {picker_check_value: this.state.checkColorpicer, picker_path: __dirname,}).then((res) => {
+         evalTS("colorSettingsTS", {picker_check_value: this.state.checkColorpicer, picker_path: __dirname, colorStart: 'rgb(255, 0, 0)', arrIndex: arrIndex}).then((res) => {
                let colVal = hexToRgb(res);
                let newArr = this.state.colors;
                newArr.splice(arrIndex, 1, colVal);
@@ -41,7 +41,7 @@ class Tab_color extends React.Component <{}, {[key: string]: Array<string>| bool
             } 
    
             const saveFilePath = path.join(__dirname, '/settingsData/colorData_01.json');
-            fs.writeFileSync(saveFilePath, JSON.stringify(res), {encoding: 'utf8', flag: 'w'});
+            fs.writeFileSync(saveFilePath, JSON.stringify(this.state.colors), {encoding: 'utf8', flag: 'w'});
            });
         };
    
