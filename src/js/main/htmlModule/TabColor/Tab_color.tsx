@@ -23,7 +23,8 @@ class Tab_color extends React.Component <{}, {[key: string]: Array<string>| bool
 
       colorSettings = (arrIndex)=>{
 
-         evalTS("colorSettingsTS", {picker_check_value: this.state.checkColorpicer, picker_path: __dirname, colorStart: 'rgb(255, 0, 0)', arrIndex: arrIndex}).then((res) => {
+         evalTS("colorSettingsTS", {picker_check_value: this.state.checkColorpicer, picker_path: __dirname, colorStart: '1664416', arrIndex: arrIndex}).then((res) => {
+               alert (res);
                let colVal = hexToRgb(res);
                let newArr = this.state.colors;
                newArr.splice(arrIndex, 1, colVal);

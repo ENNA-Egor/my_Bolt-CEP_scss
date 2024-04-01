@@ -4,7 +4,7 @@ export const colorSettingsTS = (obj: { picker_check_value: boolean, picker_path:
       var newComp =app.project.activeItem;
       var prefLayer: string = "TrCircle_";
    if(`${obj.picker_check_value}` === 'true'){
-      var externalLibrary = new ExternalObject("lib:"+`${obj.picker_path}`+'/settingsData/color_picker/ColorPicker_x64.aex');
+      var externalLibrary = new ExternalObject("lib:"+`${obj.picker_path}`+'/public/ColorPicker/ColorPicker_x64.aex');
       var oldColor = `${obj.colorStart}`;
        var color = externalLibrary.colorPicker(oldColor, "dialog_title");
        if (color ==-1){
