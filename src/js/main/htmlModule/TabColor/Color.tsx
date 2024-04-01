@@ -4,9 +4,10 @@ import React from "react";
 
 const ColorPal = (props:any) => {
 
+  const {color, replaceAndMinusColor, index} = props;
     return(
       <div>
-         <div style ={{backgroundColor:props.color}} className= {'palette'}  onClick={props.replaceAndMinusColor} id={props.index}></div>
+         <div style ={{backgroundColor:color}} className= {'palette'}  onClick={replaceAndMinusColor} id={index}></div>
       </div>
     );
   };

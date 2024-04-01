@@ -4,13 +4,15 @@ import ColorPal from "./Color";
 
 function Colors  (props: any) {
   let index =0;
+  const {colors, replaceAndMinusColor} = props;
    return (
      <div className="blok_palet">
            {
-             props.colors.map(color => (
+             colors.map(color => (
               <ColorPal color={color}
               index = {index++}
-              replaceAndMinusColor ={props.replaceAndMinusColor}/>
+              key = {index}
+              replaceAndMinusColor ={replaceAndMinusColor}/>
              ))
            }
          

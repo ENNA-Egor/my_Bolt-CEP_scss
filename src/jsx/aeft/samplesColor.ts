@@ -11,7 +11,7 @@ export const colorSettingsTS = (obj: { picker_check_value: boolean, picker_path:
          color =`${obj.colorStart}`;
       }
    } else {
-      var color = $.colorPicker ();
+      var color = $.colorPicker(color),number;
    }
    if (color !=-1) {
          var colVal = hexToRgb(color); 
