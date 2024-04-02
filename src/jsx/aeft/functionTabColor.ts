@@ -6,6 +6,7 @@ export const colorSettingsTS = (obj: { picker_check_value: boolean, picker_path:
    if(`${obj.picker_check_value}` === 'true'){
       var externalLibrary = new ExternalObject("lib:"+`${obj.picker_path}`+'/public/ColorPicker/ColorPicker_x64.aex');
       var oldColor = `${obj.colorStart}`;
+      //@ts-ignore
        var color = externalLibrary.colorPicker(oldColor, "dialog_title");
        if (color ==-1){
          color =`${obj.colorStart}`;
