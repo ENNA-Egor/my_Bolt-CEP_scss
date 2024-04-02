@@ -1,7 +1,7 @@
 
 import {
   customSettingsTS,
-} from "./samples";
+} from "./functionTabSetting";
 
 
 
@@ -10,7 +10,7 @@ export {customSettingsTS };
 
 import {
   colorSettingsTS,
-} from "./samplesColor";
+} from "./functionTabColor";
 
 
 
