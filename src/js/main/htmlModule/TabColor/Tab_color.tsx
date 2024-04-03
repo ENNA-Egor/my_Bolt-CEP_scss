@@ -10,8 +10,8 @@ import {
  } from "../../../lib/utils/bolt";
 import { render } from "react-dom";
 import Colors from './Colors'
-import hexToRgb from '../../../functionModule/function'
-import writeColorData from '../../../functionModule/writeColorData'
+import {hexToRgb} from '../../../functionModule/function'
+import {writeColorData} from '../../../functionModule/function'
 
 
 class Tab_color extends React.Component <{}, {[key: string]: Array<string>| boolean}>{
