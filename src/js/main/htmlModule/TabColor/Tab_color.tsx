@@ -11,24 +11,27 @@ import {
 import { render } from "react-dom";
 import Colors from './Colors'
 import hexToRgb from '../../../functionModule/function'
+// import writeColorData from '../../../functionModule/function'
 
 
 class Tab_color extends React.Component <{}, {[key: string]: Array<string>| boolean}>{
 
 
     state = {
-         checkColorpicer: false,
+         checkColorpicer: true,
          colors: ["red","rgb(115, 209, 60)","white","yellow","LightCoral","Cyan","green","Fuchsia","Lime","DodgerBlue","Khaki","DeepPink","YellowGreen","Gold","red"]
       }
 
-      colorSettings = (arrIndex)=>{
+      replaceColor = (arrIndex)=>{
 
-         evalTS("colorSettingsTS", {picker_check_value: this.state.checkColorpicer, picker_path: __dirname, colorStart: '1664416', arrIndex: arrIndex}).then((res) => {
+         evalTS("replaceColorTS", {picker_check_value: this.state.checkColorpicer, picker_path: __dirname, colorStart: '1664416', arrIndex: arrIndex}).then((res) => {
                alert (res);
                let colVal = hexToRgb(res);
                let newArr = this.state.colors;
                newArr.splice(arrIndex, 1, colVal);
                this.setState({colors: newArr});
+
+               // writeColorData(res);
             const saveFolderPath = path.join(__dirname, '/settingsData');
    
             if(!fs.existsSync(saveFolderPath)){
@@ -65,7 +68,7 @@ class Tab_color extends React.Component <{}, {[key: string]: Array<string>| bool
              this.setState({colors: newArr});
          }else{
             alert('ReplaseColor');
-            this.colorSettings(arrIndex)
+            this.replaceColor(arrIndex)
          }
    }
 

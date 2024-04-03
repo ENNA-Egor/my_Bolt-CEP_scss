@@ -1,6 +1,6 @@
 
 
-export const colorSettingsTS = (obj: { picker_check_value: boolean, picker_path:string, colorStart: string, arrIndex: number}) => {
+export const replaceColorTS = (obj: { picker_check_value: boolean, picker_path:string, colorStart: string, arrIndex: number}) => {
       var newComp =app.project.activeItem;
       var prefLayer: string = "TrCircle_";
    if(`${obj.picker_check_value}` === 'true'){

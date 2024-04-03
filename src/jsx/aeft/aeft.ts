@@ -9,12 +9,12 @@ export {customSettingsTS };
 
 
 import {
-  colorSettingsTS,
+  replaceColorTS,
 } from "./functionTabColor";
 
 
 
-export {colorSettingsTS};
+export {replaceColorTS};
 
 
 
