@@ -11,7 +11,7 @@ import {
 import { render } from "react-dom";
 import Colors from './Colors'
 import hexToRgb from '../../../functionModule/function'
-// import writeColorData from '../../../functionModule/function'
+import writeColorData from '../../../functionModule/writeColorData'
 
 
 class Tab_color extends React.Component <{}, {[key: string]: Array<string>| boolean}>{
@@ -31,21 +31,21 @@ class Tab_color extends React.Component <{}, {[key: string]: Array<string>| bool
                newArr.splice(arrIndex, 1, colVal);
                this.setState({colors: newArr});
 
-               // writeColorData(res);
-            const saveFolderPath = path.join(__dirname, '/settingsData');
+               writeColorData(res);
+            // const saveFolderPath = path.join(__dirname, '/settingsData');
    
-            if(!fs.existsSync(saveFolderPath)){
+            // if(!fs.existsSync(saveFolderPath)){
    
-               fs.mkdir(saveFolderPath, { recursive: true }, (err) => {
-                  if (err) {
-                      console.log('Ошибка при создании папки:', err);
-                      return;
-                  } 
-              });
-            } 
+            //    fs.mkdir(saveFolderPath, { recursive: true }, (err) => {
+            //       if (err) {
+            //           console.log('Ошибка при создании папки:', err);
+            //           return;
+            //       } 
+            //   });
+            // } 
    
-            const saveFilePath = path.join(__dirname, '/settingsData/colorData_01.json');
-            fs.writeFileSync(saveFilePath, JSON.stringify(this.state.colors), {encoding: 'utf8', flag: 'w'});
+            // const saveFilePath = path.join(__dirname, '/settingsData/colorData_01.json');
+            // fs.writeFileSync(saveFilePath, JSON.stringify(this.state.colors), {encoding: 'utf8', flag: 'w'});
            });
         };
    
