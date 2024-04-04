@@ -7,7 +7,8 @@ import {
 } from "../../lib/utils/bolt";
 
 
- class Tab_setting extends React.Component <{}, { [key: string]:  number | boolean }> {
+ class Tab_setting extends React.Component <{}, { [key: string]:  number | boolean }> {  
+   //надо вот это <{}, { [key: string]:  number | boolean }> удалить и проверить надо ли это?
     // constructor (props:string) {
  
        // super(props);

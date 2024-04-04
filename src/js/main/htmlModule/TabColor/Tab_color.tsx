@@ -16,6 +16,7 @@ import {writeColorData} from '../../../functionModule/function'
 
 class Tab_color extends React.Component <{}, {[key: string]: Array<string>| boolean}>{
 
+   //надо вот это <{}, {[key: string]: Array<string>| boolean}>удалить и проверить надо ли это?
 
     state = {
          checkColorpicer: true,
