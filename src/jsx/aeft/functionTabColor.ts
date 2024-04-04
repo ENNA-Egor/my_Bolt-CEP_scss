@@ -1,44 +1,43 @@
-import {colorValue} from './functionColorValue'
 
 export const replaceColorTS = (obj: { picker_check_value: boolean, picker_path:string, colorStart: string, arrIndex: number}) => {
-      var newComp =app.project.activeItem;
-      var prefLayer: string = "";
-
-   // if(`${obj.picker_check_value}` === 'true'){
-   //    var externalLibrary = new ExternalObject("lib:"+`${obj.picker_path}`+'/public/ColorPicker/ColorPicker_x64.aex');
-   //    var oldColor = `${obj.colorStart}`;
-   //    //@ts-ignore
-   //     var color = externalLibrary.colorPicker(oldColor, "dialog_title");
-   //     if (color ==-1){
-   //       color =`${obj.colorStart}`;
-   //    }
-   // } else {
-   //    var color = $.colorPicker(color);
-   // }
-
-   colorValue (obj.picker_check_value, obj.picker_path, obj.colorStart, obj.arrIndex).then ((colorRes: number | string)=>{
-
-      if (colorRes !=-1) {
-            var colVal = hexToRgb(colorRes); 
-            //   var newComp = app.project.activeItem;
-            if (!newComp){
-               alert ("Please select composition");
-               return -1;
-            }
+   var prefLayer: string = "";
+   var newComp =app.project.activeItem;
+   var num = obj.arrIndex+1;
+   if(`${obj.picker_check_value}` === 'true'){
+      var externalLibrary = new ExternalObject("lib:"+`${obj.picker_path}`+'/public/ColorPicker/ColorPicker_x64.aex');
+      var oldColor = `${obj.colorStart}`;
+      //@ts-ignore
+      var color = externalLibrary.colorPicker(oldColor, "dialog_title");
+      if (color ==-1){
+         color =`${obj.colorStart}`;
+      }
+   } else {
+      var color = $.colorPicker(color);
+   }
+   
+   // if (color !=-1) {
+      //       var colVal = hexToRgb(color); 
+      //       //   var newComp = app.project.activeItem;
+      //       if (!newComp){
+         //          alert ("Please select composition");
+         //          return -1;
+         //       }
+         if (newComp){
             if (newComp.name.substr(0, 11) == "TrSC_Circle"){
                prefLayer = "TrCircle_"}
                else if (newComp.name.substr(0, 12) == "TrSC_Polygon"){
                   prefLayer = "TrPolygon_"}
+                  alert (prefLayer);
+         }
                   // var numStr = numberStroke(prefLayer);
                   // layerRang (numStr, prefLayer);
                   // alert(colVal)
                // return colVal;
-               return colorRes;
-         } else {
-         return -1;
-      }
-   });
-
+               return color;
+         // } else {
+         // return -1;
+      // }
+   // });
                
  };
 

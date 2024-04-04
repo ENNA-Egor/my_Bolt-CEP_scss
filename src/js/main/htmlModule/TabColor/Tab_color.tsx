@@ -32,7 +32,7 @@ class Tab_color extends React.Component <{}, {[key: string]: Array<string>| bool
                newArr.splice(arrIndex, 1, colVal);
                this.setState({colors: newArr});
 
-               writeColorData(res);
+               writeColorData(this.state.colors);
             // const saveFolderPath = path.join(__dirname, '/settingsData');
    
             // if(!fs.existsSync(saveFolderPath)){
