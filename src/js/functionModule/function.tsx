@@ -36,9 +36,9 @@ export function rgbToHex(resultn: string) {
           } 
       });
     } 
-  
+    const colorsHex = rgbToHex (colors);
     const saveFilePath = path.join(__dirname, '/settingsData/colorData_01.json');
-    fs.writeFileSync(saveFilePath, JSON.stringify(colors), {encoding: 'utf8', flag: 'w'});
+    fs.writeFileSync(saveFilePath, JSON.stringify(colorsHex), {encoding: 'utf8', flag: 'w'});
  };
 
 
