@@ -14,25 +14,25 @@ import {hexToRgb} from '../../../functionModule/function'
 import {writeColorData} from '../../../functionModule/function'
 
 
-class Tab_color extends React.Component <{}, {[key: string]: Array<string>| boolean}>{
+class Tab_color extends React.Component {
 
-   //надо вот это <{}, {[key: string]: Array<string>| boolean}>удалить и проверить надо ли это?
+
 
     state = {
          checkColorpicer: true,
-         colors: ["rgb(250, 0, 0)","rgb(115, 209, 60)","rgb(250, 250, 250)","rgb(0, 0, 250)","rgb(0, 250, 0)l","rgb(100, 25, 50)","rgb(50, 20, 150)","rgb(210, 150, 10)","rgb(0, 25, 0)","rgb(50, 0, 0)","rgb(0, 50, 150)","rgb(150, 25, 50)","rgb(25, 50, 20)n","rgb(50, 50, 25)"]
+         colors: ["rgb(250, 0, 0)","rgb(115, 209, 60)","rgb(250, 250, 250)","rgb(0, 0, 250)","rgb(0, 250, 0)","rgb(100, 25, 50)","rgb(50, 20, 150)","rgb(210, 150, 10)","rgb(0, 25, 0)","rgb(50, 0, 0)","rgb(0, 50, 150)","rgb(150, 25, 50)","rgb(25, 50, 20)","rgb(50, 50, 25)"]
       }
 
       replaceColor = (arrIndex)=>{
 
          evalTS("replaceColorTS", {picker_check_value: this.state.checkColorpicer, picker_path: __dirname, colorStart: '1664416', arrIndex: arrIndex}).then((res) => {
-               alert (res);
                let colVal = hexToRgb(res);
                let newArr = this.state.colors;
                newArr.splice(arrIndex, 1, colVal);
                this.setState({colors: newArr});
 
                writeColorData(this.state.colors);
+               // writeColorData(colVal);
             // const saveFolderPath = path.join(__dirname, '/settingsData');
    
             // if(!fs.existsSync(saveFolderPath)){
@@ -59,6 +59,7 @@ class Tab_color extends React.Component <{}, {[key: string]: Array<string>| bool
       let newArr = this.state.colors;
       newArr.push('rgb(0, 125, 255)');
       this.setState({colors: newArr});
+      writeColorData(this.state.colors);
    }
 
    replaceAndMinusColor= (e:any)=> {     
@@ -67,8 +68,8 @@ class Tab_color extends React.Component <{}, {[key: string]: Array<string>| bool
              let newArr = this.state.colors;
              newArr.splice(arrIndex, 1);
              this.setState({colors: newArr});
+             writeColorData(this.state.colors);
          }else{
-            alert('ReplaseColor');
             this.replaceColor(arrIndex)
          }
    }
