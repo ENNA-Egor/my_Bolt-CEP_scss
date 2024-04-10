@@ -12,6 +12,7 @@ import { render } from "react-dom";
 import Colors from './Colors'
 import {hexToRgb} from '../../../functionModule/function'
 import {writeColorData} from '../../../functionModule/function'
+import {readColorData} from '../../../functionModule/function'
 
 
 class Tab_color extends React.Component {
@@ -100,7 +101,7 @@ class Tab_color extends React.Component {
           <div className="buttons">
              <div onClick={this.plusPal} className="button bt1 disableElement" id="btnPlus"></div>
              <div className="button bt3" id="btnApp">App</div>
-             <div className="button bt4" id="btn_reset">Res</div>
+             <div onClick={readColorData} className="button bt4" id="btn_reset">Res</div>
           </div>
           <div className="buttons">
              <div onClick={proba} className="button bt5" >Save</div>

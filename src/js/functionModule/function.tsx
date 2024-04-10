@@ -1,4 +1,5 @@
 
+import { error } from "console";
 import {path, fs} from "../../js/lib/cep/node";
 
 export function hexToRgb(hex){  
@@ -44,6 +45,13 @@ export function rgbToHex(resultn: string) {
     const colorsHex = rgbToHex (colors);
     const saveFilePath = path.join(__dirname, '/settingsData/colorData_01.json');
     fs.writeFileSync(saveFilePath, JSON.stringify(colorsHex), {encoding: 'utf8', flag: 'w'});
+ };
+
+
+  export function readColorData (){
+    const readFilePath = path.join(__dirname, '/settingsData/colorData_01.json');
+    const data =fs.readFileSync(readFilePath, 'utf8');
+    alert (data);
  };
 
 
