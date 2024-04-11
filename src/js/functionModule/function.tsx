@@ -49,9 +49,14 @@ export function rgbToHex(resultn: string) {
 
 
   export function readColorData (){
-    const readFilePath = path.join(__dirname, '/settingsData/colorData_01.json');
+    const readFilePath = path.join(__dirname, '/public/settingsData/customSettigsData_01.json');
     const data =fs.readFileSync(readFilePath, 'utf8');
     alert (data);
+    const newData = JSON.parse(data);
+    alert (typeof(newData));
+    alert (newData.Settings.resolution_w);
+    alert (newData.oldColor);
+    alert (newData.colorStart);
  };
 
 
