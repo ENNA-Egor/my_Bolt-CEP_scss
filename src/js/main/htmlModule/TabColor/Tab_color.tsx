@@ -22,10 +22,11 @@ class Tab_color extends React.Component {
 
     state = {
          checkColorpicer: true,
-         colors: ["rgb(250, 0, 0)","rgb(115, 209, 60)","rgb(250, 250, 250)","rgb(0, 0, 250)","rgb(0, 250, 0)","rgb(100, 25, 50)","rgb(50, 20, 150)","rgb(210, 150, 10)","rgb(0, 25, 0)","rgb(50, 0, 0)","rgb(0, 50, 150)","rgb(150, 25, 50)","rgb(25, 50, 20)","rgb(50, 50, 25)"]
+         colors: ["rgb(250, 0, 0)","rgb(115, 209, 60)","rgb(250, 250, 250)","rgb(0, 0, 250)","rgb(0, 250, 0)","rgb(100, 25, 50)","rgb(50, 20, 150)","rgb(210, 150, 10)","rgb(0, 25, 0)","rgb(50, 0, 0)","rgb(0, 50, 150)","rgb(150, 25, 50)","rgb(25, 50, 20)","rgb(50, 50, 25)"],
+         ololdCor: "0xdd1dd6",
       }
       
-      pathWriteColor: string = '/settingsData/colorData_01.json';             
+      pathWriteColor: string = '/public/settingsData/customColorData_01.json';             
       
       replaceColor = (arrIndex)=>{
          
@@ -34,8 +35,11 @@ class Tab_color extends React.Component {
             let newArr = this.state.colors;
             newArr.splice(arrIndex, 1, colVal);
             this.setState({colors: newArr});
-            const colorsHex = rgbToHex (JSON.stringify(this.state.colors));
-               writeData(colorsHex, this.pathWriteColor);
+            //@ts-ignore
+            // const colorsHex = rgbToHex(this.state.colors);
+            
+            // alert (JSON.stringify(this.state))
+               writeData(JSON.stringify(this.state), this.pathWriteColor);
                // writeColorData(colVal);
             // const saveFolderPath = path.join(__dirname, '/settingsData');
    

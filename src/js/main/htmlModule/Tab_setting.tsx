@@ -21,7 +21,7 @@ import {writeData} from '../../functionModule/function';
        }
     // }
 
-    pathWriteSettings: string = '/settingsData/customSettigsData_01.json';  
+    pathWriteSettings: string = '/public/settingsData/customSettigsData_01.json';  
 
     compCustomSettings = ()=>{
 
@@ -32,7 +32,7 @@ import {writeData} from '../../functionModule/function';
          this.setState({ framerate: res.custom_FR});
          this.setState({ duration: res.custom_Dur});
 
-         writeData(JSON.stringify(res), this.pathWriteSettings);
+         writeData(this.state, this.pathWriteSettings);
 
          // const saveFolderPath = path.join(__dirname, '/settingsData');
 
@@ -56,11 +56,13 @@ import {writeData} from '../../functionModule/function';
 
    changeInput=(e:any ) => {
          this.setState({ [e.target.name]: e.target.value});
+         writeData(this.state, this.pathWriteSettings);
       }  
 
    handleCheckboxChange=(e:any ) => {
 
       this.setState({ [e.target.name]: e.target.checked!});
+      writeData(this.state, this.pathWriteSettings);
    }  
    
 

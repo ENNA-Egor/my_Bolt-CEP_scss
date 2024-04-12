@@ -44,7 +44,7 @@ export function rgbToHex(resultn: string) {
     } 
    //  const colorsHex = rgbToHex (colors);
     const saveFilePath = path.join(__dirname, pathWrite);
-    fs.writeFileSync(saveFilePath, res, {encoding: 'utf8', flag: 'w'});
+    fs.writeFileSync(saveFilePath, JSON.stringify(res), {encoding: 'utf8', flag: 'w'});
  };
 
 
