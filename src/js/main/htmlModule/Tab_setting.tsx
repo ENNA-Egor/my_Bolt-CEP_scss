@@ -5,6 +5,7 @@ import {
   evalES,
   evalTS,
 } from "../../lib/utils/bolt";
+import {writeColorData} from '../../functionModule/function';
 
 
  class Tab_setting extends React.Component  {  
@@ -20,7 +21,8 @@ import {
        }
     // }
 
-    
+    pathWriteSettings: string = '/settingsData/customSettigsData_01.json';  
+
     compCustomSettings = ()=>{
 
       evalTS("customSettingsTS", { custom_h: 1080, custom_w: 1920, custom_Nam: 'newComp', custom_Dur: 6, custom_FR:  25, lockDurations: this.state.durLock}).then((res) => {
@@ -30,20 +32,22 @@ import {
          this.setState({ framerate: res.custom_FR});
          this.setState({ duration: res.custom_Dur});
 
-         const saveFolderPath = path.join(__dirname, '/settingsData');
+         writeColorData(JSON.stringify(res), this.pathWriteSettings);
 
-         if(!fs.existsSync(saveFolderPath)){
+         // const saveFolderPath = path.join(__dirname, '/settingsData');
 
-            fs.mkdir(saveFolderPath, { recursive: true }, (err) => {
-               if (err) {
-                   console.log('Ошибка при создании папки:', err);
-                   return;
-               } 
-           });
-         } 
+         // if(!fs.existsSync(saveFolderPath)){
 
-         const saveFilePath = path.join(__dirname, '/settingsData/customSettigsData_01.json');
-         fs.writeFileSync(saveFilePath, JSON.stringify(res), {encoding: 'utf8', flag: 'w'});
+         //    fs.mkdir(saveFolderPath, { recursive: true }, (err) => {
+         //       if (err) {
+         //           console.log('Ошибка при создании папки:', err);
+         //           return;
+         //       } 
+         //   });
+         // } 
+
+         // const saveFilePath = path.join(__dirname, '/settingsData/customSettigsData_01.json');
+         // fs.writeFileSync(saveFilePath, JSON.stringify(res), {encoding: 'utf8', flag: 'w'});
         });
      };
       
