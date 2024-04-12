@@ -11,8 +11,9 @@ import {
 import { render } from "react-dom";
 import Colors from './Colors'
 import {hexToRgb} from '../../../functionModule/function'
-import {writeColorData} from '../../../functionModule/function'
+import {writeData} from '../../../functionModule/function'
 import {readColorData} from '../../../functionModule/function'
+import {rgbToHex} from '../../../functionModule/function'
 
 
 class Tab_color extends React.Component {
@@ -33,7 +34,8 @@ class Tab_color extends React.Component {
             let newArr = this.state.colors;
             newArr.splice(arrIndex, 1, colVal);
             this.setState({colors: newArr});
-               writeColorData(this.state.colors, this.pathWriteColor);
+            const colorsHex = rgbToHex (JSON.stringify(this.state.colors));
+               writeData(colorsHex, this.pathWriteColor);
                // writeColorData(colVal);
             // const saveFolderPath = path.join(__dirname, '/settingsData');
    
@@ -61,7 +63,7 @@ class Tab_color extends React.Component {
       let newArr = this.state.colors;
       newArr.push('rgb(0, 125, 255)');
       this.setState({colors: newArr});
-      writeColorData(this.state.colors, this.pathWriteColor);
+      writeData(this.state.colors, this.pathWriteColor);
    }
 
    replaceAndMinusColor= (e:any)=> {     
@@ -70,7 +72,7 @@ class Tab_color extends React.Component {
              let newArr = this.state.colors;
              newArr.splice(arrIndex, 1);
              this.setState({colors: newArr});
-             writeColorData(this.state.colors, this.pathWriteColor);
+             writeData(this.state.colors, this.pathWriteColor);
          }else{
             this.replaceColor(arrIndex)
          }

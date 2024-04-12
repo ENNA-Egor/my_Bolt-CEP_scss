@@ -29,7 +29,7 @@ export function rgbToHex(resultn: string) {
 
 
 
-  export function writeColorData (colors, pathWrite){
+  export function writeData (res, pathWrite){
 
     const saveFolderPath = path.join(__dirname, '/settingsData');
      
@@ -42,9 +42,9 @@ export function rgbToHex(resultn: string) {
           } 
       });
     } 
-    const colorsHex = rgbToHex (colors);
+   //  const colorsHex = rgbToHex (colors);
     const saveFilePath = path.join(__dirname, pathWrite);
-    fs.writeFileSync(saveFilePath, JSON.stringify(colorsHex), {encoding: 'utf8', flag: 'w'});
+    fs.writeFileSync(saveFilePath, res, {encoding: 'utf8', flag: 'w'});
  };
 
 

@@ -5,7 +5,7 @@ import {
   evalES,
   evalTS,
 } from "../../lib/utils/bolt";
-import {writeColorData} from '../../functionModule/function';
+import {writeData} from '../../functionModule/function';
 
 
  class Tab_setting extends React.Component  {  
@@ -32,7 +32,7 @@ import {writeColorData} from '../../functionModule/function';
          this.setState({ framerate: res.custom_FR});
          this.setState({ duration: res.custom_Dur});
 
-         writeColorData(JSON.stringify(res), this.pathWriteSettings);
+         writeData(JSON.stringify(res), this.pathWriteSettings);
 
          // const saveFolderPath = path.join(__dirname, '/settingsData');
 
