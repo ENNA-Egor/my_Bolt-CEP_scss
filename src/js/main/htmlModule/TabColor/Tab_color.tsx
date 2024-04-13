@@ -13,7 +13,7 @@ import Colors from './Colors'
 import {hexToRgb} from '../../../functionModule/function'
 import {writeData} from '../../../functionModule/function'
 import {readColorData} from '../../../functionModule/function'
-import {rgbToHex} from '../../../functionModule/function'
+import {rgbToHexOne} from '../../../functionModule/function'
 
 
 class Tab_color extends React.Component {
@@ -22,40 +22,33 @@ class Tab_color extends React.Component {
 
     state = {
          checkColorpicer: true,
-         colors: ["rgb(250, 0, 0)","rgb(115, 209, 60)","rgb(250, 250, 250)","rgb(0, 0, 250)","rgb(0, 250, 0)","rgb(100, 25, 50)","rgb(50, 20, 150)","rgb(210, 150, 10)","rgb(0, 25, 0)","rgb(50, 0, 0)","rgb(0, 50, 150)","rgb(150, 25, 50)","rgb(25, 50, 20)","rgb(50, 50, 25)"],
-         ololdCor: "0xdd1dd6",
+         colors: ["5b82b3","86cab9","d5e390","fafa98","fabb86"],
+         oldColor: "dd1dd6",
       }
       
       pathWriteColor: string = '/public/settingsData/customColorData_01.json';             
       
       replaceColor = (arrIndex)=>{
          
-         evalTS("replaceColorTS", {picker_check_value: this.state.checkColorpicer, picker_path: __dirname, colorStart: '1664416', arrIndex: arrIndex}).then((res) => {
+         evalTS("replaceColorTS", {picker_check_value: this.state.checkColorpicer, picker_path: __dirname, colorStart: this.state.oldColor, arrIndex: arrIndex}).then((res) => {
             let colVal = hexToRgb(res);
+            let resNew = rgbToHexOne(colVal);
+            this.setState({oldColor: resNew});
             let newArr = this.state.colors;
-            newArr.splice(arrIndex, 1, colVal);
+            newArr.splice(arrIndex, 1, resNew);
             this.setState({colors: newArr});
-            //@ts-ignore
-            // const colorsHex = rgbToHex(this.state.colors);
-            
-            // alert (JSON.stringify(this.state))
-               writeData(JSON.stringify(this.state), this.pathWriteColor);
-               // writeColorData(colVal);
-            // const saveFolderPath = path.join(__dirname, '/settingsData');
-   
-            // if(!fs.existsSync(saveFolderPath)){
-   
-            //    fs.mkdir(saveFolderPath, { recursive: true }, (err) => {
-            //       if (err) {
-            //           console.log('Ошибка при создании папки:', err);
-            //           return;
-            //       } 
-            //   });
-            // } 
-   
-            // const saveFilePath = path.join(__dirname, '/settingsData/colorData_01.json');
-            // fs.writeFileSync(saveFilePath, JSON.stringify(this.state.colors), {encoding: 'utf8', flag: 'w'});
-           });
+         });
+        };
+
+        plusPal = ()=>{    
+         evalTS("plusPalTS", {picker_check_value: this.state.checkColorpicer, picker_path: __dirname, colorStart: this.state.oldColor}).then((res) => {
+               let colVal = hexToRgb(res);
+               let resNew = rgbToHexOne(colVal);
+               this.setState({ololdCor: resNew});
+               let newArr = this.state.colors;
+               newArr.push(resNew);
+               this.setState({colors: newArr});
+         });
         };
    
 
@@ -63,12 +56,7 @@ class Tab_color extends React.Component {
       this.setState({[e.target.name]: e.target.checked!});
    }
    
-   plusPal= ()=> {
-      let newArr = this.state.colors;
-      newArr.push('rgb(0, 125, 255)');
-      this.setState({colors: newArr});
-      writeData(this.state.colors, this.pathWriteColor);
-   }
+
 
    replaceAndMinusColor= (e:any)=> {     
       let arrIndex = +[e.target.id];
@@ -76,12 +64,14 @@ class Tab_color extends React.Component {
              let newArr = this.state.colors;
              newArr.splice(arrIndex, 1);
              this.setState({colors: newArr});
-             writeData(this.state.colors, this.pathWriteColor);
          }else{
             this.replaceColor(arrIndex)
          }
    }
 
+      componentDidUpdate(): void {
+         writeData(this.state, this.pathWriteColor);
+      }
 
    render(){
       

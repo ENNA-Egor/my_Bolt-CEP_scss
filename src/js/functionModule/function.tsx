@@ -27,22 +27,20 @@ export function rgbToHex(resultn: string) {
       return newColorArray;
      }
 
+export function rgbToHexOne(resultn: string) {
+         let leng = resultn.length;
+         let sliseResulth = resultn.slice(4,(leng-1));
+         let resultColor = sliseResulth.split(','); 
+         let r = parseInt(resultColor[0]);
+         let g = parseInt(resultColor[1]);
+         let b = parseInt(resultColor[2]);
+         let colorOne = ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+      return colorOne;
+     }
+
 
 
   export function writeData (res, pathWrite){
-
-    const saveFolderPath = path.join(__dirname, '/settingsData');
-     
-    if(!fs.existsSync(saveFolderPath)){
-  
-       fs.mkdir(saveFolderPath, { recursive: true }, (err) => {
-          if (err) {
-              console.log('Ошибка при создании папки:', err);
-              return;
-          } 
-      });
-    } 
-   //  const colorsHex = rgbToHex (colors);
     const saveFilePath = path.join(__dirname, pathWrite);
     fs.writeFileSync(saveFilePath, JSON.stringify(res), {encoding: 'utf8', flag: 'w'});
  };
@@ -54,9 +52,8 @@ export function rgbToHex(resultn: string) {
     alert (data);
     const newData = JSON.parse(data);
     alert (typeof(newData));
-    alert (newData.Settings.resolution_w);
-    alert (newData.oldColor);
-    alert (newData.colorStart);
+    alert (newData.resolution_w);
+    alert (newData.framerate);
  };
 
 

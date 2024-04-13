@@ -1,12 +1,10 @@
 
 export const customSettingsTS = (obj: { custom_h: number; custom_w: number; custom_Nam: string; custom_Dur: number; custom_FR: number, lockDurations: boolean}) => {
-  alert(`ExtendScript received an object: ${JSON.stringify(obj)}`);
               var Real_w:number=0;
               var Real_h: number = 0;
               var Real_Nam: string = '';
               var Real_Dur: number =0;
               var Real_FR: number =0;
-              alert (`${obj.lockDurations}`);
 
   var newComp =app.project.activeItem;
             if (newComp){
@@ -23,7 +21,13 @@ export const customSettingsTS = (obj: { custom_h: number; custom_w: number; cust
             }
           } else{
             alert('Pleace select composition')
-             return obj;
+             return {
+              custom_h : 1080, 
+              custom_w : 1920,
+              custom_Nam : 'newComp',
+              custom_Dur : 6,
+              custom_FR : 25,
+             }
           }
 
   return { 

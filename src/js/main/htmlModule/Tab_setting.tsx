@@ -30,25 +30,8 @@ import {writeData} from '../../functionModule/function';
          this.setState({ resolution_w: res.custom_w});
          this.setState({ resolution_h: res.custom_h});
          this.setState({ framerate: res.custom_FR});
-         this.setState({ duration: res.custom_Dur});
-
-         writeData(this.state, this.pathWriteSettings);
-
-         // const saveFolderPath = path.join(__dirname, '/settingsData');
-
-         // if(!fs.existsSync(saveFolderPath)){
-
-         //    fs.mkdir(saveFolderPath, { recursive: true }, (err) => {
-         //       if (err) {
-         //           console.log('Ошибка при создании папки:', err);
-         //           return;
-         //       } 
-         //   });
-         // } 
-
-         // const saveFilePath = path.join(__dirname, '/settingsData/customSettigsData_01.json');
-         // fs.writeFileSync(saveFilePath, JSON.stringify(res), {encoding: 'utf8', flag: 'w'});
-        });
+         this.setState({ duration: res.custom_Dur});    
+      });
      };
       
       
@@ -56,16 +39,17 @@ import {writeData} from '../../functionModule/function';
 
    changeInput=(e:any ) => {
          this.setState({ [e.target.name]: e.target.value});
-         writeData(this.state, this.pathWriteSettings);
+         let newState = this.state;
       }  
 
    handleCheckboxChange=(e:any ) => {
-
       this.setState({ [e.target.name]: e.target.checked!});
-      writeData(this.state, this.pathWriteSettings);
    }  
    
 
+   componentDidUpdate(): void {
+      writeData(this.state, this.pathWriteSettings);
+   }
       render() {
          const {num_element, resolution_w, resolution_h, framerate, duration, influence, durLock} = this.state;
          return(

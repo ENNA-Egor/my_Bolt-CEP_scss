@@ -1,15 +1,17 @@
 
 export const replaceColorTS = (obj: { picker_check_value: boolean, picker_path:string, colorStart: string, arrIndex: number}) => {
    var prefLayer: string = "";
+   alert(obj.colorStart)
    var newComp =app.project.activeItem;
    var num = obj.arrIndex+1;
    if(`${obj.picker_check_value}` === 'true'){
       var externalLibrary = new ExternalObject("lib:"+`${obj.picker_path}`+'/public/ColorPicker/ColorPicker_x64.aex');
-      var oldColor = `${obj.colorStart}`;
+      var oldColor = '0x'+`${obj.colorStart}`;
+
       //@ts-ignore
       var color = externalLibrary.colorPicker(oldColor, "dialog_title");
       if (color ==-1){
-         color =`${obj.colorStart}`;
+         color ='0x'+`${obj.colorStart}`;
       }
    } else {
       var color = $.colorPicker(color);
@@ -27,18 +29,42 @@ export const replaceColorTS = (obj: { picker_check_value: boolean, picker_path:s
                prefLayer = "TrCircle_"}
                else if (newComp.name.substr(0, 12) == "TrSC_Polygon"){
                   prefLayer = "TrPolygon_"}
-                  alert (prefLayer);
          }
                   // var numStr = numberStroke(prefLayer);
                   // layerRang (numStr, prefLayer);
                   // alert(colVal)
                // return colVal;
+
                return color;
          // } else {
          // return -1;
       // }
    // });
                
+ };
+export const plusPalTS = (obj: { picker_check_value: boolean, picker_path:string, colorStart: string}) => {
+   var prefLayer: string = "";
+   var newComp =app.project.activeItem;
+   if(`${obj.picker_check_value}` === 'true'){
+      var externalLibrary = new ExternalObject("lib:"+`${obj.picker_path}`+'/public/ColorPicker/ColorPicker_x64.aex');
+      var oldColor = '0x'+`${obj.colorStart}`;
+
+      //@ts-ignore
+      var color = externalLibrary.colorPicker(oldColor, "dialog_title");
+      if (color ==-1){
+         color ='0x'+`${obj.colorStart}`;
+      }
+   } else {
+      var color = $.colorPicker(color);
+   }
+         if (newComp){
+            if (newComp.name.substr(0, 11) == "TrSC_Circle"){
+               prefLayer = "TrCircle_"}
+               else if (newComp.name.substr(0, 12) == "TrSC_Polygon"){
+                  prefLayer = "TrPolygon_"}
+         }
+
+               return color;             
  };
 
 
