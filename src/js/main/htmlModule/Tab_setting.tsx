@@ -43,15 +43,19 @@ import {readData} from '../../functionModule/function';
          let newState = this.state;
       }  
 
+
    handleCheckboxChange=(e:any ) => {
       this.setState({ [e.target.name]: e.target.checked!});
    }  
    
    componentDidMount(): void {
       let dataSettings = readData(this.pathWriteEndReadSettings);
-      alert( dataSettings);
       const dataSettingsStart = JSON.parse( dataSettings);
-      // this.setState({resolution_w: dataSettingsStart.resolution_w, resolution_h: dataSettingsStart.resolution_h, framerate: dataSettingsStart.framerate, duration: dataSettingsStart.duration});
+      this.setState({
+         resolution_w: dataSettingsStart.resolution_w, 
+         resolution_h: dataSettingsStart.resolution_h, 
+         framerate: dataSettingsStart.framerate, 
+         duration: dataSettingsStart.duration, num_element:dataSettingsStart.num_element, influence:dataSettingsStart.influence, durLock:dataSettingsStart.durLock});
     }
 
    componentDidUpdate(): void {

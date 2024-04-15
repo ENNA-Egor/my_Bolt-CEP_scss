@@ -23,7 +23,7 @@ class Tab_color extends React.Component {
     state = {
          checkColorpicer: true,
          colors: ["5b82b3","86cab9","d5e390","fafa98","fabb86"],
-         oldColor: "dd1dd6",
+         oldColor: "0xdd1dd6",
       }
       
       pathWriteEndReadColor: string = '/public/settingsData/customColorData_01.json';             
@@ -71,9 +71,11 @@ class Tab_color extends React.Component {
 
       componentDidMount(): void {
         let dataColor = readData(this.pathWriteEndReadColor);
-        alert( dataColor);
         const dataColorStart = JSON.parse(dataColor);
-      //   this.setState({checkColorpicer: dataColorStart.checkColorpicer, colors:dataColorStart.colorStart, oldColor:dataColorStart.ololdCor});
+        this.setState({
+         checkColorpicer: dataColorStart.checkColorpicer, 
+         colors:dataColorStart.colors, 
+         oldColor:dataColorStart.oldColor});
       }
 
       componentDidUpdate(): void {

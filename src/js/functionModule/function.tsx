@@ -49,11 +49,11 @@ export function rgbToHexOne(resultn: string) {
    export function readData (pathRead){
     const readFilePath = path.join(__dirname, pathRead);
     const data =fs.readFileSync(readFilePath, 'utf8');
-    alert (data);
-    const newData = JSON.parse(data);
-    alert (typeof(newData));
-    alert (newData.resolution_w);
-    alert (newData.framerate);
+   //  alert (data);
+   //  const newData = JSON.parse(data);
+   //  alert (typeof(newData));
+   //  alert (newData.resolution_w);
+   //  alert (newData.framerate);
     return data;
  };
 
