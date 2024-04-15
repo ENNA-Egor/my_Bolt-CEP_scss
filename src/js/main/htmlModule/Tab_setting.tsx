@@ -28,10 +28,10 @@ import {readData} from '../../functionModule/function';
 
       evalTS("customSettingsTS", { custom_h: 1080, custom_w: 1920, custom_Nam: 'newComp', custom_Dur: 6, custom_FR:  25, lockDurations: this.state.durLock}).then((res) => {
 
-         this.setState({ resolution_w: res.custom_w});
-         this.setState({ resolution_h: res.custom_h});
-         this.setState({ framerate: res.custom_FR});
-         this.setState({ duration: res.custom_Dur});    
+         // this.setState({ resolution_w: res.custom_w});
+         // this.setState({ resolution_h: res.custom_h});
+         this.setState({resolution_w: res.custom_w, resolution_h: res.custom_h, framerate: res.custom_FR, duration: res.custom_Dur});
+         // this.setState({ duration: res.custom_Dur});    
       });
      };
       
@@ -50,6 +50,8 @@ import {readData} from '../../functionModule/function';
    componentDidMount(): void {
       let dataSettings = readData(this.pathWriteEndReadSettings);
       alert( dataSettings);
+      const dataSettingsStart = JSON.parse( dataSettings);
+      // this.setState({resolution_w: dataSettingsStart.resolution_w, resolution_h: dataSettingsStart.resolution_h, framerate: dataSettingsStart.framerate, duration: dataSettingsStart.duration});
     }
 
    componentDidUpdate(): void {

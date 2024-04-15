@@ -72,6 +72,8 @@ class Tab_color extends React.Component {
       componentDidMount(): void {
         let dataColor = readData(this.pathWriteEndReadColor);
         alert( dataColor);
+        const dataColorStart = JSON.parse(dataColor);
+      //   this.setState({checkColorpicer: dataColorStart.checkColorpicer, colors:dataColorStart.colorStart, oldColor:dataColorStart.ololdCor});
       }
 
       componentDidUpdate(): void {
