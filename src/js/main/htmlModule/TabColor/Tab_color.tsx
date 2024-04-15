@@ -107,7 +107,7 @@ class Tab_color extends React.Component {
           <div className="buttons">
              <div onClick={this.plusPal} className="button bt1 disableElement" id="btnPlus"></div>
              <div className="button bt3" id="btnApp">App</div>
-             <div onClick={readData} className="button bt4" id="btn_reset">Res</div>
+             <div /*onClick={}*/ className="button bt4" id="btn_reset">Res</div>
           </div>
           <div className="buttons">
              <div onClick={proba} className="button bt5" >Save</div>
