@@ -24,12 +24,12 @@ export const replaceColorTS = (obj: { picker_check_value: boolean, picker_path:s
          //          alert ("Please select composition");
          //          return -1;
          //       }
-         if (newComp){
-            if (newComp.name.substr(0, 11) == "TrSC_Circle"){
-               prefLayer = "TrCircle_"}
-               else if (newComp.name.substr(0, 12) == "TrSC_Polygon"){
-                  prefLayer = "TrPolygon_"}
-         }
+         // if (newComp){
+         //    if (newComp.name.substr(0, 11) == "TrSC_Circle"){
+         //       prefLayer = "TrCircle_"}
+         //       else if (newComp.name.substr(0, 12) == "TrSC_Polygon"){
+         //          prefLayer = "TrPolygon_"}
+         // }
                   // var numStr = numberStroke(prefLayer);
                   // layerRang (numStr, prefLayer);
                   // alert(colVal)
@@ -57,18 +57,18 @@ export const plusPalTS = (obj: { picker_check_value: boolean, picker_path:string
    } else {
       var color = $.colorPicker(color);
    }
-         if (newComp){
-            if (newComp.name.substr(0, 11) == "TrSC_Circle"){
-               prefLayer = "TrCircle_"}
-               else if (newComp.name.substr(0, 12) == "TrSC_Polygon"){
-                  prefLayer = "TrPolygon_"}
-         }
+         // if (newComp){
+         //    if (newComp.name.substr(0, 11) == "TrSC_Circle"){
+         //       prefLayer = "TrCircle_"}
+         //       else if (newComp.name.substr(0, 12) == "TrSC_Polygon"){
+         //          prefLayer = "TrPolygon_"}
+         // }
 
                return color;             
  };
 
 
- function hexToRgb(hex: any){  
+ function hexToRgb(hex: string | number){  
    if (typeof hex === 'string') hex = parseInt(hex, 16);  
    var r = (hex >> 16) & 0xFF;  
    var g = (hex >> 8 ) & 0xFF;  
