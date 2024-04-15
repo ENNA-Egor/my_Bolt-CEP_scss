@@ -12,7 +12,7 @@ import { render } from "react-dom";
 import Colors from './Colors'
 import {hexToRgb} from '../../../functionModule/function'
 import {writeData} from '../../../functionModule/function'
-import {readColorData} from '../../../functionModule/function'
+import {readData} from '../../../functionModule/function'
 import {rgbToHexOne} from '../../../functionModule/function'
 
 
@@ -26,7 +26,7 @@ class Tab_color extends React.Component {
          oldColor: "dd1dd6",
       }
       
-      pathWriteColor: string = '/public/settingsData/customColorData_01.json';             
+      pathWriteEndReadColor: string = '/public/settingsData/customColorData_01.json';             
       
       replaceColor = (arrIndex)=>{
          
@@ -69,8 +69,13 @@ class Tab_color extends React.Component {
          }
    }
 
+      componentDidMount(): void {
+        let dataColor = readData(this.pathWriteEndReadColor);
+        alert( dataColor);
+      }
+
       componentDidUpdate(): void {
-         writeData(this.state, this.pathWriteColor);
+         writeData(this.state, this.pathWriteEndReadColor);
       }
 
    render(){
@@ -98,7 +103,7 @@ class Tab_color extends React.Component {
           <div className="buttons">
              <div onClick={this.plusPal} className="button bt1 disableElement" id="btnPlus"></div>
              <div className="button bt3" id="btnApp">App</div>
-             <div onClick={readColorData} className="button bt4" id="btn_reset">Res</div>
+             <div onClick={readData} className="button bt4" id="btn_reset">Res</div>
           </div>
           <div className="buttons">
              <div onClick={proba} className="button bt5" >Save</div>

@@ -46,14 +46,15 @@ export function rgbToHexOne(resultn: string) {
  };
 
 
-  export function readColorData (){
-    const readFilePath = path.join(__dirname, '/public/settingsData/customSettigsData_01.json');
+   export function readData (pathRead){
+    const readFilePath = path.join(__dirname, pathRead);
     const data =fs.readFileSync(readFilePath, 'utf8');
     alert (data);
     const newData = JSON.parse(data);
     alert (typeof(newData));
     alert (newData.resolution_w);
     alert (newData.framerate);
+    return data;
  };
 
 

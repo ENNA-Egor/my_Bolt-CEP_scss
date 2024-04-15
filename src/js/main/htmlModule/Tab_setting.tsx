@@ -6,6 +6,7 @@ import {
   evalTS,
 } from "../../lib/utils/bolt";
 import {writeData} from '../../functionModule/function';
+import {readData} from '../../functionModule/function';
 
 
  class Tab_setting extends React.Component  {  
@@ -21,7 +22,7 @@ import {writeData} from '../../functionModule/function';
        }
     // }
 
-    pathWriteSettings: string = '/public/settingsData/customSettigsData_01.json';  
+    pathWriteEndReadSettings: string = '/public/settingsData/customSettigsData_01.json';  
 
     compCustomSettings = ()=>{
 
@@ -46,9 +47,13 @@ import {writeData} from '../../functionModule/function';
       this.setState({ [e.target.name]: e.target.checked!});
    }  
    
+   componentDidMount(): void {
+      let dataSettings = readData(this.pathWriteEndReadSettings);
+      alert( dataSettings);
+    }
 
    componentDidUpdate(): void {
-      writeData(this.state, this.pathWriteSettings);
+      writeData(this.state, this.pathWriteEndReadSettings);
    }
       render() {
          const {num_element, resolution_w, resolution_h, framerate, duration, influence, durLock} = this.state;
