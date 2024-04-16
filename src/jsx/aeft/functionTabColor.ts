@@ -1,7 +1,6 @@
 
 export const replaceColorTS = (obj: { picker_check_value: boolean, picker_path:string, colorStart: string, arrIndex: number}) => {
    var prefLayer: string = "";
-   alert(obj.colorStart)
    var newComp =app.project.activeItem;
    var num = obj.arrIndex+1;
    if(`${obj.picker_check_value}` === 'true'){

@@ -14,7 +14,7 @@ class Tab_setting extends React.Component {
       duration: 6,
       influence: 60,
       durLock: false,
-      // loading: true,
+      loading: true,
    };
    // }
 
@@ -71,10 +71,10 @@ class Tab_setting extends React.Component {
    }
    render() {
       const {num_element, resolution_w, resolution_h, framerate, duration, influence, durLock, /*loading,*/} = this.state;
-      return (
 
-         // loading ? ( < Preloader/> ):
-                   
+      return (
+         
+         
          <div className="settings tab-b hide">
             <fieldset className="field">
                <legend>Settings</legend>
