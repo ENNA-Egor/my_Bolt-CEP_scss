@@ -15,30 +15,9 @@ export const replaceColorTS = (obj: { picker_check_value: boolean, picker_path:s
    } else {
       var color = $.colorPicker(color);
    }
-   
-   // if (color !=-1) {
-      //       var colVal = hexToRgb(color); 
-      //       //   var newComp = app.project.activeItem;
-      //       if (!newComp){
-         //          alert ("Please select composition");
-         //          return -1;
-         //       }
-         // if (newComp){
-         //    if (newComp.name.substr(0, 11) == "TrSC_Circle"){
-         //       prefLayer = "TrCircle_"}
-         //       else if (newComp.name.substr(0, 12) == "TrSC_Polygon"){
-         //          prefLayer = "TrPolygon_"}
-         // }
-                  // var numStr = numberStroke(prefLayer);
-                  // layerRang (numStr, prefLayer);
-                  // alert(colVal)
-               // return colVal;
-
+            var colVal = hexToRgb(color);
                return color;
-         // } else {
-         // return -1;
-      // }
-   // });
+
                
  };
 export const plusPalTS = (obj: { picker_check_value: boolean, picker_path:string, colorStart: string}) => {
@@ -56,12 +35,7 @@ export const plusPalTS = (obj: { picker_check_value: boolean, picker_path:string
    } else {
       var color = $.colorPicker(color);
    }
-         // if (newComp){
-         //    if (newComp.name.substr(0, 11) == "TrSC_Circle"){
-         //       prefLayer = "TrCircle_"}
-         //       else if (newComp.name.substr(0, 12) == "TrSC_Polygon"){
-         //          prefLayer = "TrPolygon_"}
-         // }
+
 
                return color;             
  };
@@ -80,16 +54,15 @@ export const plusPalTS = (obj: { picker_check_value: boolean, picker_path:string
  * @param {string} layerName
  * @returns {number}
 //  */
-// function numberStroke (prefLayer:string){
-//    var newComp = app.project.activeItem;
-//    var prefix = prefLayer;
-//    let num: number=0; 
-//    for(var i=1;i<=newComp.numLayers;i++) 
-//    alert (newComp.layer(i).name);
-//    if(newComp.layer(i).name.substr(0, prefix.length) == prefix)
-//    num++;
-//   return num;  //количество строков
-// }
+export  function numberStroke (prefLayer:string, newComp:any):number{
+   var prefix = prefLayer;
+   let num: number=0; 
+   alert (newComp.numLayers);
+   for(var i=1;i<=newComp.numLayers;i++) 
+   if(newComp.layer(i).name.substr(0, prefix.length) == prefix)
+      num++;
+  return num;  //количество строков
+}
 
 
 /**
@@ -97,12 +70,11 @@ export const plusPalTS = (obj: { picker_check_value: boolean, picker_path:string
  * @param {number}  layerNum
  * @param {string} layerName 
  */
-//         function layerRang (layerNum, layerName){ 
-//          var newComp = app.project.activeItem;
-//          var prefix = layerName;
-//          newComp.layer(prefix  + 1).moveToBeginning();
-//          for (var x = 2; x<=layerNum; x++){
-//           newComp.layer(prefix  + x).moveAfter(newComp.layer(prefix  +(x-1)));
-//           }
-//  }
+     export   function layerRang (layerNum: number, layerName: string, newComp: any){ 
+         var prefix = layerName;
+         newComp.layer(prefix  + 1).moveToBeginning();
+         for (var x = 2; x<=layerNum; x++){
+          newComp.layer(prefix  + x).moveAfter(newComp.layer(prefix  +(x-1)));
+          }
+ }
  

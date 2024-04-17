@@ -14,7 +14,7 @@ import {hexToRgb} from '../../../functionModule/function'
 import {writeData} from '../../../functionModule/function'
 import {readData} from '../../../functionModule/function'
 import {rgbToHexOne} from '../../../functionModule/function'
- import { Preloader } from './Preloader';
+//  import { Preloader } from './Preloader';
 
 
 class Tab_color extends React.Component {
@@ -25,7 +25,7 @@ class Tab_color extends React.Component {
          checkColorpicer: true,
          colors: ["5b82b3","86cab9","d5e390","fafa98","fabb86"],
          oldColor: "0xdd1dd6",
-         loading: true,
+         // loading: true,
       }
       
       pathWriteEndReadColor: string = '/public/settingsData/customColorData_01.json';             
@@ -52,6 +52,12 @@ class Tab_color extends React.Component {
                this.setState({colors: newArr});
          });
         };
+
+      //   colorizePalet = ()=>{    
+      //    evalES("colorizePaletTS")(() => {
+               
+      //    });
+      //   };
    
 
    handleColorpickerChange = (e: any) => {
@@ -78,24 +84,32 @@ class Tab_color extends React.Component {
          checkColorpicer: dataColorStart.checkColorpicer, 
          colors:dataColorStart.colors, 
          oldColor:dataColorStart.oldColor,
-          // loading: false,
+         // loading: false,
       });
       }
 
       componentDidUpdate(): void {
          writeData(this.state, this.pathWriteEndReadColor);
       }
+       jsxTest = () => {
+         console.log(evalES(`helloWorld("${csi.getApplicationID()}")`));
+       };
 
    render(){
       
-      function proba(): void{
-         alert('Ok');
-      }
+      // function proba(): void{
+
+      //    alert('Ok');
+         
+      // }
+
+
+       
       function openPanel(): void{
          csi.requestOpenExtension('com.Bolt-CEP_Test.cep.settings',0);
       }
 
-      const {checkColorpicer, colors, loading,} = this.state
+      const {checkColorpicer, colors, /*loading,*/} = this.state
 
       return(
        <div className="bloc_palets tab-color tab-b visible">
@@ -107,7 +121,7 @@ class Tab_color extends React.Component {
           </div>
           <div className="blok_palet">
             <Colors colors= {colors} replaceAndMinusColor ={this.replaceAndMinusColor}/> 
-            {/* {
+             {/* {
             loading ? (  
                 < Preloader/>      
                 ): <Colors colors= {colors} replaceAndMinusColor ={this.replaceAndMinusColor}/>
@@ -119,7 +133,7 @@ class Tab_color extends React.Component {
              <div /*onClick={}*/ className="button bt4" id="btn_reset">Res</div>
           </div>
           <div className="buttons">
-             <div onClick={proba} className="button bt5" >Save</div>
+             <div onClick={this.jsxTest} className="button bt5" >Save</div>
              <div onClick={openPanel} className="button bt6">ColorPal</div>
           </div>
      </fieldset>

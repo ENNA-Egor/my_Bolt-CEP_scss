@@ -18,13 +18,33 @@ import {
 
 export {plusPalTS};
 
-
+import {numberStroke,} from './functionTabColor'
+import {layerRang} from './functionTabColor'
 
 
 
 
 export const helloWorld = () => {
   alert("Hellooo from After Effects!");
-  app.project.activeItem;
+  var prefLayer: string = "";
+  var newComp = app.project.activeItem;
+  if (!newComp){
+        alert ("Please select composition");
+        return;
+     }
+     if (newComp){
+      if (newComp.name.substr(0, 11) == "TrSC_Circle"){
+         prefLayer = "TrCircle_"}
+         else if (newComp.name.substr(0, 12) == "TrSC_Polygon"){
+            prefLayer = "TrPolygon_"}
+
+            alert(prefLayer);
+
+            var numStr: number = numberStroke(prefLayer, newComp);
+             layerRang (numStr, prefLayer, newComp);
+     }
 };
+
+
+
 
