@@ -14,6 +14,7 @@ import {hexToRgb} from '../../../functionModule/function'
 import {writeData} from '../../../functionModule/function'
 import {readData} from '../../../functionModule/function'
 import {rgbToHexOne} from '../../../functionModule/function'
+ import { Preloader } from './Preloader';
 
 
 class Tab_color extends React.Component {
@@ -24,6 +25,7 @@ class Tab_color extends React.Component {
          checkColorpicer: true,
          colors: ["5b82b3","86cab9","d5e390","fafa98","fabb86"],
          oldColor: "0xdd1dd6",
+         loading: true,
       }
       
       pathWriteEndReadColor: string = '/public/settingsData/customColorData_01.json';             
@@ -75,7 +77,9 @@ class Tab_color extends React.Component {
         this.setState({
          checkColorpicer: dataColorStart.checkColorpicer, 
          colors:dataColorStart.colors, 
-         oldColor:dataColorStart.oldColor});
+         oldColor:dataColorStart.oldColor,
+          // loading: false,
+      });
       }
 
       componentDidUpdate(): void {
@@ -91,7 +95,7 @@ class Tab_color extends React.Component {
          csi.requestOpenExtension('com.Bolt-CEP_Test.cep.settings',0);
       }
 
-      const {checkColorpicer, colors} = this.state
+      const {checkColorpicer, colors, loading,} = this.state
 
       return(
        <div className="bloc_palets tab-color tab-b visible">
@@ -102,7 +106,12 @@ class Tab_color extends React.Component {
           <input type="checkbox" checked={checkColorpicer} onChange={this.handleColorpickerChange} className="n_points  check" name="checkColorpicer"/>
           </div>
           <div className="blok_palet">
-            <Colors colors= {colors} replaceAndMinusColor ={this.replaceAndMinusColor}/>   
+            <Colors colors= {colors} replaceAndMinusColor ={this.replaceAndMinusColor}/> 
+            {/* {
+            loading ? (  
+                < Preloader/>      
+                ): <Colors colors= {colors} replaceAndMinusColor ={this.replaceAndMinusColor}/>
+           }   */}
           </div>
           <div className="buttons">
              <div onClick={this.plusPal} className="button bt1 disableElement" id="btnPlus"></div>

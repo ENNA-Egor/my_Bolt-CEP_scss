@@ -3,7 +3,7 @@ import { os, path, fs } from '../../../lib/cep/node';
 import { csi, evalES, evalTS } from '../../../lib/utils/bolt';
 import { writeData } from '../../../functionModule/function';
 import { readData } from '../../../functionModule/function';
-// import { Preloader } from './Preloader';
+
 
 class Tab_setting extends React.Component {
    state = {
@@ -13,10 +13,9 @@ class Tab_setting extends React.Component {
       framerate: 25,
       duration: 6,
       influence: 60,
-      durLock: false,
-      loading: true,
+      durLock: false,    
    };
-   // }
+
 
    pathWriteEndReadSettings: string =
       '/public/settingsData/customSettigsData_01.json';
@@ -30,21 +29,17 @@ class Tab_setting extends React.Component {
          custom_FR: 25,
          lockDurations: this.state.durLock,
       }).then((res) => {
-         // this.setState({ resolution_w: res.custom_w});
-         // this.setState({ resolution_h: res.custom_h});
          this.setState({
             resolution_w: res.custom_w,
             resolution_h: res.custom_h,
             framerate: res.custom_FR,
             duration: res.custom_Dur,
          });
-         // this.setState({ duration: res.custom_Dur});
       });
    };
 
    changeInput = (e: any) => {
       this.setState({ [e.target.name]: e.target.value });
-      // let newState = this.state;
    };
 
    handleCheckboxChange = (e: any) => {
@@ -62,7 +57,6 @@ class Tab_setting extends React.Component {
          num_element: dataSettingsStart.num_element,
          influence: dataSettingsStart.influence,
          durLock: dataSettingsStart.durLock,
-         // loading: false,
       });
    }
 
@@ -70,7 +64,7 @@ class Tab_setting extends React.Component {
       writeData(this.state, this.pathWriteEndReadSettings);
    }
    render() {
-      const {num_element, resolution_w, resolution_h, framerate, duration, influence, durLock, /*loading,*/} = this.state;
+      const {num_element, resolution_w, resolution_h, framerate, duration, influence, durLock,} = this.state;
 
       return (
          
