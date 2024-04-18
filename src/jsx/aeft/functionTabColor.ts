@@ -1,3 +1,4 @@
+import {add_color_shape } from './functionTabColorSett'
 
 export const replaceColorTS = (obj: { picker_check_value: boolean, picker_path:string, colorStart: string, arrIndex: number}) => {
    var prefLayer: string = "";
@@ -78,3 +79,25 @@ export  function numberStroke (prefLayer:string, newComp:any):number{
           }
  }
  
+
+ export const helloWorld = (color:string[]) => {
+   alert("Hellooo from After Effects!");
+   var prefLayer: string = "";
+   var newComp = app.project.activeItem;
+   if (!newComp){
+         alert ("Please select composition");
+         return;
+      }
+      if (newComp){
+       if (newComp.name.substr(0, 11) == "TrSC_Circle"){
+          prefLayer = "TrCircle_"}
+          else if (newComp.name.substr(0, 12) == "TrSC_Polygon"){
+             prefLayer = "TrPolygon_"}
+ 
+             alert(prefLayer);
+ 
+             var numStr: number = numberStroke(prefLayer, newComp);
+              layerRang (numStr, prefLayer, newComp);
+      }
+      add_color_shape(color);
+ };

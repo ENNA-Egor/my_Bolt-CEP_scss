@@ -94,7 +94,15 @@ class Tab_color extends React.Component {
 
       
        jsxTest = () => {
-         console.log(evalES(`helloWorld("${csi.getApplicationID()}")`));
+         // console.log(evalES(`helloWorld("${csi.getApplicationID()}")`));
+         evalTS("helloWorld", {color: this.state.colors}).then((res) => {
+            // let colVal = hexToRgb(res);
+            // let resNew = rgbToHexOne(colVal);
+            // this.setState({ololdCor: resNew});
+            // let newArr = this.state.colors;
+            // newArr.push(resNew);
+            // this.setState({colors: newArr});
+      });
        };
 
    render(){

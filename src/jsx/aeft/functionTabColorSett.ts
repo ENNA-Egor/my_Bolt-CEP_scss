@@ -1,5 +1,6 @@
-export function add_color_shape(sett){
-    var colorArrShape = sett.split(',');
+export function add_color_shape(sett:string[]){
+   //  var colorArrShape = sett.split(',');
+    var colorArrShape = sett;
     var newComp = app.project.activeItem;
     if (!newComp){
       alert ("Please select composition");
