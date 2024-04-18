@@ -1,22 +1,26 @@
-export function add_color_shape(sett:string[]){
+import {hexToRgb} from './functionTabColor'
+
+
+export function add_color_shape(sett:string[], newComp:any, numStr:number, prefLayer:string){
    //  var colorArrShape = sett.split(',');
     var colorArrShape = sett;
-    var newComp = app.project.activeItem;
-    if (!newComp){
-      alert ("Please select composition");
-      return -1;
-   }
+    var i:number;
+   //  var newComp = app.project.activeItem;
+   //  if (!newComp){
+   //    alert ("Please select composition");
+   //    return;
+   // }
    
-    if (newComp.name.substr(0, 11) == "TrSC_Circle"){
-      var prefLayer = "TrCircle_"}
-      else if (newComp.name.substr(0, 12) == "TrSC_Polygon"){
-      prefLayer = "TrPolygon_"}
-      var numStr = numberStroke(prefLayer);
-         layerRang (numStr, prefLayer);
+   //  if (newComp.name.substr(0, 11) == "TrSC_Circle"){
+   //    var prefLayer = "TrCircle_"}
+   //    else if (newComp.name.substr(0, 12) == "TrSC_Polygon"){
+   //    prefLayer = "TrPolygon_"}
+   //    var numStr = numberStroke(prefLayer);
+   //       layerRang (numStr, prefLayer);
       var nCol = colorArrShape.length;
       if (numStr>nCol){
          for(var m=0; m<numStr; m++){
-            realStr =  m+1;
+            var realStr =  m+1;
             var nameShape =prefLayer+realStr;
             var col =(m%nCol);
             for(i=0;i<nCol; i++){

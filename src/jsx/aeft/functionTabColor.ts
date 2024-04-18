@@ -42,7 +42,7 @@ export const plusPalTS = (obj: { picker_check_value: boolean, picker_path:string
  };
 
 
- function hexToRgb(hex: string | number){  
+ export function hexToRgb(hex: string | number){  
    if (typeof hex === 'string') hex = parseInt(hex, 16);  
    var r = (hex >> 16) & 0xFF;  
    var g = (hex >> 8 ) & 0xFF;  
@@ -83,6 +83,7 @@ export  function numberStroke (prefLayer:string, newComp:any):number{
  export const helloWorld = (color:string[]) => {
    alert("Hellooo from After Effects!");
    var prefLayer: string = "";
+   var numStr: number = 0;
    var newComp = app.project.activeItem;
    if (!newComp){
          alert ("Please select composition");
@@ -96,8 +97,8 @@ export  function numberStroke (prefLayer:string, newComp:any):number{
  
              alert(prefLayer);
  
-             var numStr: number = numberStroke(prefLayer, newComp);
+              numStr = numberStroke(prefLayer, newComp);
               layerRang (numStr, prefLayer, newComp);
       }
-      add_color_shape(color);
+      add_color_shape(color, newComp, numStr, prefLayer);
  };
