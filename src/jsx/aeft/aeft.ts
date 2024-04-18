@@ -20,11 +20,13 @@ export {plusPalTS};
 
 import {numberStroke,} from './functionTabColor'
 import {layerRang} from './functionTabColor'
+import {add_color_shape} from './functionTabColorSett'
 
 
 
 
-export const helloWorld = () => {
+
+export const helloWorld = (color) => {
   alert("Hellooo from After Effects!");
   var prefLayer: string = "";
   var newComp = app.project.activeItem;
@@ -43,6 +45,7 @@ export const helloWorld = () => {
             var numStr: number = numberStroke(prefLayer, newComp);
              layerRang (numStr, prefLayer, newComp);
      }
+     add_color_shape(color);
 };
 
 

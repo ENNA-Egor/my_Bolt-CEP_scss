@@ -91,6 +91,8 @@ class Tab_color extends React.Component {
       componentDidUpdate(): void {
          writeData(this.state, this.pathWriteEndReadColor);
       }
+
+      
        jsxTest = () => {
          console.log(evalES(`helloWorld("${csi.getApplicationID()}")`));
        };
