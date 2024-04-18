@@ -16,7 +16,7 @@ export const replaceColorTS = (obj: { picker_check_value: boolean, picker_path:s
    } else {
       var color = $.colorPicker(color);
    }
-            var colVal = hexToRgb(color);
+            // var colVal = hexToRgb(color);
                return color;
 
                
@@ -42,12 +42,15 @@ export const plusPalTS = (obj: { picker_check_value: boolean, picker_path:string
  };
 
 
- export function hexToRgb(hex: string | number){  
+ export function hexToRgb(hex: string | number){ 
+   alert('Ok') 
    if (typeof hex === 'string') hex = parseInt(hex, 16);  
    var r = (hex >> 16) & 0xFF;  
    var g = (hex >> 8 ) & 0xFF;  
    var b = (hex >> 0 ) & 0xFF;  
-   return 'rgb'+ '('+r+',' +g+','+ b +')';  
+   alert('rgb'+ '('+r+',' +g+','+ b +')');  
+   // return 'rgb'+ '('+r+',' +g+','+ b +')';  
+   return [r,g, b];  
   }
 
   /**
@@ -58,7 +61,6 @@ export const plusPalTS = (obj: { picker_check_value: boolean, picker_path:string
 export  function numberStroke (prefLayer:string, newComp:any):number{
    var prefix = prefLayer;
    let num: number=0; 
-   alert (newComp.numLayers);
    for(var i=1;i<=newComp.numLayers;i++) 
    if(newComp.layer(i).name.substr(0, prefix.length) == prefix)
       num++;
@@ -81,7 +83,6 @@ export  function numberStroke (prefLayer:string, newComp:any):number{
  
 
  export const helloWorld = (color:string[]) => {
-   alert("Hellooo from After Effects!");
    var prefLayer: string = "";
    var numStr: number = 0;
    var newComp = app.project.activeItem;
@@ -94,11 +95,9 @@ export  function numberStroke (prefLayer:string, newComp:any):number{
           prefLayer = "TrCircle_"}
           else if (newComp.name.substr(0, 12) == "TrSC_Polygon"){
              prefLayer = "TrPolygon_"}
- 
-             alert(prefLayer);
- 
+
               numStr = numberStroke(prefLayer, newComp);
               layerRang (numStr, prefLayer, newComp);
-      }
+      }//@ts-ignore
       add_color_shape(color, newComp, numStr, prefLayer);
  };

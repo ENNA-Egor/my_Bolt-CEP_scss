@@ -91,11 +91,12 @@ class Tab_color extends React.Component {
       componentDidUpdate(): void {
          writeData(this.state, this.pathWriteEndReadColor);
       }
-
       
        jsxTest = () => {
          // console.log(evalES(`helloWorld("${csi.getApplicationID()}")`));
-         evalTS("helloWorld", {color: this.state.colors}).then((res) => {
+         // const colorsStr = JSON.stringify(this.state.colors);
+         //@ts-ignore
+         evalTS("helloWorld", this.state.colors).then((res) => {
             // let colVal = hexToRgb(res);
             // let resNew = rgbToHexOne(colVal);
             // this.setState({ololdCor: resNew});
