@@ -43,12 +43,10 @@ export const plusPalTS = (obj: { picker_check_value: boolean, picker_path:string
 
 
  export function hexToRgb(hex: string | number){ 
-   alert('Ok') 
    if (typeof hex === 'string') hex = parseInt(hex, 16);  
    var r = ((hex >> 16) & 0xFF)/255;  
    var g = ((hex >> 8 ) & 0xFF)/255;  
-   var b = ((hex >> 0 ) & 0xFF)/255;  // добавил деление на 255
-   alert('rgb'+ '('+r+',' +g+','+ b +')');  
+   var b = ((hex >> 0 ) & 0xFF)/255;  
    // return 'rgb'+ '('+r+',' +g+','+ b +')';  
    return [r,g, b];  
   }

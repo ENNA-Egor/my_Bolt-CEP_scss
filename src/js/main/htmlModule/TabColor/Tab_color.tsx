@@ -53,11 +53,6 @@ class Tab_color extends React.Component {
          });
         };
 
-      //   colorizePalet = ()=>{    
-      //    evalES("colorizePaletTS")(() => {
-               
-      //    });
-      //   };
    
 
    handleColorpickerChange = (e: any) => {
@@ -93,26 +88,13 @@ class Tab_color extends React.Component {
       }
       
        colorSet = () => {
-         // console.log(evalES(`helloWorld("${csi.getApplicationID()}")`));
-         // const colorsStr = JSON.stringify(this.state.colors);
-         //@ts-ignore
          evalTS("colorSetTS", this.state.colors).then((res) => {
-            // let colVal = hexToRgb(res);
-            // let resNew = rgbToHexOne(colVal);
-            // this.setState({ololdCor: resNew});
-            // let newArr = this.state.colors;
-            // newArr.push(resNew);
-            // this.setState({colors: newArr});
+
       });
        };
 
    render(){
-      
-      // function proba(): void{
 
-      //    alert('Ok');
-         
-      // }
 
 
        
