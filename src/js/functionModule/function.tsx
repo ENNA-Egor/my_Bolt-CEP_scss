@@ -1,6 +1,7 @@
 
 import { error } from "console";
 import {path, fs} from "../../js/lib/cep/node";
+import {evalTS} from '../lib/utils/bolt'
 
 export function hexToRgb(hex){  
    if (typeof hex === 'string') hex = parseInt(hex, 16);  
@@ -53,3 +54,11 @@ export function rgbToHexOne(resultn: string) {
  };
 
 
+
+
+//  export function addColor(color){
+//       evalTS("colorSetTS", color).then((res) => {
+//    });
+//     };
+
+ 

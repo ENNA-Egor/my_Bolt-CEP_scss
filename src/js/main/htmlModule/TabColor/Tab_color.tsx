@@ -14,6 +14,7 @@ import {hexToRgb} from '../../../functionModule/function'
 import {writeData} from '../../../functionModule/function'
 import {readData} from '../../../functionModule/function'
 import {rgbToHexOne} from '../../../functionModule/function'
+// import {addColor} from '../../../functionModule/function'
 //  import { Preloader } from './Preloader';
 
 
@@ -68,7 +69,8 @@ class Tab_color extends React.Component {
              newArr.splice(arrIndex, 1);
              this.setState({colors: newArr});
          }else{
-            this.replaceColor(arrIndex)
+            this.replaceColor(arrIndex);
+            // addColor(this.state.colors);
          }
    }
 
