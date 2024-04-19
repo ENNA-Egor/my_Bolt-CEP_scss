@@ -82,7 +82,7 @@ export  function numberStroke (prefLayer:string, newComp:any):number{
  }
  
 
- export const helloWorld = (color:string[]) => {
+ export const colorSetTS = (color:string[]) => {
    var prefLayer: string = "";
    var numStr: number = 0;
    var newComp = app.project.activeItem;

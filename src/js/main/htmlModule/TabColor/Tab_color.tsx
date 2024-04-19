@@ -92,11 +92,11 @@ class Tab_color extends React.Component {
          writeData(this.state, this.pathWriteEndReadColor);
       }
       
-       jsxTest = () => {
+       colorSet = () => {
          // console.log(evalES(`helloWorld("${csi.getApplicationID()}")`));
          // const colorsStr = JSON.stringify(this.state.colors);
          //@ts-ignore
-         evalTS("helloWorld", this.state.colors).then((res) => {
+         evalTS("colorSetTS", this.state.colors).then((res) => {
             // let colVal = hexToRgb(res);
             // let resNew = rgbToHexOne(colVal);
             // this.setState({ololdCor: resNew});
@@ -144,7 +144,7 @@ class Tab_color extends React.Component {
              <div /*onClick={}*/ className="button bt4" id="btn_reset">Res</div>
           </div>
           <div className="buttons">
-             <div onClick={this.jsxTest} className="button bt5" >Save</div>
+             <div onClick={this.colorSet} className="button bt5" >Save</div>
              <div onClick={openPanel} className="button bt6">ColorPal</div>
           </div>
      </fieldset>
