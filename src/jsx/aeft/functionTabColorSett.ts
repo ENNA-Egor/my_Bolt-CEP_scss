@@ -37,6 +37,7 @@ export function add_color_shape(sett:string, newComp:any, numStr:number, prefLay
             var newcolorArrShape = hexToRgb(colorArrShape[n-1]);
             newComp.layer(nameShape).property("ADBE Root Vectors Group").property("ADBE Vector Group").property("ADBE Vectors Group").property("ADBE Vector Graphic - Stroke").property("ADBE Vector Stroke Color").setValue ([newcolorArrShape[0], newcolorArrShape[1], newcolorArrShape[2]]);
             // попробовать вот такой формат "0x5b82b3" т.е. var newcolorArrShape = '0x'+`${colorArrShape[n-1]}`;
+            // а вероятнее всего тут проблема с тем что надо результат делить на 255
          }
       }
     }
