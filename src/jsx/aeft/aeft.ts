@@ -20,7 +20,7 @@ export {plusPalTS};
 import {
 
   colorSetTS,
-} from "./functionTabColor";
+} from "./functionTabColorSett";
 
 export {colorSetTS};
 

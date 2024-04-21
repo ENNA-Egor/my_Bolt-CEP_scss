@@ -1,4 +1,4 @@
-import {add_color_shape } from './functionTabColorSett'
+// import {add_color_shape } from './functionTabColorSett'
 
 export const replaceColorTS = (obj: { picker_check_value: boolean, picker_path:string, colorStart: string, arrIndex: number}) => {
    var prefLayer: string = "";
@@ -80,22 +80,3 @@ export  function numberStroke (prefLayer:string, newComp:any):number{
  }
  
 
- export const colorSetTS = (color:string[]) => {
-   var prefLayer: string = "";
-   var numStr: number = 0;
-   var newComp = app.project.activeItem;
-   if (!newComp){
-         alert ("Please select composition");
-         return;
-      }
-      if (newComp){
-       if (newComp.name.substr(0, 11) == "TrSC_Circle"){
-          prefLayer = "TrCircle_"}
-          else if (newComp.name.substr(0, 12) == "TrSC_Polygon"){
-             prefLayer = "TrPolygon_"}
-
-              numStr = numberStroke(prefLayer, newComp);
-              layerRang (numStr, prefLayer, newComp);
-      }//@ts-ignore
-      add_color_shape(color, newComp, numStr, prefLayer);
- };
