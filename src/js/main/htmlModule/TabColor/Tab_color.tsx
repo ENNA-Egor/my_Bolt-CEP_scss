@@ -26,6 +26,7 @@ class Tab_color extends React.Component {
          checkColorpicer: true,
          colors: ["5b82b3","86cab9","d5e390","fafa98","fabb86"],
          oldColor: "0xdd1dd6",
+         autoFill: false,
          // loading: true,
       }
       
@@ -87,6 +88,9 @@ class Tab_color extends React.Component {
 
       componentDidUpdate(): void {
          writeData(this.state, this.pathWriteEndReadColor);
+         if (this.state.autoFill=== true){
+            this.colorSet()
+         }
       }
       
        colorSet = () => {
@@ -104,7 +108,7 @@ class Tab_color extends React.Component {
          csi.requestOpenExtension('com.Bolt-CEP_Test.cep.settings',0);
       }
 
-      const {checkColorpicer, colors, /*loading,*/} = this.state
+      const {checkColorpicer, colors, autoFill,/*loading,*/} = this.state
 
       return(
        <div className="bloc_palets tab-color tab-b visible">
@@ -121,6 +125,10 @@ class Tab_color extends React.Component {
                 < Preloader/>      
                 ): <Colors colors= {colors} replaceAndMinusColor ={this.replaceAndMinusColor}/>
            }   */}
+          </div>
+          <div className="colorP">
+          <p>AutoFill</p>
+          <input type="checkbox" checked={autoFill} onChange={this.handleColorpickerChange} className="n_points  check" name="autoFill"/>
           </div>
           <div className="buttons">
              <div onClick={this.plusPal} className="button bt1 disableElement" id="btnPlus"></div>

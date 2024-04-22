@@ -17,12 +17,20 @@ import {
 } from "./functionTabColor";
 
 export {plusPalTS};
+
 import {
 
   colorSetTS,
 } from "./functionTabColorSett";
 
 export {colorSetTS};
+
+import {
+
+  createCircleTS,
+} from "./functionTabCreateCircle";
+
+export {createCircleTS};
 
 
 

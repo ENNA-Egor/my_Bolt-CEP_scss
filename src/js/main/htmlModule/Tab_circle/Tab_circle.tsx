@@ -1,4 +1,28 @@
-function Tab_circle(){
+import React  from "react";
+import {os, path, fs} from "../../../lib/cep/node"
+import {
+   csi,
+   evalES,
+   evalFile,
+   openLinkInBrowser,
+   subscribeBackgroundColor,
+   evalTS,
+ } from "../../../lib/utils/bolt";
+import { render } from "react-dom";
+
+
+
+class  Tab_circle extends React.Component{
+
+    // const text: string = 'CreateCircle';
+    // createCircle = ()=>{
+    //     evalTS("createCircleTS", {text: this.Text}).then((res) => {
+
+    //     });
+    //    };
+
+render(): React.ReactNode {
+    
     return(
         <div className="tab-circle tab-b hide">
         <fieldset className="field">
@@ -19,6 +43,8 @@ function Tab_circle(){
         </fieldset>   
     </div>   
     );
+}
+
  }
 
 
