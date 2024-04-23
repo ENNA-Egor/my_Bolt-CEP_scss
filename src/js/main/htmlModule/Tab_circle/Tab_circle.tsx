@@ -58,8 +58,8 @@ render(): React.ReactNode {
             </div> 
             <p>Add/End</p>
             <div className="add_end_blok" >
-                <div className="button button_plus"></div>
-                <div className="button button_minus"></div>
+                <div className="button button_plus" onClick={this.plusEl}></div>
+                <div className="button button_minus" onClick={this.minusEl}></div>
             </div>
         </fieldset>   
     </div>   
