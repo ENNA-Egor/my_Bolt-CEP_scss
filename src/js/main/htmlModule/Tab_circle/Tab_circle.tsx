@@ -12,59 +12,59 @@ import { render } from "react-dom";
 
 
 
-class  Tab_circle extends React.Component{
+function  Tab_circle(){
 
 
-    createCircle = ()=>{
+    function createCircle  (){
         evalTS("createCircleTS", "createCircle").then((res) => {
         });
        };
 
 
-    butCap = ()=>{
+       function  butCap  (){
         evalTS("butCapTS", "butCap").then((res) => {
         });
        };
 
-    roundCap = ()=>{
+       function  roundCap  (){
         evalTS("roundCapTS", "roundCap").then((res) => {
         });
        };
 
-    plusEl = ()=>{
+       function plusEl  (){
         evalTS("plusElTS", "plusEl").then((res) => {
         });
        };
 
-    minusEl = ()=>{
+       function  minusEl  (){
         evalTS("minusElTS", "minusEl").then((res) => {
         });
        };
 
 
-render(): React.ReactNode {
+// render(): React.ReactNode {
     
     return(
         <div className="tab-circle tab-b hide">
         <fieldset className="field">
         <legend>Circle</legend>
             <div className="circle-blok">
-                <div className="button buttonC" onClick={this.createCircle}>Create</div>
+                <div className="button buttonC" onClick={createCircle}>Create</div>
             </div>  
             <p>Cap</p>
             <div className="linecap_blok" >
-                <div className="button button_cap  but" onClick={this.butCap}></div>
-                <div className="button button_cap round"  onClick={this.roundCap}></div>
+                <div className="button button_cap  but" onClick={butCap}></div>
+                <div className="button button_cap round"  onClick={roundCap}></div>
             </div> 
             <p>Add/End</p>
             <div className="add_end_blok" >
-                <div className="button button_plus" onClick={this.plusEl}></div>
-                <div className="button button_minus" onClick={this.minusEl}></div>
+                <div className="button button_plus" onClick={plusEl}></div>
+                <div className="button button_minus" onClick={minusEl}></div>
             </div>
         </fieldset>   
     </div>   
     );
-}
+// }
 
  }
 

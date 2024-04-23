@@ -82,6 +82,7 @@ class Tab_color extends React.Component {
          checkColorpicer: dataColorStart.checkColorpicer, 
          colors:dataColorStart.colors, 
          oldColor:dataColorStart.oldColor,
+         autoFill:dataColorStart.autoFill,
          // loading: false,
       });
       }
