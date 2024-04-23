@@ -1,61 +1,33 @@
 
-import {
-  customSettingsTS,
-} from "./functionTabSetting";
-
-export {customSettingsTS };
-
+import {customSettingsTS,} from "./functionTabSetting";
 
 import {
-  replaceColorTS,
-} from "./functionTabColor";
-
-export {replaceColorTS};
-
-import {
+  replaceColorTS, 
   plusPalTS,
 } from "./functionTabColor";
 
-export {plusPalTS};
+import {colorSetTS,} from "./functionTabColorSett";
+
+import {createCircleTS,} from "./functionTabCreateCircle";
 
 import {
-
-  colorSetTS,
-} from "./functionTabColorSett";
-
-export {colorSetTS};
-
-import {
-  createCircleTS,
-} from "./functionTabCreateCircle";
-
-export {createCircleTS};
-
-
-import {
-  butCapTS,
-} from "./functionTabCreateCircle";
-
-export {butCapTS};
-
-
-import {
-  roundCapTS,
-} from "./functionTabCreateCircle";
-
-export {roundCapTS};
-
-import {
-  plusElTS,
-} from "./functionTabCreateCircle";
-
-export {plusElTS};
-
-import {
+  butCapTS, 
+  roundCapTS, 
+  plusElTS, 
   minusElTS,
 } from "./functionTabCreateCircle";
 
-export {minusElTS};
+export {
+  customSettingsTS, 
+  replaceColorTS, 
+  plusPalTS, colorSetTS, 
+  createCircleTS, 
+  butCapTS, 
+  roundCapTS, 
+  plusElTS, 
+  minusElTS
+};
+
 
 
 

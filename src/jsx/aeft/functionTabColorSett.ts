@@ -5,6 +5,7 @@ import {layerRang} from './functionTabColor'
 
 
 export const colorSetTS = (color:string[]) => {
+   app.beginUndoGroup("Colorise Shape");
    var prefLayer: string = "";
    var numStr: number = 0;
    var newComp:_ItemClasses | null = app.project.activeItem;
@@ -46,5 +47,6 @@ export const colorSetTS = (color:string[]) => {
               newComp.layer(nameShape).property("ADBE Root Vectors Group").property("ADBE Vector Group").property("ADBE Vectors Group").property("ADBE Vector Graphic - Stroke").property("ADBE Vector Stroke Color").setValue ([newcolorArrShape[0], newcolorArrShape[1], newcolorArrShape[2]]);
            }
         }
+        app.endUndoGroup(); /// Отмена раскраски.
  };
 
