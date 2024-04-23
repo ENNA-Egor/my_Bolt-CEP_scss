@@ -14,12 +14,33 @@ import { render } from "react-dom";
 
 class  Tab_circle extends React.Component{
 
-    // const text: string = 'CreateCircle';
-    // createCircle = ()=>{
-    //     evalTS("createCircleTS", {text: this.Text}).then((res) => {
 
-    //     });
-    //    };
+    createCircle = ()=>{
+        evalTS("createCircleTS", "createCircle").then((res) => {
+        });
+       };
+
+
+    butCap = ()=>{
+        evalTS("butCapTS", "butCap").then((res) => {
+        });
+       };
+
+    roundCap = ()=>{
+        evalTS("roundCapTS", "roundCap").then((res) => {
+        });
+       };
+
+    plusEl = ()=>{
+        evalTS("plusElTS", "plusEl").then((res) => {
+        });
+       };
+
+    minusEl = ()=>{
+        evalTS("minusElTS", "minusEl").then((res) => {
+        });
+       };
+
 
 render(): React.ReactNode {
     
@@ -28,12 +49,12 @@ render(): React.ReactNode {
         <fieldset className="field">
         <legend>Circle</legend>
             <div className="circle-blok">
-                <div className="button buttonC">Create</div>
+                <div className="button buttonC" onClick={this.createCircle}>Create</div>
             </div>  
             <p>Cap</p>
             <div className="linecap_blok" >
-                <div className="button button_cap  but"></div>
-                <div className="button button_cap round"></div>
+                <div className="button button_cap  but" onClick={this.butCap}></div>
+                <div className="button button_cap round"  onClick={this.roundCap}></div>
             </div> 
             <p>Add/End</p>
             <div className="add_end_blok" >

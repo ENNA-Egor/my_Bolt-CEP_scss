@@ -25,11 +25,37 @@ import {
 
 export {colorSetTS};
 
-// import {
-//   createCircleTS,
-// } from "./functionTabCreateCircle";
+import {
+  createCircleTS,
+} from "./functionTabCreateCircle";
 
-// export {createCircleTS};
+export {createCircleTS};
+
+
+import {
+  butCapTS,
+} from "./functionTabCreateCircle";
+
+export {butCapTS};
+
+
+import {
+  roundCapTS,
+} from "./functionTabCreateCircle";
+
+export {roundCapTS};
+
+import {
+  plusElTS,
+} from "./functionTabCreateCircle";
+
+export {plusElTS};
+
+import {
+  minusElTS,
+} from "./functionTabCreateCircle";
+
+export {minusElTS};
 
 
 
