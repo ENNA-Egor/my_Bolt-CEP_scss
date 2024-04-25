@@ -9,13 +9,11 @@ import {
    evalTS,
  } from "../../../lib/utils/bolt";
 import { render } from "react-dom";
-import Colors from './Colors'
-import {hexToRgb} from '../../../functionModule/function'
-import {writeData} from '../../../functionModule/function'
-import {readData} from '../../../functionModule/function'
-import {rgbToHexOne} from '../../../functionModule/function'
-// import {addColor} from '../../../functionModule/function'
-//  import { Preloader } from './Preloader';
+import Colors from './Colors';
+import {hexToRgb} from '../../../functionModule/function';
+import {writeData} from '../../../functionModule/function';
+import {readData} from '../../../functionModule/function';
+import {rgbToHexOne} from '../../../functionModule/function';
 
 
 class Tab_color extends React.Component {

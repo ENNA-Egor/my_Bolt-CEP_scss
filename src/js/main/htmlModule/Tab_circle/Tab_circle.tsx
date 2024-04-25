@@ -8,14 +8,24 @@ import {
    subscribeBackgroundColor,
    evalTS,
  } from "../../../lib/utils/bolt";
+ import {readData} from '../../../functionModule/function'
 import { render } from "react-dom";
 
 
 
 function  Tab_circle(){
 
+    const pathWriteEndReadSettings: string =
+      '/public/settingsData/customSettigsData_01.json';
+
 
     function createCircle  (){
+        let dataSettings = readData(pathWriteEndReadSettings);
+      const dataSettingsStart = JSON.parse(dataSettings);
+      alert (dataSettingsStart);
+      alert (dataSettingsStart.resolution_w);
+      alert (dataSettingsStart.framerate);
+      alert (dataSettingsStart.num_element);
         evalTS("createCircleTS", "createCircle").then((res) => {
         });
        };
