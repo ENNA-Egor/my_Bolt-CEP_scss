@@ -1,9 +1,9 @@
 import React, { createContext, useState} from "react";
 
-export const StartContext = createContext();
+export const StartContext = createContext<unknown>(0);
 
 export  const Context = (props) => {
-    const [] = useState([
+    const [customData, setCustomData] = useState([
         {
             "checkColorpicer":true,
             "colors":["5b82b3","86cab9","d5e390","fafa98","fabb86"],
@@ -20,5 +20,12 @@ export  const Context = (props) => {
         }
     ]);
 
+        const valueData ={
+            customData,
+        }
+
+            return <StartContext.Provider value={valueData}>
+                {props.children}
+            </StartContext.Provider>
     
 }
