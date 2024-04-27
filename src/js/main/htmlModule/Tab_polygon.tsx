@@ -1,11 +1,29 @@
+import React, {useContext}  from "react";
+import {os, path, fs} from "../../lib/cep/node"
+import {
+   csi,
+   evalES,
+   evalFile,
+   openLinkInBrowser,
+   subscribeBackgroundColor,
+   evalTS,
+ } from "../../lib/utils/bolt";
+import { render } from "react-dom";
+
+import { StartContext } from "../Context";
+
 function Tab_polygon(){
+      const {customData = []} = useContext (StartContext);
+
+      alert (customData);
+      const npoint = customData.num_element;
     return(
         <div className="tab-polygon tab-b  hide">
         <fieldset className="field">
            <legend>Polygon</legend>
            <div className="polygon-blok point-blok">
            <p className="n_points">Number Points</p>
-           <input type="text" className="n_points  inp" name="num_points" min="3" max="15" defaultValue="5"/>
+           <input type="text" className="n_points  inp" name="num_points" min="3" max="15" defaultValue={npoint}/>
            </div>
            <div className="polygon-blok">
               <div className="button buttonP">Create</div>

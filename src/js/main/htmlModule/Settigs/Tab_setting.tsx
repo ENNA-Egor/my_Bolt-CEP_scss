@@ -1,6 +1,8 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { os, path, fs } from '../../../lib/cep/node';
 import { csi, evalES, evalTS } from '../../../lib/utils/bolt';
+import { StartContext } from '../../Context';
+
 import { writeData } from '../../../functionModule/function';
 import { readData } from '../../../functionModule/function';
 

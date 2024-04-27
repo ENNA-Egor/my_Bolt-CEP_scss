@@ -1,4 +1,4 @@
-import React  from "react";
+import React, {useContext}  from "react";
 import {os, path, fs} from "../../../lib/cep/node"
 import {
    csi,
@@ -9,6 +9,8 @@ import {
    evalTS,
  } from "../../../lib/utils/bolt";
 import { render } from "react-dom";
+import {StartContext} from '../../Context';
+
 import Colors from './Colors';
 import {hexToRgb} from '../../../functionModule/function';
 import {writeData} from '../../../functionModule/function';
