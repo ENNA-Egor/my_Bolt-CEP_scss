@@ -6,8 +6,7 @@ import Tab_setting from './Settigs/Tab_setting';
 import { Context } from '../Context';
 
 function Tabs() {
-  return <Context>
-    (
+  return (
      <div className="tabs-body">
        <Tab_circle />
        <Tab_polygon />
@@ -15,7 +14,6 @@ function Tabs() {
        <Tab_setting />
      </div>
    );
-  </Context>
 
 }
 

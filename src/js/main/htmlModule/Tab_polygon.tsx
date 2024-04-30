@@ -13,10 +13,8 @@ import { render } from "react-dom";
 import { StartContext } from "../Context";
 
 function Tab_polygon(){
-      const {customData = []} = useContext (StartContext);
-
-      alert (customData);
-      const npoint = customData.num_element;
+       const {customData =[]} = useContext (StartContext);
+      const npoint = customData[0].num_point;
     return(
         <div className="tab-polygon tab-b  hide">
         <fieldset className="field">
