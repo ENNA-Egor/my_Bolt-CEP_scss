@@ -21,7 +21,7 @@ function Tab_polygon(){
            <legend>Polygon</legend>
            <div className="polygon-blok point-blok">
            <p className="n_points">Number Points</p>
-           <input type="text" className="n_points  inp" name="num_points" min="3" max="15" defaultValue={npoint}/>
+           <input type="text" className="n_points  inp" name="num_points" min="3" max="15" value={npoint}/>
            </div>
            <div className="polygon-blok">
               <div className="button buttonP">Create</div>

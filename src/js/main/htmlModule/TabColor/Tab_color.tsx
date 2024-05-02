@@ -121,11 +121,6 @@ class Tab_color extends React.Component {
           </div>
           <div className="blok_palet">
             <Colors colors= {colors} replaceAndMinusColor ={this.replaceAndMinusColor}/> 
-             {/* {
-            loading ? (  
-                < Preloader/>      
-                ): <Colors colors= {colors} replaceAndMinusColor ={this.replaceAndMinusColor}/>
-           }   */}
           </div>
           <div className="colorP">
           <p>AutoFill</p>
