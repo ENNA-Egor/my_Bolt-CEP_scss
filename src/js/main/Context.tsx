@@ -3,7 +3,7 @@ import React, { createContext, useState} from "react";
 export const StartContext = createContext<any>(0);
 
 export  const Context = (props) => {
-    const [customData, setCustomData] = useState([
+    const [customData, setCustomData] = useState(
         {
             checkColorpicer : true,
             colors:["5b82b3","86cab9","d5e390","fafa98","fabb86"],
@@ -17,12 +17,22 @@ export  const Context = (props) => {
             influence:60,
             durLock:false, 
             loading: true,
-            num_point: 6,
+            num_points: 6,
         }
-    ]);
+    );
+    const changeInput = (name, value) => {
+        alert('value   '+value);
+        alert(name);
+        setCustomData({
+            ...customData,
+            num_points : value,
+        });
+     };
+
 
         const valueData ={
             customData,
+            changeInput,
         }
 
             return <StartContext.Provider value={valueData}>

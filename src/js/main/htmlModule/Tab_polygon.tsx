@@ -11,17 +11,28 @@ import {
 import { render } from "react-dom";
 
 import { StartContext } from "../Context";
+import { allowedImportFiles } from "../../lib/utils/ppro";
 
 function Tab_polygon(){
-       const {customData =[]} = useContext (StartContext);
-      const npoint = customData[0].num_point;
-    return(
+       const {customData ={}, changeInput} = useContext (StartContext);
+      const npoint = customData.num_points;
+      const framerate = customData.framerate;
+      alert (framerate)
+
+     const changeInputOn = (e: any) => {
+         alert([e.target.name]);
+         alert(e.target.value);
+         changeInput( [e.target.name] , e.target.value);
+      };
+   
+
+      return(
         <div className="tab-polygon tab-b  hide">
         <fieldset className="field">
            <legend>Polygon</legend>
            <div className="polygon-blok point-blok">
            <p className="n_points">Number Points</p>
-           <input type="text" className="n_points  inp" name="num_points" min="3" max="15" value={npoint}/>
+           <input onChange={changeInputOn} type="text" className="n_points  inp" name="num_points" min="3" max="15" value={npoint}/>
            </div>
            <div className="polygon-blok">
               <div className="button buttonP">Create</div>
