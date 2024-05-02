@@ -12,6 +12,7 @@ import { render } from "react-dom";
 import {StartContext} from '../../Context';
 
 import Colors from './Colors';
+import {Preloader} from './Preloader'
 import {hexToRgb} from '../../../functionModule/function';
 import {writeData} from '../../../functionModule/function';
 import {readData} from '../../../functionModule/function';
@@ -24,7 +25,7 @@ class Tab_color extends React.Component {
 
     state = {
          checkColorpicer: true,
-         colors: ["5b82b3","86cab9","d5e390","fafa98","fabb86"],
+        colors:[''],//["5b82b3","86cab9","d5e390","fafa98","fabb86"],
          oldColor: "0xdd1dd6",
          autoFill: false,
          // loading: true,
@@ -119,9 +120,13 @@ class Tab_color extends React.Component {
           <p>ColorPicker_AE</p>
           <input type="checkbox" checked={checkColorpicer} onChange={this.handleColorpickerChange} className="n_points  check" name="checkColorpicer"/>
           </div>
+         {
+          colors.length ? (
           <div className="blok_palet">
             <Colors colors= {colors} replaceAndMinusColor ={this.replaceAndMinusColor}/> 
           </div>
+          ) : <Preloader/> 
+          }
           <div className="colorP">
           <p>AutoFill</p>
           <input type="checkbox" checked={autoFill} onChange={this.handleColorpickerChange} className="n_points  check" name="autoFill"/>
