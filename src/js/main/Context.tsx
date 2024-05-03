@@ -21,8 +21,6 @@ export  const Context = (props) => {
         }
     );
     const changeInput = (targetName:string, targetValue:number) => {
-        alert('value   '+targetValue);
-        alert(targetName);
         setCustomData((prevState) =>{
             return {
             ...prevState,

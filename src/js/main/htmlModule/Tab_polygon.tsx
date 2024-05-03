@@ -16,12 +16,7 @@ import { allowedImportFiles } from "../../lib/utils/ppro";
 function Tab_polygon(){
        const {customData ={}, changeInput} = useContext (StartContext);
       const npoint = customData.num_points;
-      const framerate = customData.framerate;
-      alert (framerate)
-
      const changeInputOn = (e: any) => {
-         alert([e.target.name]);
-         alert(e.target.value);
          changeInput( [e.target.name] , e.target.value);
       };
    

@@ -10,10 +10,10 @@ import { Context } from './Context';
 initBolt();
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <Context>
   <React.StrictMode>
     <Main />
-    <Tabs/>
+      <Context>
+        <Tabs/>
+      </Context>
   </React.StrictMode>
-  </Context>
 );
