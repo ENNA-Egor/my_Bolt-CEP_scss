@@ -20,12 +20,14 @@ export  const Context = (props) => {
             num_points: 6,
         }
     );
-    const changeInput = (name, value) => {
+    const changeInput = (name:string, value:number) => {
         alert('value   '+value);
         alert(name);
-        setCustomData({
-            ...customData,
-            num_points : value,
+        setCustomData((prevState) =>{
+            return {
+            ...prevState,
+            [name] : value,
+            };
         });
      };
 
