@@ -20,13 +20,13 @@ export  const Context = (props) => {
             num_points: 6,
         }
     );
-    const changeInput = (name:string, value:number) => {
-        alert('value   '+value);
-        alert(name);
+    const changeInput = (targetName:string, targetValue:number) => {
+        alert('value   '+targetValue);
+        alert(targetName);
         setCustomData((prevState) =>{
             return {
             ...prevState,
-            [name] : value,
+            [targetName] : targetValue,
             };
         });
      };
