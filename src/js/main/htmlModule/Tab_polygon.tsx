@@ -1,4 +1,4 @@
-import React, {useContext}  from "react";
+import React, {useContext, useEffect}  from "react";
 import {os, path, fs} from "../../lib/cep/node"
 import {
    csi,
@@ -14,12 +14,23 @@ import { StartContext } from "../Context";
 import { allowedImportFiles } from "../../lib/utils/ppro";
 
 function Tab_polygon(){
-       const {customData ={}, changeInput} = useContext (StartContext);
+       const {customData ={}, changeInput, writeDataContext} = useContext (StartContext);
       const npoint = customData.num_points;
      const changeInputOn = (e: any) => {
+         if (e.target.value >15){
+            alert('The value cannot be greater than 15')
+            e.target.value =15
+         }else if (e.target.value <3){
+            e.target.value =3
+            // alert('The value cannot be less than 3')
+         }
          changeInput( [e.target.name] , e.target.value);
       };
-   
+
+
+      useEffect(() => {
+         setTimeout(writeDataContext, 10 , customData);
+         }, [customData]);
 
       return(
         <div className="tab-polygon tab-b  hide">
@@ -27,7 +38,7 @@ function Tab_polygon(){
            <legend>Polygon</legend>
            <div className="polygon-blok point-blok">
            <p className="n_points">Number Points</p>
-           <input onChange={changeInputOn} type="text" className="n_points  inp" name="num_points" min="3" max="15" value={npoint}/>
+           <input onChange={changeInputOn} className="n_points  inp" name="num_points" min="3" max="15" value={npoint}/>
            </div>
            <div className="polygon-blok">
               <div className="button buttonP">Create</div>
