@@ -15,7 +15,7 @@ import { StartContext } from '../../Context';
 function Tab_setting () {
 
 
-   const {customData ={}, changeInput, writeDataContext, handleCheckboxChange, customSetting} = useContext (StartContext);
+   const {customData ={}, changeInput, handleCheckboxChange, customSetting} = useContext (StartContext);
 
    const pathWriteEndReadSettings: string =
       '/public/settingsData/customSettigsData_01.json';

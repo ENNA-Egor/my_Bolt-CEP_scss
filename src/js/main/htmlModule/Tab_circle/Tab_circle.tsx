@@ -10,11 +10,13 @@ import {
  } from "../../../lib/utils/bolt";
 import { render } from "react-dom";
 import {} from '../../Context';
+import {StartContext} from '../../Context';
 
 
 
 function  Tab_circle(){
 
+    const {customData ={},} = useContext (StartContext);
 
     function createCircle  (){
         evalTS("createCircleTS", "createCircle").then((res) => {

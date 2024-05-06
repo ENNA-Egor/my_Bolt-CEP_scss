@@ -14,7 +14,7 @@ import { StartContext } from "../Context";
 // import { allowedImportFiles } from "../../lib/utils/ppro";
 
 function Tab_polygon(){
-       const {customData ={}, changeInput, writeDataContext} = useContext (StartContext);
+       const {customData ={}, changeInput,} = useContext (StartContext);
       const npoint = customData.num_points;
      const changeInputOn = (e: any) => {
         if (e.target.value <3){

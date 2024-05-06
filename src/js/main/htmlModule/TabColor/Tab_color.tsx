@@ -21,7 +21,7 @@ import {rgbToHexOne} from '../../../functionModule/function';
 
 function Tab_color (){
          
-      const {customData ={}, changeInput, writeDataContext, customColorSettings, handleCheckboxChange} = useContext (StartContext);
+      const {customData ={}, customColorSettings, handleCheckboxChange} = useContext (StartContext);
       
    const   replaceColor = (arrIndex)=>{  
          evalTS("replaceColorTS", {picker_check_value: customData.checkColorpicer, picker_path: __dirname, colorStart: customData.oldColor, arrIndex: arrIndex}).then((res) => {
