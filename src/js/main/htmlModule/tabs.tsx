@@ -19,6 +19,10 @@ function Tabs() {
       startData(dataStartContext)
       writeDataContext( dataStartContext)
     }, []);
+
+    useEffect(() => {
+      setTimeout(writeDataContext, 10 , customData);
+      }, [customData]);
     
   return (
      <div className="tabs-body">

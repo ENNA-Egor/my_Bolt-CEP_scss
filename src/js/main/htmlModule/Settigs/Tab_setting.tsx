@@ -7,66 +7,68 @@ import { writeData } from '../../../functionModule/function';
 import { readData } from '../../../functionModule/function';
 
 
-class Tab_setting extends React.Component {
-   state = {
-      num_element: 5,
-      resolution_w: 1920,
-      resolution_h: 1080,
-      framerate: 25,
-      duration: 6,
-      influence: 60,
-      durLock: false,    
-   };
+// class Tab_setting extends React.Component {
+function Tab_setting () {
+   // state = {
+   //    num_element: 5,
+   //    resolution_w: 1920,
+   //    resolution_h: 1080,
+   //    framerate: 25,
+   //    duration: 6,
+   //    influence: 60,
+   //    durLock: false,    
+   // };
 
+   const {customData ={}, changeInput, writeDataContext, handleCheckboxChange, customSetting} = useContext (StartContext);
 
-   pathWriteEndReadSettings: string =
+   const pathWriteEndReadSettings: string =
       '/public/settingsData/customSettigsData_01.json';
 
-   compCustomSettings = () => {
+   const compCustomSettings = () => {
       evalTS('customSettingsTS', {
          custom_h: 1080,
          custom_w: 1920,
          custom_Nam: 'newComp',
          custom_Dur: 6,
          custom_FR: 25,
-         lockDurations: this.state.durLock,
+         lockDurations: customData.durLock,
       }).then((res) => {
-         this.setState({
-            resolution_w: res.custom_w,
-            resolution_h: res.custom_h,
-            framerate: res.custom_FR,
-            duration: res.custom_Dur,
+         customSetting({
+            resol_w: res.custom_w,
+            resol_h: res.custom_h,
+            fr_r: res.custom_FR,
+            dur: res.custom_Dur,
          });
       });
    };
 
-   changeInput = (e: any) => {
-      this.setState({ [e.target.name]: e.target.value });
+   const changeInputOn = (e: any) => {
+      changeInput({ [e.target.name]: e.target.value });
    };
 
-   handleCheckboxChange = (e: any) => {
-      this.setState({ [e.target.name]: e.target.checked! });
+   const handleCheckboxChangeOn = (e: any) => {
+      handleCheckboxChange({ [e.target.name]: e.target.checked! });
    };
 
-   componentDidMount(): void {
-      let dataSettings = readData(this.pathWriteEndReadSettings);
-      const dataSettingsStart = JSON.parse(dataSettings);
-      this.setState({
-         resolution_w: dataSettingsStart.resolution_w,
-         resolution_h: dataSettingsStart.resolution_h,
-         framerate: dataSettingsStart.framerate,
-         duration: dataSettingsStart.duration,
-         num_element: dataSettingsStart.num_element,
-         influence: dataSettingsStart.influence,
-         durLock: dataSettingsStart.durLock,
-      });
-   }
+   // componentDidMount(): void {
+   //    let dataSettings = readData(this.pathWriteEndReadSettings);
+   //    const dataSettingsStart = JSON.parse(dataSettings);
+   //    this.setState({
+   //       resolution_w: dataSettingsStart.resolution_w,
+   //       resolution_h: dataSettingsStart.resolution_h,
+   //       framerate: dataSettingsStart.framerate,
+   //       duration: dataSettingsStart.duration,
+   //       num_element: dataSettingsStart.num_element,
+   //       influence: dataSettingsStart.influence,
+   //       durLock: dataSettingsStart.durLock,
+   //    });
+   // }
 
-   componentDidUpdate(): void {
-      writeData(this.state, this.pathWriteEndReadSettings);
-   }
-   render() {
-      const {num_element, resolution_w, resolution_h, framerate, duration, influence, durLock,} = this.state;
+   // componentDidUpdate(): void {
+   //    writeData(this.state, this.pathWriteEndReadSettings);
+   // }
+   // render() {
+      // const {num_element, resolution_w, resolution_h, framerate, duration, influence, durLock,} = this.state;
 
       return (
          
@@ -78,55 +80,55 @@ class Tab_setting extends React.Component {
                   <div className="sett">
                      <p>N_element</p>
                      <input
-                        onChange={this.changeInput}
+                        onChange={changeInputOn}
                         className="n_elem inp"
                         name="num_element"
                         min="2"
                         max="15"
-                        value={num_element}
+                        value={customData.num_element}
                      />
                   </div>
                   <div className="sett">
                      <p>Res</p>
                      <input
-                        onChange={this.changeInput}
+                        onChange={changeInputOn}
                         type="text"
                         className="resol resol-w  inp2"
                         name="resolution_w"
-                        value={resolution_w}
+                        value={customData.resolution_w}
                      />
                      <input
-                        onChange={this.changeInput}
+                        onChange={changeInputOn}
                         type="text"
                         className="resol resol-h  inp2"
                         name="resolution_h"
-                        value={resolution_h}
+                        value={customData.resolution_h}
                      />
                   </div>
                   <div className="sett">
                      <p>F/R </p>
                      <input
-                        onChange={this.changeInput}
+                        onChange={changeInputOn}
                         type="text"
                         className="framerate n_points inp"
                         name="framerate"
-                        value={framerate}
+                        value={customData.framerate}
                      />
                   </div>
                   <div className="sett dur_set">
                      <p>Dur(sek)</p>
                      <input
-                        onChange={this.changeInput}
+                        onChange={changeInputOn}
                         type="text"
                         className="duration n_points inp"
                         name="duration"
-                        value={duration}
+                        value={customData.duration}
                      />
                      {/* <label> */}
                      <input
                         type="checkbox"
-                        checked={durLock}
-                        onChange={this.handleCheckboxChange}
+                        checked={customData.durLock}
+                        onChange={handleCheckboxChangeOn}
                         className="n_points one_dur"
                         name="durLock"
                      />
@@ -136,15 +138,15 @@ class Tab_setting extends React.Component {
                   <div className="sett ">
                      <p>Inf( % )</p>
                      <input
-                        onChange={this.changeInput}
+                        onChange={changeInputOn}
                         type="text"
                         className="influ n_points inp"
                         name="influence"
-                        value={influence}
+                        value={customData.influence}
                      />
                   </div>
                   <div className="sett">
-                     <div className="button bt7" onClick={this.compCustomSettings}>
+                     <div className="button bt7" onClick={compCustomSettings}>
                         SetComp
                      </div>
                   </div>
@@ -152,7 +154,7 @@ class Tab_setting extends React.Component {
             </fieldset>
          </div>
       );
-   }
+   // }
 }
 
 export default Tab_setting;

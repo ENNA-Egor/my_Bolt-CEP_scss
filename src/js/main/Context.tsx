@@ -30,6 +30,27 @@ export  const Context = (props) => {
         });
      };
 
+     const handleCheckboxChange = (targetName:string, targetChecked:boolean) => {
+        setCustomData((prevState) =>{
+            return {
+            ...prevState,
+            [targetName] : targetChecked!,
+            };
+        });
+     };
+
+     const customSetting = (resol_w, resol_h, fr_r, dur) =>{
+        setCustomData((prevState) =>{
+            return {
+            ...prevState,
+            resolution_w : resol_w,
+            resolution_h : resol_h,
+            framerate : fr_r,
+            duration : dur,
+            };
+        });
+     }
+
 
 
      const startData = (stateData)=> {
@@ -65,6 +86,8 @@ export  const Context = (props) => {
             changeInput,
             startData,
             writeDataContext,
+            handleCheckboxChange,
+            customSetting,
         }
 
             return <StartContext.Provider value={valueData}>
