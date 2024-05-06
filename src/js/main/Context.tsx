@@ -52,6 +52,15 @@ export  const Context = (props) => {
      }
 
 
+     const customColorSettings = (oldcolor, palColor) =>{
+        setCustomData((prevState) =>{
+            return {
+            ...prevState,
+            oldColor : oldcolor,
+            colors : palColor,
+            };
+        });
+     }
 
      const startData = (stateData)=> {
         setCustomData ((prevState) =>{
@@ -88,6 +97,7 @@ export  const Context = (props) => {
             writeDataContext,
             handleCheckboxChange,
             customSetting,
+            customColorSettings,
         }
 
             return <StartContext.Provider value={valueData}>

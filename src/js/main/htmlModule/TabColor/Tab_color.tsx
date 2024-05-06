@@ -19,98 +19,93 @@ import {readData} from '../../../functionModule/function';
 import {rgbToHexOne} from '../../../functionModule/function';
 
 
-class Tab_color extends React.Component {
+function Tab_color (){
 
 
 
-    state = {
-         checkColorpicer: true,
-        colors:[''],//["5b82b3","86cab9","d5e390","fafa98","fabb86"],
-         oldColor: "0xdd1dd6",
-         autoFill: false,
-         // loading: true,
-      }
+   //  state = {
+   //       checkColorpicer: true,
+   //      colors:[''],//["5b82b3","86cab9","d5e390","fafa98","fabb86"],
+   //       oldColor: "0xdd1dd6",
+   //       autoFill: false,
+   //       // loading: true,
+   //    }
       
-      pathWriteEndReadColor: string = '/public/settingsData/customColorData_01.json';             
+      // pathWriteEndReadColor: string = '/public/settingsData/customColorData_01.json';             
+      const {customData ={}, changeInput, writeDataContext, customColorSettings, handleCheckboxChange} = useContext (StartContext);
       
-      replaceColor = (arrIndex)=>{
-         
-         evalTS("replaceColorTS", {picker_check_value: this.state.checkColorpicer, picker_path: __dirname, colorStart: this.state.oldColor, arrIndex: arrIndex}).then((res) => {
+   const   replaceColor = (arrIndex)=>{  
+         evalTS("replaceColorTS", {picker_check_value: customData.checkColorpicer, picker_path: __dirname, colorStart: customData.oldColor, arrIndex: arrIndex}).then((res) => {
             let colVal = hexToRgb(res);
             let resNew = rgbToHexOne(colVal);
-            this.setState({oldColor: resNew});
-            let newArr = this.state.colors;
+            let newArr = customData.colors;
             newArr.splice(arrIndex, 1, resNew);
-            this.setState({colors: newArr});
+            customColorSettings(resNew, newArr);
          });
         };
 
-        plusPal = ()=>{    
-         evalTS("plusPalTS", {picker_check_value: this.state.checkColorpicer, picker_path: __dirname, colorStart: this.state.oldColor}).then((res) => {
+   const  plusPal = ()=>{    
+         evalTS("plusPalTS", {picker_check_value: customData.checkColorpicer, picker_path: __dirname, colorStart: customData.oldColor}).then((res) => {
                let colVal = hexToRgb(res);
                let resNew = rgbToHexOne(colVal);
-               this.setState({ololdCor: resNew});
-               let newArr = this.state.colors;
+               let newArr = customData.colors;
                newArr.push(resNew);
-               this.setState({colors: newArr});
+               customColorSettings(resNew, newArr);
          });
         };
 
    
 
-   handleColorpickerChange = (e: any) => {
-      this.setState({[e.target.name]: e.target.checked!});
+ const  handleColorpickerChangeOn = (e: any) => {
+      handleCheckboxChange({[e.target.name]: e.target.checked!});
    }
    
 
 
-   replaceAndMinusColor= (e:any)=> {     
+const   replaceAndMinusColor= (e:any)=> {     
       let arrIndex = +[e.target.id];
          if (e.ctrlKey) {
-             let newArr = this.state.colors;
+             let newArr = customData.colors;
+             let oldcolor = customData.oldColor;
              newArr.splice(arrIndex, 1);
-             this.setState({colors: newArr});
+             customColorSettings(oldcolor, newArr);
          }else{
-            this.replaceColor(arrIndex);
-            // addColor(this.state.colors);
+            replaceColor(arrIndex);
          }
    }
 
-      componentDidMount(): void {
-        let dataColor = readData(this.pathWriteEndReadColor);
-        const dataColorStart = JSON.parse(dataColor);
-        this.setState({
-         checkColorpicer: dataColorStart.checkColorpicer, 
-         colors:dataColorStart.colors, 
-         oldColor:dataColorStart.oldColor,
-         autoFill:dataColorStart.autoFill,
-         // loading: false,
-      });
-      }
+      // componentDidMount(): void {
+      //   let dataColor = readData(this.pathWriteEndReadColor);
+      //   const dataColorStart = JSON.parse(dataColor);
+      //   this.setState({
+      //    checkColorpicer: dataColorStart.checkColorpicer, 
+      //    colors:dataColorStart.colors, 
+      //    oldColor:dataColorStart.oldColor,
+      //    autoFill:dataColorStart.autoFill,
+      //    // loading: false,
+      // });
+      // }
 
-      componentDidUpdate(): void {
-         writeData(this.state, this.pathWriteEndReadColor);
-         if (this.state.autoFill=== true){
-            this.colorSet()
-         }
-      }
+      // componentDidUpdate(): void {
+      //    writeData(this.state, this.pathWriteEndReadColor);
+      //    if (this.state.autoFill=== true){
+      //       this.colorSet()
+      //    }
+      // }
       
-       colorSet = () => {
-         evalTS("colorSetTS", this.state.colors).then((res) => {
+      const colorSet = () => {
+         evalTS("colorSetTS", customData.colors).then((res) => {
 
       });
        };
 
-   render(){
-
-
-
+   // render(){
        
       function openPanel(): void{
          csi.requestOpenExtension('com.Bolt-CEP_Test.cep.settings',0);
       }
 
-      const {checkColorpicer, colors, autoFill,/*loading,*/} = this.state
+      // const {checkColorpicer, colors, autoFill,/*loading,*/} = this.state
 
       return(
        <div className="bloc_palets tab-color tab-b visible">
@@ -118,22 +113,22 @@ class Tab_color extends React.Component {
           <legend>Color</legend>
           <div className="colorP">
           <p>ColorPicker_AE</p>
-          <input type="checkbox" checked={checkColorpicer} onChange={this.handleColorpickerChange} className="n_points  check" name="checkColorpicer"/>
+          <input type="checkbox" checked={customData.checkColorpicer} onChange={handleColorpickerChangeOn} className="n_points  check" name="checkColorpicer"/>
           </div>
          {
-          colors.length ? (
+          customData.colors.length ? (
           <div className="blok_palet">
-            <Colors colors= {colors} replaceAndMinusColor ={this.replaceAndMinusColor}/> 
+            <Colors colors= {customData.colors} replaceAndMinusColor ={replaceAndMinusColor}/> 
           </div>
           ) : <Preloader/> 
           }
           <div className="colorP">
           <p>AutoFill</p>
-          <input type="checkbox" checked={autoFill} onChange={this.handleColorpickerChange} className="n_points  check" name="autoFill"/>
+          <input type="checkbox" checked={customData.autoFill} onChange={handleColorpickerChangeOn} className="n_points  check" name="autoFill"/>
           </div>
           <div className="buttons">
-             <div onClick={this.plusPal} className="button bt1 disableElement" id="btnPlus"></div>
-             <div onClick={this.colorSet} className="button bt3" id="btnApp">App</div>
+             <div onClick={plusPal} className="button bt1 disableElement" id="btnPlus"></div>
+             <div onClick={colorSet} className="button bt3" id="btnApp">App</div>
              <div /*onClick={}*/ className="button bt4" id="btn_reset">Res</div>
           </div>
           <div className="buttons">
@@ -143,7 +138,7 @@ class Tab_color extends React.Component {
      </fieldset>
     </div>
       );
-   }
+   // }
 
  }
 
