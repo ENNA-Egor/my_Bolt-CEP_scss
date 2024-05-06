@@ -1,12 +1,12 @@
 import { HtmlHTMLAttributes, useEffect, useState } from "react";
-import { os, path } from "../lib/cep/node";
+// import { os, path } from "../lib/cep/node";
 import {
-  csi,
-  evalES,
-  evalFile,
-  openLinkInBrowser,
+  // csi,
+  // evalES,
+  // evalFile,
+  // openLinkInBrowser,
   subscribeBackgroundColor,
-  evalTS,
+  // evalTS,
 } from "../lib/utils/bolt";
 import circle from "../assets/png/Circle-01.png";
 import polygon from "../assets/png/Polygon-01.png";

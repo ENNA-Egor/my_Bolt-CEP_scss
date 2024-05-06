@@ -1,23 +1,19 @@
 import React, {useContext} from 'react';
-import { os, path, fs } from '../../../lib/cep/node';
-import { csi, evalES, evalTS } from '../../../lib/utils/bolt';
+// import { os, path, fs } from '../../../lib/cep/node';
+import { 
+   //    csi,
+   //  evalES, 
+    evalTS
+    } from '../../../lib/utils/bolt';
 import { StartContext } from '../../Context';
 
-import { writeData } from '../../../functionModule/function';
-import { readData } from '../../../functionModule/function';
+// import { writeData } from '../../../functionModule/function';
+// import { readData } from '../../../functionModule/function';
 
 
-// class Tab_setting extends React.Component {
+
 function Tab_setting () {
-   // state = {
-   //    num_element: 5,
-   //    resolution_w: 1920,
-   //    resolution_h: 1080,
-   //    framerate: 25,
-   //    duration: 6,
-   //    influence: 60,
-   //    durLock: false,    
-   // };
+
 
    const {customData ={}, changeInput, writeDataContext, handleCheckboxChange, customSetting} = useContext (StartContext);
 
@@ -43,32 +39,13 @@ function Tab_setting () {
    };
 
    const changeInputOn = (e: any) => {
-      changeInput({ [e.target.name]: e.target.value });
+      changeInput( [e.target.name], e.target.value );
    };
 
    const handleCheckboxChangeOn = (e: any) => {
-      handleCheckboxChange({ [e.target.name]: e.target.checked! });
+      handleCheckboxChange( [e.target.name], e.target.checked);
    };
 
-   // componentDidMount(): void {
-   //    let dataSettings = readData(this.pathWriteEndReadSettings);
-   //    const dataSettingsStart = JSON.parse(dataSettings);
-   //    this.setState({
-   //       resolution_w: dataSettingsStart.resolution_w,
-   //       resolution_h: dataSettingsStart.resolution_h,
-   //       framerate: dataSettingsStart.framerate,
-   //       duration: dataSettingsStart.duration,
-   //       num_element: dataSettingsStart.num_element,
-   //       influence: dataSettingsStart.influence,
-   //       durLock: dataSettingsStart.durLock,
-   //    });
-   // }
-
-   // componentDidUpdate(): void {
-   //    writeData(this.state, this.pathWriteEndReadSettings);
-   // }
-   // render() {
-      // const {num_element, resolution_w, resolution_h, framerate, duration, influence, durLock,} = this.state;
 
       return (
          

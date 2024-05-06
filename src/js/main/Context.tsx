@@ -25,7 +25,7 @@ export  const Context = (props) => {
         setCustomData((prevState) =>{
             return {
             ...prevState,
-            [targetName] : targetValue,
+            [targetName] : +targetValue,
             };
         });
      };
@@ -34,7 +34,7 @@ export  const Context = (props) => {
         setCustomData((prevState) =>{
             return {
             ...prevState,
-            [targetName] : targetChecked!,
+            [targetName] : targetChecked,
             };
         });
      };

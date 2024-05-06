@@ -1,37 +1,26 @@
 import React, {useContext}  from "react";
-import {os, path, fs} from "../../../lib/cep/node"
+// import {os, path, fs} from "../../../lib/cep/node"
 import {
    csi,
-   evalES,
-   evalFile,
-   openLinkInBrowser,
-   subscribeBackgroundColor,
+   // evalES,
+   // evalFile,
+   // openLinkInBrowser,
+   // subscribeBackgroundColor,
    evalTS,
  } from "../../../lib/utils/bolt";
-import { render } from "react-dom";
+// import { render } from "react-dom";
 import {StartContext} from '../../Context';
 
 import Colors from './Colors';
 import {Preloader} from './Preloader'
 import {hexToRgb} from '../../../functionModule/function';
-import {writeData} from '../../../functionModule/function';
-import {readData} from '../../../functionModule/function';
+// import {writeData} from '../../../functionModule/function';
+// import {readData} from '../../../functionModule/function';
 import {rgbToHexOne} from '../../../functionModule/function';
 
 
 function Tab_color (){
-
-
-
-   //  state = {
-   //       checkColorpicer: true,
-   //      colors:[''],//["5b82b3","86cab9","d5e390","fafa98","fabb86"],
-   //       oldColor: "0xdd1dd6",
-   //       autoFill: false,
-   //       // loading: true,
-   //    }
-      
-      // pathWriteEndReadColor: string = '/public/settingsData/customColorData_01.json';             
+         
       const {customData ={}, changeInput, writeDataContext, customColorSettings, handleCheckboxChange} = useContext (StartContext);
       
    const   replaceColor = (arrIndex)=>{  
@@ -57,7 +46,7 @@ function Tab_color (){
    
 
  const  handleColorpickerChangeOn = (e: any) => {
-      handleCheckboxChange({[e.target.name]: e.target.checked!});
+      handleCheckboxChange([e.target.name], e.target.checked);
    }
    
 
@@ -74,24 +63,7 @@ const   replaceAndMinusColor= (e:any)=> {
          }
    }
 
-      // componentDidMount(): void {
-      //   let dataColor = readData(this.pathWriteEndReadColor);
-      //   const dataColorStart = JSON.parse(dataColor);
-      //   this.setState({
-      //    checkColorpicer: dataColorStart.checkColorpicer, 
-      //    colors:dataColorStart.colors, 
-      //    oldColor:dataColorStart.oldColor,
-      //    autoFill:dataColorStart.autoFill,
-      //    // loading: false,
-      // });
-      // }
 
-      // componentDidUpdate(): void {
-      //    writeData(this.state, this.pathWriteEndReadColor);
-      //    if (this.state.autoFill=== true){
-      //       this.colorSet()
-      //    }
-      // }
       
       const colorSet = () => {
          evalTS("colorSetTS", customData.colors).then((res) => {
@@ -99,13 +71,12 @@ const   replaceAndMinusColor= (e:any)=> {
       });
        };
 
-   // render(){
+
        
       function openPanel(): void{
          csi.requestOpenExtension('com.Bolt-CEP_Test.cep.settings',0);
       }
 
-      // const {checkColorpicer, colors, autoFill,/*loading,*/} = this.state
 
       return(
        <div className="bloc_palets tab-color tab-b visible">
@@ -138,7 +109,7 @@ const   replaceAndMinusColor= (e:any)=> {
      </fieldset>
     </div>
       );
-   // }
+
 
  }
 
