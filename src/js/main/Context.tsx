@@ -7,7 +7,7 @@ export  const Context = (props) => {
     const [customData, setCustomData] = useState(
         {
             checkColorpicer : true,
-            colors:[],
+            colors:[""],
             oldColor:"",
             autoFill: false,
             num_element:null,

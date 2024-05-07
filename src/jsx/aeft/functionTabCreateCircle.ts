@@ -1,7 +1,10 @@
+import {createContent} from './functionCreateContent'
 
-
-export const createCircleTS = (startText: string) => {
-   alert (startText)  
+export const createCircleTS = (startText: string, param:string, dataCreate:any,) => {
+   alert (startText);  
+   alert (dataCreate.colors);  
+   alert (param);
+   createContent (startText, param, dataCreate); 
  };
 
 export const butCapTS = (startText: string) => {
