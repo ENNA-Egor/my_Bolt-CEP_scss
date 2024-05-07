@@ -9,6 +9,7 @@ import {
 import {colorSetTS,} from "./functionTabColorSett";
 
 import {createCircleTS,} from "./functionTabCreateCircle";
+import {createPolygonTS,} from "./functionTabCreatePolygon";
 
 import {
   butCapTS, 
@@ -25,7 +26,8 @@ export {
   butCapTS, 
   roundCapTS, 
   plusElTS, 
-  minusElTS
+  minusElTS,
+  createPolygonTS
 };
 
 

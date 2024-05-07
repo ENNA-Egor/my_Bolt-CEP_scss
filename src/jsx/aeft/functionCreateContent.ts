@@ -18,7 +18,7 @@ var influ = dataCreate.influence;
 var colorArr = dataCreate.colors;
 var numPoint = dataCreate.num_points;
 
-function CreateOne() {
+// function CreateOne(): void {
    app.beginUndoGroup("Creative Stroke Compositions");
    //////////////////////////////////////создаём папки.
    var n = 0;
@@ -89,5 +89,5 @@ function CreateOne() {
 
    newComp.parentFolder = ellFolder;
 
-    }
+   //  }
 };  
