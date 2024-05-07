@@ -1,4 +1,4 @@
-import React, {useContext}  from "react";
+import React, {useContext, useEffect}  from "react";
 // import {os, path, fs} from "../../../lib/cep/node"
 import {
    csi,
@@ -63,13 +63,17 @@ const   replaceAndMinusColor= (e:any)=> {
          }
    }
 
+   const colorSet = () => {
+      evalTS("colorSetTS", customData.colors).then((res) => {
+   });
+    };
 
-      
-      const colorSet = () => {
+   useEffect(() => { 
+      if (customData.autoFill === true){
          evalTS("colorSetTS", customData.colors).then((res) => {
-
-      });
-       };
+         }); 
+      }
+      }, [customData]);
 
 
        

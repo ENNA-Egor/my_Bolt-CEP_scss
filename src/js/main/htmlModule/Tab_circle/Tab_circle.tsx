@@ -17,9 +17,10 @@ import {StartContext} from '../../Context';
 function  Tab_circle(){
 
     const {customData ={},} = useContext (StartContext);
+    const  patFfx = path.join(__dirname, '/public/ffx/');
 
     function createCircle  (){
-        evalTS("createCircleTS", "createCircle", "Circle", {dataCreate: customData}).then((res) => {
+        evalTS("createCircleTS", "createCircle", "Circle", customData, patFfx).then((res) => {
         });
        };
 

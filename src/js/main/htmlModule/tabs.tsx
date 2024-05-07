@@ -3,7 +3,6 @@ import Tab_circle from './Tab_circle/Tab_circle';
 import Tab_polygon from './Tab_polygon';
 import Tab_color from './TabColor/Tab_color';
 import Tab_setting from './Settigs/Tab_setting';
-// import { Context } from '../Context';
 import {readData} from '../../functionModule/function'
 import { StartContext } from "../Context";
 

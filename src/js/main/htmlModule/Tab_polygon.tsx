@@ -17,7 +17,7 @@ function Tab_polygon(){
 
 
    function createPolygon  (){
-      evalTS("createPolygonTS", "createCircle", "Polygon", {dataCreate: customData}).then((res) => {
+      evalTS("createPolygonTS", "createPolygon", "Polygon", customData).then((res) => {
       });
      };
 
@@ -45,7 +45,7 @@ function Tab_polygon(){
            <input onChange={changeInputOn} className="n_points  inp" name="num_points" value={npoint}/>
            </div>
            <div className="polygon-blok">
-              <div className="button buttonP">Create</div>
+              <div className="button buttonP" onClick={createPolygon}>Create</div>
            </div>  
            <p>Cap</p>
            <div className="linecap_blok" >
