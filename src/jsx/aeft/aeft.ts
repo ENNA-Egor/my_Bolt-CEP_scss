@@ -21,7 +21,8 @@ import {
 export {
   customSettingsTS, 
   replaceColorTS, 
-  plusPalTS, colorSetTS, 
+  plusPalTS, 
+  colorSetTS, 
   createCircleTS, 
   butCapTS, 
   roundCapTS, 

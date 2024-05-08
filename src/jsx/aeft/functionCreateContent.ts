@@ -1,5 +1,7 @@
 import {path, fs} from "../../js/lib/cep/node";
 
+import {colorSetTS} from './functionTabColorSett'
+
 
 export const createContent = (startText:string, param:string, dataCreate:any, patFfx:string) => {
  
@@ -231,6 +233,9 @@ var numPoint = dataCreate.num_points;
       //@ts-ignore
       app.project.activeItem.layer("Controll").selected = true;
 
+      colorSetTS(colorArr);
+
 
    }
+   app.endUndoGroup(); /// Отмена создания композиции.
 };  
