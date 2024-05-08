@@ -1,5 +1,5 @@
 import React, {useContext}  from "react";
-// import {os, path, fs} from "../../lib/cep/node"
+import {os, path, fs} from "../../lib/cep/node"
 import {
 //    csi,
 //    evalES,
@@ -15,13 +15,14 @@ import { StartContext } from "../Context";
 
 function Tab_polygon(){
 
+   const {customData ={}, changeInput,} = useContext (StartContext);
+   const  patFfx = path.join(__dirname, '/public/ffx/');
 
    function createPolygon  (){
-      evalTS("createPolygonTS", "createPolygon", "Polygon", customData).then((res) => {
+      evalTS("createPolygonTS", "createPolygon", "Polygon", customData, patFfx).then((res) => {
       });
      };
 
-       const {customData ={}, changeInput,} = useContext (StartContext);
       const npoint = customData.num_points;
      const changeInputOn = (e: any) => {
         if (e.target.value <3){

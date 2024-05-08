@@ -1,10 +1,7 @@
 import {createContent} from './functionCreateContent'
 
-export const createPolygonTS = (startText: string, param:string, dataCreate:any,) => {
-   alert (startText);  
-   alert (dataCreate.colors);  
-   alert (param);
-   createContent (startText, param, dataCreate); 
+export const createPolygonTS = (startText: string, param:string, dataCreate:any, patFfx:string) => {
+   createContent (startText, param, dataCreate, patFfx); 
  };
 
 // export const butCapTS = (startText: string) => {

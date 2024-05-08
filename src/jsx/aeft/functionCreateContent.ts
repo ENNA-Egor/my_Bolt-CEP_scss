@@ -24,7 +24,7 @@ var colorArr = dataCreate.colors;
 var numPoint = dataCreate.num_points;
 
 
-   app.beginUndoGroup("Creative Stroke Compositions");
+   // app.beginUndoGroup("Creative Stroke Compositions");
    //////////////////////////////////////создаём папки.
    var n = 0;
    var numScriptFolder = 1;
@@ -103,7 +103,7 @@ var numPoint = dataCreate.num_points;
          contentRun_C();
       }
       else if (nFunk == "contentRun_Polygon") {
-         // contentRun_P();
+         contentRun_P();
       }
       else {
          return 'Composition not created';
@@ -233,9 +233,157 @@ var numPoint = dataCreate.num_points;
       //@ts-ignore
       app.project.activeItem.layer("Controll").selected = true;
 
-      colorSetTS(colorArr);
+   }
 
+   function contentRun_P() {  //////////////Полигоны
+      //////////////////////////////////////////   Изинги
+      var ease = +influ;
+      var easeIn = new KeyframeEase(0, ease);
+      var easeOut = new KeyframeEase(0, ease);
+      // Присвиваем свойство Шай композиции.
+      //@ts-ignore
+      app.project.activeItem.hideShyLayers = true;
+      var numShapeLaer = +countElement;;  //// Количество строков
+      var LCap = 2; // Выбор характера края строка
+      //@ts-ignore
+      var w = newComp.width;
+      //@ts-ignore
+      var h = newComp.height;
+      //@ts-ignore
+      var a = newComp.pixelAspect;
+
+
+      var valueStroke = Math.sqrt(Math.pow(h / 2, 2) + Math.pow(w / 2 * a, 2)) / numShapeLaer;
+
+
+      ///////////////////////////////////////////////////////////////////////////////////////
+      var point = numPoint;
+      var angleB = 360 / point;
+      var angleA = (180 - (angleB)) / 2;
+      var angleR = Math.PI / 180 * angleA
+
+
+      var StepVal = valueStroke / Math.sin(angleR);
+
+      /////////////////////////////////////////////////////////////////////////////////////////
+      /// Нулевой объект. Контроллер.
+      //@ts-ignore
+      var nullobjectP = newComp.layers.addNull();
+      nullobjectP.source.name = ("Controll_P");
+      nullobjectP.name = ("Controll_P");
+      var controlPPath = ffxPath + "Animation_Control_P.ffx";
+      var presetFile3 = new File(controlPPath);
+      nullobjectP.applyPreset(presetFile3);
+         //@ts-ignore
+      newComp.layer("Controll_P")("ADBE Effect Parade")("Pseudo/ANIM _CONTR_P")("Pseudo/ANIM _CONTR_P-0012").expression = CopyrightText_P + '\r\n\r\neval (\"@JSXBIN@ES@2.0@MyBbyBn0ABOAbyCn0ABJCnAjzFjWjBjMjVjFBfACzChdhdCEEjzGjFjGjGjFjDjUDfRBFeUiBiOiJiNiBiUiJiPiOhAifiDiPiOiUiSiPiMifiQffRBFeNiBjVjUjPhAiJjOjUjFjSjWjBjMffnndAbyFn0ABJFnAFd0EzAEByB\")'
+         //@ts-ignore
+      newComp.layer("Controll_P")("ADBE Effect Parade")("Pseudo/ANIM _CONTR_P")("Pseudo/ANIM _CONTR_P-0012").setValue(StepVal);
+      //@ts-ignore
+      newComp.layer("Controll_P")("ADBE Effect Parade")("Pseudo/ANIM _CONTR_P")("Pseudo/ANIM _CONTR_P-0013").expression = CopyrightText_P + '\r\n\r\neval (\"@JSXBIN@ES@2.0@MyBbyBn0ACJAnABjzBjYBfjzFjWjBjMjVjFCfnfJCnAEXzFjSjPjVjOjEDfjzEiNjBjUjIEfRBjBfff0DzAFByB\")'
+      //@ts-ignore
+      newComp.layer("Controll_P")("ADBE Effect Parade")("Pseudo/ANIM _CONTR_P")("Pseudo/ANIM _CONTR_P-0018").expression = CopyrightText_P + '\r\n\r\neval (\"@JSXBIN@ES@2.0@MyBbyBn0ABOAbyCn0ABJCnAjzFjWjBjMjVjFBfACzChdhdCEEjzGjFjGjGjFjDjUDfRBFeUiBiOiJiNiBiUiJiPiOhAifiDiPiOiUiSiPiMifiQffRBFeNiBjVjUjPhAiJjOjUjFjSjWjBjMffnndBbyFn0ABJFnAFd0EzAEByB\")'
+      //@ts-ignore
+      newComp.layer("Controll_P")("ADBE Effect Parade")("Pseudo/ANIM _CONTR_P")("Pseudo/ANIM _CONTR_P-0025").expression = CopyrightText_P + '\r\n\r\neval (\"@JSXBIN@ES@2.0@MyBbyBn0ABOAbyBn0ABJBnAFd0ACzChdhdBEEjzGjFjGjGjFjDjUCfRBFeUiBiOiJiNiBiUiJiPiOhAifiDiPiOiUiSiPiMifiQffRBFeOiTjJjNjNjFjUjSjJjDiSjPjVjOjEffnndBbyDn0ABJDnAjzFjWjBjMjVjFDf0DzAEByB\")'
+      //@ts-ignore
+      newComp.layer("Controll_P")("ADBE Effect Parade")("Pseudo/ANIM _CONTR_P")("Pseudo/ANIM _CONTR_P-0031").expression = CopyrightText_P + '\r\n\r\neval (\"@JSXBIN@ES@2.0@MyBbyBn0ABOAbyBn0ABOBbyCn0ABJCnAFd0ACzChdhdBEEXzGjFjGjGjFjDjUCfEXzFjMjBjZjFjSDfjzIjUjIjJjTiDjPjNjQEfRBFeKiDjPjOjUjSjPjMjMifiQffRBFeUiBiOiJiNiBiUiJiPiOhAifiDiPiOiUiSiPiMifiQffRBFeMiJjOifiPjVjUhAiDjIjFjDjLffnndAbyEn0ABJEnAjzFjWjBjMjVjFFfACBEEXCfEXDfjEfRBFeKiDjPjOjUjSjPjMjMifiQffRBFeUiBiOiJiNiBiUiJiPiOhAifiDiPiOiUiSiPiMifiQffRBFeLiBjVjUjPhPiNjBjOjVjBjMffnndAbyIn0ABJInAjFf0DzAGByB\")'
+      //@ts-ignore
+      newComp.layer("Controll_P")("ADBE Effect Parade")("Pseudo/ANIM _CONTR_P")("Pseudo/ANIM _CONTR_P-0032").expression = CopyrightText_P + '\r\n\r\neval (\"@JSXBIN@ES@2.0@MyBbyBn0ABOAbyBn0ABOBbyCn0ABJCnAFdjEACzChdhdBEEXzGjFjGjGjFjDjUCfEXzFjMjBjZjFjSDfjzIjUjIjJjTiDjPjNjQEfRBFeKiDjPjOjUjSjPjMjMifiQffRBFeUiBiOiJiNiBiUiJiPiOhAifiDiPiOiUiSiPiMifiQffRBFeMiJjOifiPjVjUhAiDjIjFjDjLffnndBbyEn0ABJEnAjzFjWjBjMjVjFFfACBEEXCfEXDfjEfRBFeKiDjPjOjUjSjPjMjMifiQffRBFeUiBiOiJiNiBiUiJiPiOhAifiDiPiOiUiSiPiMifiQffRBFeLiBjVjUjPhPiNjBjOjVjBjMffnndAbyHn0ABJHnAjFf0DzAGByB\")'
+      //@ts-ignore
+      newComp.layer("Controll_P")("ADBE Effect Parade")("Pseudo/ANIM _CONTR_P")("Pseudo/ANIM _CONTR_P-0037").expression = CopyrightText_P + '\r\n\r\neval (\"@JSXBIN@ES@2.0@MyBbyBn0ABOAbyCn0ABJCnAFd0ACzChdhdBEEjzGjFjGjGjFjDjUCfRBFeUiBiOiJiNiBiUiJiPiOhAifiDiPiOiUiSiPiMifiQffRBFeOiTjJjNjNjFjUjSjJjDiSjPjVjOjEffnndBbyEn0ABJEnAjzFjWjBjMjVjFDf0DzAEByB\")'
+      //@ts-ignore
+      newComp.layer("Controll_P")("ADBE Effect Parade")("Pseudo/ANIM _CONTR_P")("Pseudo/ANIM _CONTR_P-0013").setValue(numPoint);
+      //@ts-ignore
+      var tstP = newComp.layer("Controll_P")("ADBE Effect Parade")("Pseudo/ANIM _CONTR_P")("Pseudo/ANIM _CONTR_P-0031");
+      var tStartIn = 0;
+      var tStartOut = (DurComp / 3);
+      tstP.setValuesAtTimes([tStartIn, tStartOut], [0, 100]);
+      tstP.setTemporalEaseAtKey(2, [easeIn]);
+      tstP.setTemporalEaseAtKey(1, [easeOut]);
+      //@ts-ignore
+      var tenP = newComp.layer("Controll_P")("ADBE Effect Parade")("Pseudo/ANIM _CONTR_P")("Pseudo/ANIM _CONTR_P-0032");
+      var tEndIn = (DurComp / 12 * 5);
+      var tEndOut = (DurComp / 3 * 2);
+      tenP.setValuesAtTimes([tEndIn, tEndOut], [0, 100]);
+      tenP.setTemporalEaseAtKey(2, [easeIn]);
+      tenP.setTemporalEaseAtKey(1, [easeOut]);
+      ///nullobjectP.locked = true;
+      //@ts-ignore
+      newComp.layer("Controll_P")("ADBE Effect Parade")("Pseudo/ANIM _CONTR_P")("Pseudo/ANIM _CONTR_P-0002").setValue(valueStroke / 2);
+      //@ts-ignore
+      newComp.layer("Controll_P")("ADBE Effect Parade")("Pseudo/ANIM _CONTR_P")("Pseudo/ANIM _CONTR_P-0004").setValue(valueStroke);
+
+      nullobjectP.enabled = false;
+
+      /// Нулевой объект. Контроллер по ValueAtTime.
+      //@ts-ignore
+      var nullobjectN = newComp.layers.addNull();
+      nullobjectN.source.name = ("Nul");
+      nullobjectN.name = ("Nul");
+      var nullP = ffxPath + "NulControll_P.ffx";
+      var presetFile4 = new File(nullP);
+      nullobjectN.applyPreset(presetFile4);
+      //@ts-ignore
+      newComp.layer("Nul")("ADBE Effect Parade")("Pseudo/Nul_Contr_P")("Pseudo/Nul_Contr_P-0001").expression = CopyrightText_P + '\r\n\r\neval (\"@JSXBIN@ES@2.0@MyBbyBn0ACOAbyBn0ABJBnABjzBjOBfndAfACzChdhdCXzHjOjVjNiLjFjZjTDfEEXzGjFjGjGjFjDjUEfEXzFjMjBjZjFjSFfjzIjUjIjJjTiDjPjNjQGfRBFeKiDjPjOjUjSjPjMjMifiQffRBFeUiBiOiJiNiBiUiJiPiOhAifiDiPiOiUiSiPiMifiQffRBFeMiJjOifiPjVjUhAiDjIjFjDjLffnndAbDn0ADJDnABjBfXzFjJjOjEjFjYHfEXzKjOjFjBjSjFjTjUiLjFjZIfEEXEfEXFfjGfRBFeKiDjPjOjUjSjPjMjMifiQffRBFeUiBiOiJiNiBiUiJiPiOhAifiDiPiOiUiSiPiMifiQffRBFeMiJjOifiPjVjUhAiDjIjFjDjLffRBjzEjUjJjNjFJfffnfJEnABjzBjUKfXJfEXIfEEXEfEXFfjGfRBFeKiDjPjOjUjSjPjMjMifiQffRBFeUiBiOiJiNiBiUiJiPiOhAifiDiPiOiUiSiPiMifiQffRBFeMiJjOifiPjVjUhAiDjIjFjDjLffRBjJfffnfOFbyGn0ABJGnABjBfCzBhNLjBfnndBnfACzBhcMjJfjKfnnnJLnABjzFjWjBjMjVjFNfjBfnf0DzAOByB\")'
+      //@ts-ignore
+      newComp.layer("Nul")("ADBE Effect Parade")("Pseudo/Nul_Contr_P")("Pseudo/Nul_Contr_P-0002").expression = CopyrightText_P + '\r\n\r\neval (\"@JSXBIN@ES@2.0@MyBbyBn0ABOAbyBn0ABJBnABjzBjUBfndAfACzBhcCEEjzGjFjGjGjFjDjUDfRBFeNiOjVjMiDjPjOjUjSjPjMjMifiQffRBFeGiOjVjNiLjFjZffnndBbyEn0ABJEnABjBfXzEjUjJjNjFEfEXzDjLjFjZFfEEXDfEXzFjMjBjZjFjSGfjzIjUjIjJjTiDjPjNjQHfRBFeKiDjPjOjUjSjPjMjMifiQffRBFeUiBiOiJiNiBiUiJiPiOhAifiDiPiOiUiSiPiMifiQffRBFeMiJjOifiPjVjUhAiDjIjFjDjLffRBEEjDfRBFeNiOjVjMiDjPjOjUjSjPjMjMifiQffRBFeGiOjVjNiLjFjZffffnf0DzAIByB\")'
+      //@ts-ignore
+      newComp.layer("Nul")("ADBE Effect Parade")("Pseudo/Nul_Contr_P")("Pseudo/Nul_Contr_P-0003").expression = CopyrightText_P + '\r\n\r\neval (\"@JSXBIN@ES@2.0@MyBbyBn0ABOAbyBn0ABJBnABjzDjFjOjEBfCzBhKCCCCzBhNDjzEjUjJjNjFEfEEXzGjFjGjGjFjDjUFfEXzFjMjBjZjFjSGfjzIjUjIjJjTiDjPjNjQHfRBFeDiOjVjMffRBFeNiOjVjMiDjPjOjUjSjPjMjMifiQffRBFeHiUjJjNjFiLjFjZffnnnndKEEXFfEXGfjHfRBFeKiDjPjOjUjSjPjMjMifiQffRBFeUiBiOiJiNiBiUiJiPiOhAifiDiPiOiUiSiPiMifiQffRBFeJiUjSjJjNiTjQjFjFjEffnnnfACzChdhdIEEXFfEXGfjHfRBFeKiDjPjOjUjSjPjMjMifiQffRBFeUiBiOiJiNiBiUiJiPiOhAifiDiPiOiUiSiPiMifiQffRBFeMiJjOifiPjVjUhAiDjIjFjDjLffnndAbyFn0ABJFnAFdjE0DzAJByB\")'
+      //@ts-ignore
+      newComp.layer("Nul")("ADBE Effect Parade")("Pseudo/Nul_Contr_P")("Pseudo/Nul_Contr_P-0004").expression = CopyrightText_P + '\r\n\r\neval (\"@JSXBIN@ES@2.0@MyBbyBn0ABOAbBn0ACJBnABjzCiTjUBfCzBhKCCCCzBhNDjzEjUjJjNjFEfEEXzGjFjGjGjFjDjUFfEXzFjMjBjZjFjSGfjzIjUjIjJjTiDjPjNjQHfRBFeDiOjVjMffRBFeNiOjVjMiDjPjOjUjSjPjMjMifiQffRBFeHiUjJjNjFiLjFjZffnnnndKEEXFfEXGfjHfRBFeKiDjPjOjUjSjPjMjMifiQffRBFeUiBiOiJiNiBiUiJiPiOhAifiDiPiOiUiSiPiMifiQffRBFeJiUjSjJjNiTjQjFjFjEffnnnfJCnAjBfACzChdhdIEEXFfEXGfjHfRBFeKiDjPjOjUjSjPjMjMifiQffRBFeUiBiOiJiNiBiUiJiPiOhAifiDiPiOiUiSiPiMifiQffRBFeMiJjOifiPjVjUhAiDjIjFjDjLffnndBbyEn0ABJEnAFd0EzAJByB\")'
+         //@ts-ignore
+      app.project.activeItem.layer("Nul").shy = true;
+      nullobjectN.enabled = false;
+      nullobjectN.locked = false;
+
+
+      /// Шейповый слой с набором экспрешенов.
+      //@ts-ignore
+      var shapeLayer = newComp.layers.addShape();
+      shapeLayer.name = ("TrPolygon_1");
+      var shapegroup = shapeLayer.property("Contents").addProperty("ADBE Vector Group");
+      var newshapeP = shapegroup.property("Contents").addProperty("ADBE Vector Shape - Star");
+      shapegroup.property("Material Options").enabled = false;
+      newshapeP.property("ADBE Vector Star Type").setValue(2);
+      newshapeP.property("ADBE Vector Star Points").expression = CopyrightText_P + '\r\n\r\neval (\"@JSXBIN@ES@2.0@MyBbyBn0ABJAnAEEXzGjFjGjGjFjDjUBfEXzFjMjBjZjFjSCfjzIjUjIjJjTiDjPjNjQDfRBFeKiDjPjOjUjSjPjMjMifiQffRBFeUiBiOiJiNiBiUiJiPiOhAifiDiPiOiUiSiPiMifiQffRBFeGiQjPjJjOjUjTff0DzAEByB\")'
+      newshapeP.property("ADBE Vector Star Rotation").expression = CopyrightText_P + '\r\n\reval (\"@JSXBIN@ES@2.0@MyBbyBn0ADJCnABjzFiTjIiSjPjUBfEEXzGjFjGjGjFjDjUCfEXzFjMjBjZjFjSDfjzIjUjIjJjTiDjPjNjQEfRBFeKiDjPjOjUjSjPjMjMifiQffRBFeUiBiOiJiNiBiUiJiPiOhAifiDiPiOiUiSiPiMifiQffRBFeIiSjPjUjBjUjJjPjOffnfJEnABjzFiTjIjJjGjUFfEEXCfEXDfjEfRBFeKiDjPjOjUjSjPjMjMifiQffRBFeUiBiOiJiNiBiUiJiPiOhAifiDiPiOiUiSiPiMifiQffRBFeNiTjIjJjGjUiSjPjUjBjUjJjPjOffnfJHnAEXzLjWjBjMjVjFiBjUiUjJjNjFGfjBfRBCzBhNHjzEjUjJjNjFIfCzBhKJCJCHjzFjJjOjEjFjYKfnndBXzNjGjSjBjNjFiEjVjSjBjUjJjPjOLfjEfnnjFfnnnnff0DzAMByB\")'
+      newshapeP.property("ADBE Vector Star Outer Radius").expression = CopyrightText_P + '\r\n\r\neval (\"@JSXBIN@ES@2.0@MyBbyBn0AFJAnABjzFjQjPjJjOjUBfEEXzGjFjGjGjFjDjUCfEXzFjMjBjZjFjSDfjzIjUjIjJjTiDjPjNjQEfRBFeKiDjPjOjUjSjPjMjMifiQffRBFeUiBiOiJiNiBiUiJiPiOhAifiDiPiOiUiSiPiMifiQffRBFeGiQjPjJjOjUjTffnfJBnABjzGjBjOjHjMjFiCFfCzBhPGnjBfd2jIBnnfJCnABjzGjBjOjHjMjFiBHfCGCzBhNInjFfdlUnnndCnfJDnABjzGjBjOjHjMjFiSJfCzBhKKCGXzCiQiJLfjzEiNjBjUjIMfnndlUjHfnnnfOFbHn0AFJHnABjzEiTjJjajFNfEEXCfEXDfjEfRBFeKiDjPjOjUjSjPjMjMifiQffRBFeUiBiOiJiNiBiUiJiPiOhAifiDiPiOiUiSiPiMifiQffRBFeEiTjJjajFffnfJJnABjzFiTjUjSjPjLOfEEXCfEXDfjEfRBFeKiDjPjOjUjSjPjMjMifiQffRBFeUiBiOiJiNiBiUiJiPiOhAifiDiPiOiUiSiPiMifiQffRBFeGiTjUjSjPjLjFffnfJLnABjzEiTjUjFjQPfCICzBhLQCGjOfEXzDjTjJjORfjMfRBjJfffnnEEXCfEXDfjEfRBFeKiDjPjOjUjSjPjMjMifiQffRBFeUiBiOiJiNiBiUiJiPiOhAifiDiPiOiUiSiPiMifiQffRBFeIiJjOjUjFjSjWjBjMffnnnndBnfJNnABjzEjUjFjNjQSfCQjNfCKjPfCIjzFjJjOjEjFjYTfnndBnnnnnfJPnAjSfACzChdhdUEEXCfEXDfjEfRBFeKiDjPjOjUjSjPjMjMifiQffRBFeUiBiOiJiNiBiUiJiPiOhAifiDiPiOiUiSiPiMifiQffRBFeNiBjVjUjPhAiJjOjUjFjSjWjBjMffnndBbTn0AEJTnABjNfEEXCfEXDfjEfRBFeKiDjPjOjUjSjPjMjMifiQffRBFeUiBiOiJiNiBiUiJiPiOhAifiDiPiOiUiSiPiMifiQffRBFeEiTjJjajFffnfJVnABjPfEEXCfEXDfjEfRBFeKiDjPjOjUjSjPjMjMifiQffRBFeUiBiOiJiNiBiUiJiPiOhAifiDiPiOiUiSiPiMifiQffRBFeEiTjUjFjQffnfJXnABjSfCQjNfCKjPfCIjTfnndBnnnnnfJZnAjSf0DzAVByB\")'
+      var newshapePG = shapegroup.property("Contents").addProperty("ADBE Vector Graphic - Stroke");
+
+      newshapePG.property("ADBE Vector Stroke Line Cap").setValue(2) //(LCap);
+      newshapePG.property("ADBE Vector Stroke Width").expression = CopyrightText_P + '\r\n\r\neval (\"@JSXBIN@ES@2.0@MyBbyBn0AKJAnABjzFjTjFjFjEiTBfEEXzGjFjGjGjFjDjUCfEXzFjMjBjZjFjSDfjzIjUjIjJjTiDjPjNjQEfRBFeKiDjPjOjUjSjPjMjMifiQffRBFeUiBiOiJiNiBiUiJiPiOhAifiDiPiOiUiSiPiMifiQffRBFeMiTjIjJjGjUiTjUjSiTjFjFjEffnfJBnABjzFiWjPjMiTiTFfEEXCfEXDfjEfRBFeKiDjPjOjUjSjPjMjMifiQffRBFeUiBiOiJiNiBiUiJiPiOhAifiDiPiOiUiSiPiMifiQffRBFePiNjBjYiSjBjOjEiTjUjSiTjIjJjGjUffnfJCnABjzCjSjEGfCzBhLHjBfjzFjJjOjEjFjYIfnnnfJDnAEjzKjTjFjFjEiSjBjOjEjPjNJfRCjGfFctffJEnABjzGjTjMjJjEjFiTKfEjzGjSjBjOjEjPjNLfRCFdBjFfffnfbGn0ACJGnASzGjQjSjFjGjJjYMyBneKiUjSiQjPjMjZjHjPjOifftJHnASzDjOjVjNNyBndAftaIOJJKnATNyBBtACzChdhdOEXzGjTjVjCjTjUjSPfXzEjOjBjNjFQfEXDfjEfRBVzBjJRfyBffRCFdAXzGjMjFjOjHjUjISfVMfyBffVMfyBnnnAVRfyBBXzJjOjVjNiMjBjZjFjSjTTfjEfByBzChchdUJLnAVNfyBONbyPn0ABJPnASzDiJjOjEVyBCzBhNWjIfnndBnftACOEEXCfEXDfjEfRBFeKiDjPjOjUjSjPjMjMifiQffRBFeUiBiOiJiNiBiUiJiPiOhAifiDiPiOiUiSiPiMifiQffRBFeNiTjUjSjPjLjFiTiJjOjWjFjSjUffnndAbyTn0ABJTnASVyBCWVNfyBjIfnnnffOZbygan0ABJganAEEXCfEXDfjEfRBFeKiDjPjOjUjSjPjMjMifiQffRBFeUiBiOiJiNiBiUiJiPiOhAifiDiPiOiUiSiPiMifiQffRBFeGiTjUjSjPjLjFffACOEEXCfEXDfjEfRBFeKiDjPjOjUjSjPjMjMifiQffRBFeUiBiOiJiNiBiUiJiPiOhAifiDiPiOiUiSiPiMifiQffRBFeRiTjUjSjPjLjFiTjIjJjGjUifiPjOhPiPjGffnndAbgdn0ADJgdnABjzJiWjBjMiTjUjSjPjLjFXfEEXCfEXDfjEfRBFeKiDjPjOjUjSjPjMjMifiQffRBFeUiBiOiJiNiBiUiJiPiOhAifiDiPiOiUiSiPiMifiQffRBFeGiTjUjSjPjLjFffnfJgenABjzFiTjUjSiTjIYfEEXCfEXDfjEfRBFeKiDjPjOjUjSjPjMjMifiQffRBFeUiBiOiJiNiBiUiJiPiOhAifiDiPiOiUiSiPiMifiQffRBFeLiTjUjSjPjLjFiTjIjJjGjUffnfOgfbyhAn0ABJhAnAEXzLjWjBjMjVjFiBjUiUjJjNjFZfjXfRBCWjzEjUjJjNjFgafCzBhKgbCgbVVfyBXzNjGjSjBjNjFiEjVjSjBjUjJjPjOgcfjEfnnjYfnnnnffACOEEXCfEXDfjEfRBFeKiDjPjOjUjSjPjMjMifiQffRBFeUiBiOiJiNiBiUiJiPiOhAifiDiPiOiUiSiPiMifiQffRBFeOiSjBjOjEjPjNiTjUjSiTjIjJjGjUffnndAbhDn0ACJhDnABjzIiTjUjSiTjIiSjOjEgdfjKfnfJhEnAEXZfjXfRBCWjgafCgbCgbVVfyBXgcfjEfnnjgdfnnnnffAER4C0AiAM40BiAV4D0AiAN4B0AiAAEAzAgeByB\")'
+      var newshapeTP = shapegroup.property("Contents").addProperty("ADBE Vector Filter - Trim");
+      newshapeTP.property("ADBE Vector Trim Start").expression = CopyrightText_P + '\r\neval (\"@JSXBIN@ES@2.0@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\")';
+      newshapeTP.property("ADBE Vector Trim End").expression = CopyrightText_P + '\r\n\r\neval (\"@JSXBIN@ES@2.0@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\")';
+      newshapeTP.property("ADBE Vector Trim Offset").expression = CopyrightText_P + '\/\/\/\/\/\/\/\/\/.\r\n\r\n\r\neval (\"@JSXBIN@ES@2.0@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\")'
+      ///   Присваиваем свойство шай слою.
+      //@ts-ignore
+      app.project.activeItem.layer("TrPolygon_1").shy = true;
+      /// Дезактивирую слой "TrStrokeP 1" 
+      //@ts-ignore
+      app.project.activeItem.layer("TrPolygon_1").selected = true;
+
+      ///Копии  слоя.
+
+      for (i = 1; i <= (numShapeLaer - 1); i++) {
+         //@ts-ignore
+         app.project.activeItem.layer("TrPolygon_1").duplicate()
+      }
+      //@ts-ignore
+      app.project.activeItem.layer("TrPolygon_1").selected = false;
+
+
+
+
+      /// Активизирую окно "Effect Controls"
+      if (app.findMenuCommandId("Effect Controls")) { app.executeCommand(app.findMenuCommandId("Effect Controls")) }
+
+
+      /// Активизирую слой "Controll_P" 
+      //@ts-ignore
+      app.project.activeItem.layer("Controll_P").selected = true;
 
    }
-   app.endUndoGroup(); /// Отмена создания композиции.
+
+   colorSetTS(colorArr);
+   // app.endUndoGroup(); /// Отмена создания композиции.
 };  
