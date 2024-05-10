@@ -1,4 +1,4 @@
-import React, {useContext, useEffect}  from "react";
+import React, { HtmlHTMLAttributes ,useContext, useEffect}  from "react";
 // import {os, path, fs} from "../../../lib/cep/node"
 import {
    csi,
@@ -43,10 +43,13 @@ function Tab_color (){
          });
         };
 
-   
+        var btnPlusPal = document.getElementsByClassName('bt1');
 
  const  handleColorpickerChangeOn = (e: any) => {
       handleCheckboxChange([e.target.name], e.target.checked);
+      if(customData.autoFill===false){
+         btnPlusPal[0].classList.add('hide');
+      } else {btnPlusPal[0].classList.remove('hide');}
    }
    
 
@@ -102,7 +105,7 @@ const   replaceAndMinusColor= (e:any)=> {
           <input type="checkbox" checked={customData.autoFill} onChange={handleColorpickerChangeOn} className="n_points  check" name="autoFill"/>
           </div>
           <div className="buttons">
-             <div onClick={plusPal} className="button bt1 disableElement" id="btnPlus"></div>
+             <div onClick={plusPal} className="button bt1 " id="btnPlus"></div>
              <div onClick={colorSet} className="button bt3" id="btnApp">App</div>
              <div /*onClick={}*/ className="button bt4" id="btn_reset">Res</div>
           </div>

@@ -9,7 +9,7 @@ import {
    evalTS,
  } from "../../../lib/utils/bolt";
 import { render } from "react-dom";
-import {} from '../../Context';
+// import {} from '../../Context';
 import {StartContext} from '../../Context';
 
 
@@ -26,12 +26,12 @@ function  Tab_circle(){
 
 
        function  butCap  (){
-        evalTS("butCapTS", "butCap").then((res) => {
+        evalTS("butCapTS", "butCap", "TrCircle", 1).then((res) => {
         });
        };
 
        function  roundCap  (){
-        evalTS("roundCapTS", "roundCap").then((res) => {
+        evalTS("roundCapTS", "roundCap", "TrCircle", 2).then((res) => {
         });
        };
 
