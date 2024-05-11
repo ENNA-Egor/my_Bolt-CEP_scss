@@ -1,5 +1,7 @@
 
-export const butCap = ( param:string, Line:number) => {
+export const butCap = ( param:string, Line:number, nameComp:string) => {
+
+
    // function capStroke(Line, param) {
       app.beginUndoGroup("CapStrokefunction");
       //@ts-ignore
@@ -12,10 +14,10 @@ export const butCap = ( param:string, Line:number) => {
       var setRoundCaps = function () {
          //wrapper function
          var activeComp = app.project.activeItem;
+         if(nameComp !==activeComp?.name.substr(0, nameComp.length)){
+            alert('Choose the appropriate composition!');
+         }
          if (activeComp && activeComp instanceof CompItem) {
-   
-   
-   
             var prefix = param;
             for (var s = 1; s <= activeComp.numLayers; s++) {
                var later = activeComp.layer(s);

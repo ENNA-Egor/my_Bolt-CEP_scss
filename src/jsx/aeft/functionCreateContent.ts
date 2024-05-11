@@ -3,7 +3,7 @@
 import {colorSetTS} from './functionTabColorSett'
 
 
-export const createContent = (startText:string, param:string, dataCreate:any, patFfx:string) => {
+export const createContent = ( param:string, dataCreate:any, patFfx:string) => {
  
 
     //////////////////////////////////////создаём контент.//////////////////////////////////////////////

@@ -20,28 +20,28 @@ function  Tab_circle(){
     const  patFfx = path.join(__dirname, '/public/ffx/');
 
     function createCircle  (){
-        evalTS("createCircleTS", "createCircle", "Circle", customData, patFfx).then((res) => {
+        evalTS("createCircleTS", "Circle", customData, patFfx).then((res) => {
         });
        };
 
 
        function  butCap  (){
-        evalTS("butCapTS", "butCap", "TrCircle", 1).then((res) => {
+        evalTS("butCapTS",  "TrCircle", 1, "TrSC_Circle").then((res) => {
         });
        };
 
        function  roundCap  (){
-        evalTS("roundCapTS", "roundCap", "TrCircle", 2).then((res) => {
+        evalTS("roundCapTS",  "TrCircle", 2, "TrSC_Circle").then((res) => {
         });
        };
 
        function plusEl  (){
-        evalTS("plusElTS", "plusEl").then((res) => {
+        evalTS("plusElTS", "TrCircle",  "TrSC_Circle").then((res) => {
         });
        };
 
        function  minusEl  (){
-        evalTS("minusElTS", "minusEl").then((res) => {
+        evalTS("minusElTS", "TrCircle", "TrSC_Circle").then((res) => {
         });
        };
 

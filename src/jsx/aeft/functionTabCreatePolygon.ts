@@ -1,16 +1,17 @@
 import {createContent} from './functionCreateContent'
+import {butCap} from './functionCap';
 
-export const createPolygonTS = (startText: string, param:string, dataCreate:any, patFfx:string) => {
-   createContent (startText, param, dataCreate, patFfx); 
+export const createPolygonTS = ( param:string, dataCreate:any, patFfx:string) => {
+   createContent ( param, dataCreate, patFfx); 
  };
 
-// export const butCapTS = (startText: string) => {
-//    alert (startText)   
-//  };
+ export const butCapTS = ( param:string, caps:number, nameComp:string) => {
+  butCap (param, caps, nameComp);
+};
 
-// export const roundCapTS = (startText: string) => {
-//    alert (startText)  
-//  };
+export const roundCapTS = ( param:string, caps:number, nameComp:string) => {
+  butCap (param, caps, nameComp); 
+};
 
 // export const plusElTS = (startText: string) => {
 //    alert (startText)  

@@ -19,7 +19,17 @@ function Tab_polygon(){
    const  patFfx = path.join(__dirname, '/public/ffx/');
 
    function createPolygon  (){
-      evalTS("createPolygonTS", "createPolygon", "Polygon", customData, patFfx).then((res) => {
+      evalTS("createPolygonTS", "Polygon", customData, patFfx).then((res) => {
+      });
+     };
+
+     function  butCap  (){
+      evalTS("butCapTS",  "TrPolygon", 1, "TrSC_Polygon").then((res) => {
+      });
+     };
+
+     function  roundCap  (){
+      evalTS("roundCapTS",  "TrPolygon", 2, "TrSC_Polygon").then((res) => {
       });
      };
 
@@ -50,8 +60,8 @@ function Tab_polygon(){
            </div>  
            <p>Cap</p>
            <div className="linecap_blok" >
-              <div className="button button_cap  but"></div>
-              <div className="button button_cap round"></div>
+              <div className="button button_cap  but" onClick={butCap}></div>
+              <div className="button button_cap round" onClick={roundCap}></div>
            </div> 
            <p>Add/End</p>
            <div className="add_end_blok" >
