@@ -4,6 +4,8 @@ export const butCap = ( param:string, Line:number, nameComp:string) => {
 
    // function capStroke(Line, param) {
       app.beginUndoGroup("CapStrokefunction");
+      var myWindow = new Window("dialog", "A warning");
+      var myMessage = myWindow.add("statictext");
       //@ts-ignore
       function setRoundStrokeCap (later) {
 
@@ -15,7 +17,8 @@ export const butCap = ( param:string, Line:number, nameComp:string) => {
          //wrapper function
          var activeComp = app.project.activeItem;
          if(nameComp !==activeComp?.name.substr(0, nameComp.length)){
-            alert('Choose the appropriate composition!');
+            myMessage.text = "Select "+nameComp+ " composition";
+            myWindow.show();
          }
          if (activeComp && activeComp instanceof CompItem) {
             var prefix = param;

@@ -1,6 +1,6 @@
 import {createContent} from './functionCreateContent';
 import {butCap} from './functionCap';
-import {plusEl, /*elementMinus*/} from './functionPlusMinus'
+import {plusEl, minusEl} from './functionPlusMinus'
 
 export const createCircleTS = ( param:string, dataCreate:any,patFfx:string) => {
 
@@ -20,7 +20,5 @@ export const plusElTS = (prefComp:string, prefLayer:string, color:[string]) => {
  };
 
 export const minusElTS = (prefComp:string, prefLayer:string) => {
-   alert (prefComp)  
-   alert (prefLayer) 
-  //  elementMinus (prefComp, prefLayer)   
+   minusEl (prefComp, prefLayer)   
  };

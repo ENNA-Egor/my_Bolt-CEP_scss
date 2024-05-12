@@ -43,13 +43,13 @@ function Tab_color (){
          });
         };
 
-        var btnPlusPal = document.getElementsByClassName('bt1');
+        var btnApp = document.getElementsByClassName('bt3');
 
  const  handleColorpickerChangeOn = (e: any) => {
       handleCheckboxChange([e.target.name], e.target.checked);
       if(customData.autoFill===false){
-         btnPlusPal[0].classList.add('hide');
-      } else {btnPlusPal[0].classList.remove('hide');}
+         btnApp[0].classList.add('disabled-div');
+      } else {btnApp[0].classList.remove('disabled-div');}
    }
    
 

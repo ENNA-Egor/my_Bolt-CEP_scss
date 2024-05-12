@@ -33,6 +33,16 @@ function Tab_polygon(){
       });
      };
 
+     function plusEl  (){
+      evalTS("plusElTS",  "TrSC_Polygon-", "TrPolygon_", customData.colors).then((res) => {
+      });
+     };
+
+     function  minusEl  (){
+      evalTS("minusElTS", "TrSC_Polygon-", "TrPolygon_").then((res) => {
+      });
+     };
+
       const npoint = customData.num_points;
      const changeInputOn = (e: any) => {
         if (e.target.value <3){
@@ -65,8 +75,8 @@ function Tab_polygon(){
            </div> 
            <p>Add/End</p>
            <div className="add_end_blok" >
-              <div className="button button_plus"></div>
-              <div className="button button_minus"></div>
+              <div className="button button_plus" onClick={plusEl}></div>
+              <div className="button button_minus" onClick={minusEl}></div>
            </div>
         </fieldset>
      </div>
