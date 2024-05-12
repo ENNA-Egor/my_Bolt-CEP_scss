@@ -36,12 +36,12 @@ function  Tab_circle(){
        };
 
        function plusEl  (){
-        evalTS("plusElTS", "TrCircle",  "TrSC_Circle").then((res) => {
+        evalTS("plusElTS",  "TrSC_Circle-", "TrCircle_", customData.colors).then((res) => {
         });
        };
 
        function  minusEl  (){
-        evalTS("minusElTS", "TrCircle", "TrSC_Circle").then((res) => {
+        evalTS("minusElTS", "TrSC_Circle-", "TrCircle_").then((res) => {
         });
        };
 

@@ -1,25 +1,32 @@
+
+import {colorSetTS} from './functionTabColorSett'
+
 /// Кнопка плюс элемента
-export const plusEl=(prefComp:String, prefLayer:string)=> {
+export const plusEl=(prefComp:string, prefLayer:string, color:[string])=> {
    app.beginUndoGroup("elementPlusfunction");
    var myWindow = new Window("dialog", "A warning");
    var myMessage = myWindow.add("statictext")
    var newComp = app.project.activeItem;
-   var prefixComp = prefComp;
-   var x = prefixComp.length - 6;
-   var prefMesage = prefixComp.substr(5, x);
-   if (newComp.name.substr(0, prefixComp.length) == prefixComp) {
+   var x:number = prefComp.length - 5;
+   var prefMesage = prefComp.substr(5, x);
+   var nu:number;
+   //@ts-ignore
+   if (newComp.name.substr(0, prefComp.length) === prefComp) {
       var prefix = prefLayer,
          num = 0;
+          //@ts-ignore
       for (var i = 1; i <= newComp.numLayers; i++)
-         if (newComp.layer(i).name.substr(0, prefix.length) == prefix)
-            num++;
+         //@ts-ignore
+      if (newComp.layer(i).name.substr(0, prefix.length) === prefix)
+         num++;
       num;  //количество строков
       if(num==20){
          myMessage.text ='Cannot create more than 20 items.';
          myWindow.show();
          return
       }
-
+      alert(prefLayer+ '1')
+          //@ts-ignore
       app.project.activeItem.layer(prefLayer + "1").duplicate()  // Дублируем слой
    }
    else {
@@ -27,18 +34,21 @@ export const plusEl=(prefComp:String, prefLayer:string)=> {
       myWindow.show();
    }
    var activComp = newComp;
-   if (prefComp == "TrSC_Circle-") {
-      circleResize(activComp, '1');
+   if (prefComp === "TrSC_Circle-") {
+      //@ts-ignore
+      circleResize(activComp, '1', num);
    } else if (prefComp == "TrSC_Polygon-") {
-      polygonResize(activComp, '1');
+      //@ts-ignore
+      polygonResize(activComp, '1', num);
    }
-   add_color_shape(colorAdd)
+           colorSetTS(color)
    app.endUndoGroup(); /// Отмена добавления элемента.
 
 }
 
-
-function circleResize(newComp, n) { ////Изменяем размер окружностей
+ //@ts-ignore
+function circleResize(newComp, n, num) { ////Изменяем размер окружностей
+   //@ts-ignore
    var numShapeLaer = num + (+n);  //// Количество строков
    var w = newComp.width;
    var h = newComp.height;
@@ -49,8 +59,9 @@ function circleResize(newComp, n) { ////Изменяем размер окруж
    newComp.layer("Controll")("ADBE Effect Parade")("Pseudo/ANIM _CONTROL_C")("Pseudo/ANIM _CONTROL_C-0012").setValue(valueStroke * 2);
 
 }
-
+ //@ts-ignore
 function polygonResize(newComp, n) {  ////Изменяем размер полигонов
+    //@ts-ignore
    var numShapeLaer = num + (+n);  //// Количество строков
    var w = newComp.width;
    var h = newComp.height;
@@ -68,41 +79,41 @@ function polygonResize(newComp, n) {  ////Изменяем размер поли
 
 /// Кнопка минус элемента
 
-function elementMinus(prefComp, prefLayer) {
-   app.beginUndoGroup("elementMinusfunction");
-   var myWindow = new Window("dialog", "A warning");
-   var myMessage = myWindow.add("statictext");
-   var newComp = app.project.activeItem;
-   var prefixComp = prefComp;
-   if (newComp.name.substr(0, prefixComp.length) == prefixComp) {
-      var prefix = prefLayer;
-      num = 0;
-      for (var i = 1; i <= newComp.numLayers; i++)
-         if (newComp.layer(i).name.substr(0, prefix.length) == prefix)
-            num++;
-      num;  //количество строков
-      if (num >= 3) {
-         app.project.activeItem.layer(prefLayer + num).remove() // Удаляем слой
-         var activComp = newComp;
-         if (prefComp == "TrSC_Circle-") {
-            circleResize(activComp, '-1');
-         } else if (prefComp == "TrSC_Polygon-") {
-            polygonResize(activComp, '-1');
-         }
-         app.endUndoGroup(); /// Отмена удаления элемента.
+//  export const elementMinus(prefComp, prefLayer) => {
+//    app.beginUndoGroup("elementMinusfunction");
+//    var myWindow = new Window("dialog", "A warning");
+//    var myMessage = myWindow.add("statictext");
+//    var newComp = app.project.activeItem;
+//    var prefixComp = prefComp;
+//    if (newComp.name.substr(0, prefixComp.length) == prefixComp) {
+//       var prefix = prefLayer;
+//       num = 0;
+//       for (var i = 1; i <= newComp.numLayers; i++)
+//          if (newComp.layer(i).name.substr(0, prefix.length) == prefix)
+//             num++;
+//       num;  //количество строков
+//       if (num >= 3) {
+//          app.project.activeItem.layer(prefLayer + num).remove() // Удаляем слой
+//          var activComp = newComp;
+//          if (prefComp == "TrSC_Circle-") {
+//             circleResize(activComp, '-1');
+//          } else if (prefComp == "TrSC_Polygon-") {
+//             polygonResize(activComp, '-1');
+//          }
+//          app.endUndoGroup(); /// Отмена удаления элемента.
 
 
-      } else {
-         // var myWindow = new Window("dialog", "A warning");
-         // var myMessage = myWindow.add("statictext");
-         myMessage.text = "The composition can not be less than two elements";
-         myWindow.show();
-      }
-   }
-   else {
-      // var myWindow = new Window("dialog", "A warning");
-      // var myMessage = myWindow.add("statictext");
-      myMessage.text = "Select Circle composition";
-      myWindow.show();
-   }
-}
+//       } else {
+//          // var myWindow = new Window("dialog", "A warning");
+//          // var myMessage = myWindow.add("statictext");
+//          myMessage.text = "The composition can not be less than two elements";
+//          myWindow.show();
+//       }
+//    }
+//    else {
+//       // var myWindow = new Window("dialog", "A warning");
+//       // var myMessage = myWindow.add("statictext");
+//       myMessage.text = "Select Circle composition";
+//       myWindow.show();
+//    }
+// }

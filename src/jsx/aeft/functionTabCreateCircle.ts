@@ -1,5 +1,6 @@
 import {createContent} from './functionCreateContent';
 import {butCap} from './functionCap';
+import {plusEl, /*elementMinus*/} from './functionPlusMinus'
 
 export const createCircleTS = ( param:string, dataCreate:any,patFfx:string) => {
 
@@ -14,12 +15,12 @@ export const roundCapTS = ( param:string, caps:number, nameComp:string) => {
    butCap (param, caps, nameComp); 
  };
 
-export const plusElTS = (prefComp:string, prefLayer:string) => {
-   alert (prefComp)  
-   alert (prefLayer)  
+export const plusElTS = (prefComp:string, prefLayer:string, color:[string]) => {
+   plusEl (prefComp, prefLayer, color)
  };
 
 export const minusElTS = (prefComp:string, prefLayer:string) => {
    alert (prefComp)  
-   alert (prefLayer)    
+   alert (prefLayer) 
+  //  elementMinus (prefComp, prefLayer)   
  };
