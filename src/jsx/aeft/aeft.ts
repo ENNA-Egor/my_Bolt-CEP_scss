@@ -1,32 +1,32 @@
 
-import {customSettingsTS,} from "./functionTabSetting";
+import { customSettingsTS, } from "./functionTabSetting";
 
 import {
-  replaceColorTS, 
+  replaceColorTS,
   plusPalTS,
 } from "./functionTabColor";
 
-import {colorSetTS,} from "./functionTabColorSett";
+import { colorSetTS, } from "./functionTabColorSett";
 
-import {createCircleTS,} from "./functionTabCreateCircle";
-import {createPolygonTS,} from "./functionTabCreatePolygon";
+import { createCircleTS, } from "./functionTabCreateCircle";
+import { createPolygonTS, } from "./functionTabCreatePolygon";
 
 import {
-  butCapTS, 
-  roundCapTS, 
-  plusElTS, 
+  butCapTS,
+  roundCapTS,
+  plusElTS,
   minusElTS,
 } from "./functionTabCreateCircle";
 
 export {
-  customSettingsTS, 
-  replaceColorTS, 
-  plusPalTS, 
-  colorSetTS, 
-  createCircleTS, 
-  butCapTS, 
-  roundCapTS, 
-  plusElTS, 
+  customSettingsTS,
+  replaceColorTS,
+  plusPalTS,
+  colorSetTS,
+  createCircleTS,
+  butCapTS,
+  roundCapTS,
+  plusElTS,
   minusElTS,
   createPolygonTS
 };
