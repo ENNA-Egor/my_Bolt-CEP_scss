@@ -219,7 +219,7 @@ h1{
 .boddy{
   background-color: $darkest;
   margin: 0 2px;
-  max-width: 100px;
+  max-width: 155px;
   min-height: 200px;
   border: 1px solid $highlight;
   border-radius: 3px;
@@ -238,3 +238,37 @@ h1{
   opacity: 0.3;
   user-select: none;
 }
+
+.legend {
+  font-size: 14px;
+  color: $colorbord;
+}
+
+.setName {
+  color: $color-border-button;
+  background-color: $colorbg;
+  border: 1px solid $color-border-button;
+  width: 120px;
+}
+
+.field_1 {
+  width: 150px;
+  margin: 5px 2px 5px 0;
+  padding: 0;
+  color: $colorbord;
+}
+  
+  .button_bt {
+    background-color: $colorbg;
+    color: '#f1e6d6';
+    margin: 5px 5px 5px 3px;
+    padding: 1px;
+    min-width: 20px;
+    height: 20px;
+    user-select: none;
+    text-align: center;
+    border: 1px solid $color-border-button;
+    border-radius: 2px;
+    color: $color-border-button;
+ }
+
