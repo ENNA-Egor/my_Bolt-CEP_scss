@@ -1,16 +1,19 @@
 import React from "react";
 import Element from './element'
 
-interface PropsInterface {
-  palett: string;
-}
 
-function Palett(props: PropsInterface) {
+
+function Palett(props: any) {
   const { palett } = props;
+  alert(Object.keys(palett));
   return (
     <div className="palet">
-      Palette: { palett }
-      <Element element={palett} />
+ {
+  Object.keys(palett).map(palet =>(
+    <Element palet={palett} />
+
+  ))
+ }
     </div>
   );
 }

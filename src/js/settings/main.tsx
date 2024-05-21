@@ -52,7 +52,7 @@ const Main = () => {
             <button class="button btn4">^ Data</button> */}
         </fieldset>
     </div>
-    <Paletts paletts={customPalett.Default.Standart[0]}/>
+    <Paletts paletts={customPalett}/>
     {/* <Paletts paletts={'Proba'}/> */}
  </div>
   );

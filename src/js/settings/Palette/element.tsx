@@ -1,7 +1,8 @@
-function Element(props: { element: string }) {
+function Element(props:any) {
+  const { palet } = props;
   return (
     <div className="palet">
-      Palette: { props.element }
+      Palette- { palet. Default.Яркий}
       {/* <h5>{props.element}</h5> */}
     </div>
   );
