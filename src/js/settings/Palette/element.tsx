@@ -1,16 +1,10 @@
-function Element (props:any)  {
+function Element(props: { element: string }) {
+  return (
+    <div className="palet">
+      Palette: { props.element }
+      {/* <h5>{props.element}</h5> */}
+    </div>
+  );
+}
 
-
-      return(
-        // <div className="palet">
-           
-        //    Palette + {props}
-        //    Palette
-        // </div>
-
-        <h5>{'Proba'}</h5>
-      );
-    };
-  
-  
-    export default  Element ;
+export default Element;
