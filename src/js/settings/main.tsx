@@ -25,7 +25,12 @@ const Main = () => {
     const plusPal=()=> {
       alert ('Ok');
       // alert (customPalett.Default);
-      console.log (customPalett.Default.Standart);
+      console.log (customPalett.Default);
+      let n =Object.keys(customPalett)[0];
+      console.log (n);
+      // console.log (customPalett.`$n`);
+      console.log (Object.keys(customPalett)[0]);
+      console.log (Object.keys(customPalett)[1]);
     }
 
   return (
