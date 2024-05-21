@@ -1,4 +1,4 @@
-import { HtmlHTMLAttributes, useEffect, useState } from "react";
+import { HtmlHTMLAttributes, useEffect, useState, useContext } from "react";
 import { os, path } from "../lib/cep/node";
 import {
   csi,
@@ -8,6 +8,8 @@ import {
   subscribeBackgroundColor,
   evalTS,
 } from "../lib/utils/bolt";
+import Paletts from './Palette/paletts'
+import { PaletteContext } from './PalettContext';
 
 const Main = () => {
   const [bgColor, setBgColor] = useState("#282c34");
@@ -18,11 +20,17 @@ const Main = () => {
     }
   }, []);
 
+    const {customPalett}=  useContext(PaletteContext);
 
+    const plusPal=()=> {
+      alert ('Ok');
+      // alert (customPalett.Default);
+      console.log (customPalett.Default.Standart);
+    }
 
   return (
    <div className="boddy">
-   {/* <p>Color Palette</p> */}
+    <p>COLOR PALETTE</p> 
    {/* <div className="buttons">
    <div className="button">Click</div>
    </div> */}
@@ -33,12 +41,14 @@ const Main = () => {
     <div>
         <fieldset className="field_1">
             <legend className="legend">Add Preset</legend>
-            <button className="button_bt btn2">+</button>
+            <button className="button_bt btn2" onClick={plusPal}>+</button>
             <input className="setName" type="text" placeholder="Enter a group name"/>
              {/* <button class="button btn3">- Data</button>
             <button class="button btn4">^ Data</button> */}
         </fieldset>
     </div>
+    <Paletts paletts={customPalett.Default.Standart[0]}/>
+    {/* <Paletts paletts={'Proba'}/> */}
  </div>
   );
 };
