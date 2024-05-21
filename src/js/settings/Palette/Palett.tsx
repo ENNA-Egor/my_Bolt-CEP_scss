@@ -8,7 +8,7 @@ const Palett = (props:any) => {
 //   const colorToRgb = hexToRgb(color);
     const text:any = palett;
     return(
-      <div >
+      <div className="palet">
          {/* <div style ={{backgroundColor:colorToRgb}} className= {'palette'}  onClick={replaceAndMinusColor} id={index}></div> */}
          Palette + {text}
       </div>
