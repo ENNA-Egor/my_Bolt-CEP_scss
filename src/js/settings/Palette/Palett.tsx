@@ -1,8 +1,8 @@
 import React from "react";
-// import {hexToRgb} from '../../../functionModule/function'
+import Element from './element'
 
 
-const Palett = (props:any) => {
+function Palett  (props:any) {
 
   const {palett} = props;
 //   const colorToRgb = hexToRgb(color);
@@ -11,6 +11,8 @@ const Palett = (props:any) => {
       <div className="palet">
          {/* <div style ={{backgroundColor:colorToRgb}} className= {'palette'}  onClick={replaceAndMinusColor} id={index}></div> */}
          Palette + {text}
+         <Element element = {'Proba'}/>
+         {/* <Element/> */}
       </div>
     );
   };
