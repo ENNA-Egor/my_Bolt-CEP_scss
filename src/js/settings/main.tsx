@@ -8,7 +8,7 @@ import {
   subscribeBackgroundColor,
   evalTS,
 } from "../lib/utils/bolt";
-import Paletts from './Palette/paletts'
+import PalettList from './Palette/palettList'
 import { PaletteContext } from './PalettContext';
 
 const Main = () => {
@@ -34,25 +34,6 @@ const Main = () => {
       console.log (Object.keys(customPalett)[1]);
     }
 
-    function renderPalett(COLORS_PALLETE: any) {
-      return Object.keys(COLORS_PALLETE).map((key) => {
-        const value = COLORS_PALLETE[key];
-        if (typeof value === "object") {
-          return (
-            <div key={key}>
-              <h1>{key}</h1>
-              <ul>{renderPalett(value)}</ul>
-            </div>
-          );
-        } else {
-          return <li key={key} className= {'palette'} style ={{backgroundColor:value}}>{value}</li>;
-        }
-      });
-    }
-    
-    const PalettList = () => {
-      return <ul>{renderPalett(COLORS_PALLETE)}</ul>;
-    };
     
     return (
       <div className="boddy">
@@ -73,15 +54,8 @@ const Main = () => {
             <button class="button btn4">^ Data</button> */}
         </fieldset>
     </div>
-     {/* <div>{getKey_1_Context(COLORS_PALLETE)}</div> 
-     {
-  Object.keys(customPalett).map(keys =>( */}
-    
-     <PalettList/>
-{/* //         ))
-//       }  */}
-{/* //     <Paletts paletts={'Proba'}/>  */}
-//  </div>
+     <PalettList palets={COLORS_PALLETE}/>
+  </div>
   );
 };
 
