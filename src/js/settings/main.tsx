@@ -21,6 +21,7 @@ const Main = () => {
   }, []);
 
     const {customPalett}=  useContext(PaletteContext);
+    const COLORS_PALLETE = customPalett;
 
     const plusPal=()=> {
       alert ('Ok');
@@ -33,8 +34,28 @@ const Main = () => {
       console.log (Object.keys(customPalett)[1]);
     }
 
-  return (
-   <div className="boddy">
+    function renderPalett(COLORS_PALLETE: any) {
+      return Object.keys(COLORS_PALLETE).map((key) => {
+        const value = COLORS_PALLETE[key];
+        if (typeof value === "object") {
+          return (
+            <div key={key}>
+              <h1>{key}</h1>
+              <ul>{renderPalett(value)}</ul>
+            </div>
+          );
+        } else {
+          return <li key={key} className= {'palette'} style ={{backgroundColor:value}}>{value}</li>;
+        }
+      });
+    }
+    
+    const PalettList = () => {
+      return <ul>{renderPalett(COLORS_PALLETE)}</ul>;
+    };
+    
+    return (
+      <div className="boddy">
     <p>COLOR PALETTE</p> 
    {/* <div className="buttons">
    <div className="button">Click</div>
@@ -52,14 +73,15 @@ const Main = () => {
             <button class="button btn4">^ Data</button> */}
         </fieldset>
     </div>
-    {
-  Object.keys(customPalett).map(keys =>(
+     {/* <div>{getKey_1_Context(COLORS_PALLETE)}</div> 
+     {
+  Object.keys(customPalett).map(keys =>( */}
     
-    <Paletts paletts={customPalett}/>
-        ))
-      }
-    {/* <Paletts paletts={'Proba'}/> */}
- </div>
+     <PalettList/>
+{/* //         ))
+//       }  */}
+{/* //     <Paletts paletts={'Proba'}/>  */}
+//  </div>
   );
 };
 
