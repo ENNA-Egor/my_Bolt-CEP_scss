@@ -1,3 +1,6 @@
+import {hexToRgb} from '../../../js/functionModule/function'
+
+
 function renderPalett(COLORS_PALLETE: any) {
     return Object.keys(COLORS_PALLETE).map((key) => {
       const value = COLORS_PALLETE[key];
@@ -5,11 +8,12 @@ function renderPalett(COLORS_PALLETE: any) {
         return (
           <div key={key}>
             <h1>{key}</h1>
-            <ul>{renderPalett(value)}</ul>
+            <div>{renderPalett(value)}</div>
           </div>
         );
       } else {
-        return <li key={key} className= {'palette'} style ={{backgroundColor:value}}>{value}</li>;
+        const colorToRgb = hexToRgb(value);
+        return <div key={key} className= {'palette'} style ={{backgroundColor:colorToRgb}}></div>;
       }
     });
   }
@@ -18,7 +22,7 @@ function renderPalett(COLORS_PALLETE: any) {
 
 
 function PalettList  (props:any) {
-    return <ul>{renderPalett(props.palets)}</ul>;
+    return <div className="blok_palet">{renderPalett(props.palets)}</div>;
   };
 
 
