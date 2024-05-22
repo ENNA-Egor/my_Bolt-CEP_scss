@@ -8,12 +8,12 @@ function renderPalett(COLORS_PALLETE: any) {
         return (
           <div key={key}>
             <h1>{key}</h1>
-            <div>{renderPalett(value)}</div>
+            <div className="blok_palet2">{renderPalett(value)}</div>
           </div>
         );
       } else {
         const colorToRgb = hexToRgb(value);
-        return <div key={key} className= {'palette'} style ={{backgroundColor:colorToRgb}}></div>;
+        return <div key={key} className= {'palette2'} style ={{backgroundColor:colorToRgb}}></div>;
       }
     });
   }

@@ -36,7 +36,7 @@ const Main = () => {
 
     
     return (
-      <div className="boddy">
+      <div className="boddy2">
     <p>COLOR PALETTE</p> 
    {/* <div className="buttons">
    <div className="button">Click</div>

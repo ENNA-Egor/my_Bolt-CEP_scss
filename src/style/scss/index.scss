@@ -162,6 +162,21 @@ legend{
     border-radius: 3px;
   }
 }
+.blok_palet2{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: $max_width;
+  .palette2{
+    width: $size_elem2;
+    height: $size_elem2;
+    border: 1px solid $highlight;
+    margin: 1px;
+    background-color: rgb(161, 255, 255);
+    color: rgb(161, 255, 255);
+    border-radius: 3px;
+  }
+}
 
 .sett-bloc{
   display: flex;
@@ -224,6 +239,14 @@ h1, .palet{
   border: 1px solid $highlight;
   border-radius: 3px;
 }
+.boddy2{
+  background-color: $darkest;
+  margin: 0 2px;
+  max-width: 115px;
+  min-height: 200px;
+  border: 1px solid $highlight;
+  border-radius: 3px;
+}
  h3{
   color: $yellowfont;
   position: absolute;
@@ -248,7 +271,8 @@ h1, .palet{
   color: $color-border-button;
   background-color: $colorbg;
   border: 1px solid $color-border-button;
-  width: 120px;
+  width: 80px;
+  font-size: 10px;
 }
 
 .field_1 {
