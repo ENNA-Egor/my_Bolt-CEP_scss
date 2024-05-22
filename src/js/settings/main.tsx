@@ -52,7 +52,12 @@ const Main = () => {
             <button class="button btn4">^ Data</button> */}
         </fieldset>
     </div>
+    {
+  Object.keys(customPalett).map(keys =>(
+    
     <Paletts paletts={customPalett}/>
+        ))
+      }
     {/* <Paletts paletts={'Proba'}/> */}
  </div>
   );

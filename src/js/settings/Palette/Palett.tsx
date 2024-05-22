@@ -8,12 +8,12 @@ function Palett(props: any) {
   alert(Object.keys(palett));
   return (
     <div className="palet">
+      <p>{Object.keys(palett)}</p>   
  {
-  Object.keys(palett).map(palet =>(
-    <Element palet={palett} />
-
-  ))
- }
+   Object.keys(palett).map(palet =>( 
+     <Element palet={palett} />
+    ))
+  }
     </div>
   );
 }

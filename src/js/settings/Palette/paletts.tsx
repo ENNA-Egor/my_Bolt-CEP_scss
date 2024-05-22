@@ -8,9 +8,8 @@ function Paletts  (props: any) {
   // let num: number = Object.keys(paletts).length;
    return (
      <div className="blok_palet">
-          
-           <Palett palett = {paletts} />
-           
+      <p>{Object.keys(paletts)}</p>
+    <Palett palett = {paletts} />
            </div>   
 
      );
