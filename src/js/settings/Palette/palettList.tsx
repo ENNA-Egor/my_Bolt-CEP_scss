@@ -1,27 +1,35 @@
-import {hexToRgb} from '../../../js/functionModule/function'
+import {  useContext } from "react";
 
-const delEndAppOn = (e:any)=>{
-  let nameTar:string = e.target.id;
-  switch (nameTar) {
-    case 'Standart':
-    case 'Start':
-    case 'Bright':
-    case 'Arbitrary':
-      alert('No')
-      break;
-    default:
-      alert('Yes')
-      break;
-  }
-}
+import {hexToRgb} from '../../../js/functionModule/function'
+import { PaletteContext } from '../PalettContext';
+
 
 function renderPalett(COLORS_PALLETE: any) {
-    return Object.keys(COLORS_PALLETE).map((key) => {
-      const value = COLORS_PALLETE[key];
-      if (typeof value === "object") {
-        if (key==('Custom')){
-          return (
-            <div key={key}>
+  const {delEndApp, fixetGroup}=  useContext(PaletteContext);
+  
+  const delEndAppOn = (e:any)=>{
+    let nameTar:string = e.target.id;
+    switch (nameTar) {
+        case 'Standart':
+        case 'Start':
+        case 'Bright':
+        case 'Arbitrary':
+          fixetGroup();
+          break;
+        default:
+          delEndApp( [e.target.id]  );
+          break;
+      }
+    }
+
+
+
+  return Object.keys(COLORS_PALLETE).map((key) => {
+    const value = COLORS_PALLETE[key];
+    if (typeof value === "object") {
+      if (key==('Custom')){
+        return (
+          <div key={key}>
               <h1 className="blok_group">{key}</h1>
               <div className="blok_palet2">{renderPalett(value)}</div>
             </div>
@@ -34,7 +42,7 @@ function renderPalett(COLORS_PALLETE: any) {
             </div>
           )
         }
-         else {
+        else {
           return (
             <div key={key}>
               <h1 className="blok_group_group" onClick={delEndAppOn} id={key}>{key}</h1>
@@ -49,11 +57,12 @@ function renderPalett(COLORS_PALLETE: any) {
       }
     });
   }
+  
+  
 
-
-
-
-function PalettList  (props:any) {
+  
+  
+  function PalettList  (props:any) {
     return <div className="blok_palet">{renderPalett(props.palets)}</div>;
   };
 

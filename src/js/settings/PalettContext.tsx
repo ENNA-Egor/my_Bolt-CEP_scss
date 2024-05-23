@@ -22,9 +22,20 @@ export const Context = (props) => {
             }
         }
     )
+    
+
+    const delEndApp = (targetName: string) => {
+            alert('Yes');
+    };
+
+    const fixetGroup = () => {
+            alert('This group cannot be edited');
+    };
 
     const valueData = {
         customPalett,
+        delEndApp,
+        fixetGroup,
 
     }
 
