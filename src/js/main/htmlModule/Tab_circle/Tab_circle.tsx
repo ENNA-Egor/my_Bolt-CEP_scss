@@ -9,7 +9,6 @@ import {
    evalTS,
  } from "../../../lib/utils/bolt";
 import { render } from "react-dom";
-// import {} from '../../Context';
 import {StartContext} from '../../Context';
 
 
@@ -46,7 +45,6 @@ function  Tab_circle(){
        };
 
 
-// render(): React.ReactNode {
     
     return(
         <div className="tab-circle tab-b hide">
@@ -68,7 +66,7 @@ function  Tab_circle(){
         </fieldset>   
     </div>   
     );
-// }
+
 
  }
 

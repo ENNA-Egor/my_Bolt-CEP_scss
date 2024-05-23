@@ -54,11 +54,4 @@ export function rgbToHexOne(resultn: string) {
  };
 
 
-
-
-//  export function addColor(color){
-//       evalTS("colorSetTS", color).then((res) => {
-//    });
-//     };
-
  

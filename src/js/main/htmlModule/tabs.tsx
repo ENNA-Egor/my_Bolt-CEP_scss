@@ -16,7 +16,6 @@ function Tabs() {
     let dataContext = readData(pathWriteEndReadContext);
       const dataStartContext:any = JSON.parse(dataContext);
       startData(dataStartContext)
-      // writeDataContext( dataStartContext)
     }, []);
 
     useEffect(() => {

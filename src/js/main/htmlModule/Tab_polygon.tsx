@@ -1,17 +1,11 @@
 import React, { useContext } from "react";
-import { os, path, fs } from '../../lib/cep/node';
+import { path, } from '../../lib/cep/node';
 import {
-   //    csi,
-   //    evalES,
-   //    evalFile,
-   //    openLinkInBrowser,
-   //    subscribeBackgroundColor,
    evalTS,
 } from "../../lib/utils/bolt";
 import { render } from "react-dom";
 
 import { StartContext } from "../Context";
-// import { allowedImportFiles } from "../../lib/utils/ppro";
 
 function Tab_polygon() {
 

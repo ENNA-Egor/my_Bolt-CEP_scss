@@ -1,21 +1,14 @@
-import React, { HtmlHTMLAttributes, useContext, useEffect } from "react";
-// import {os, path, fs} from "../../../lib/cep/node"
+import React, {  useContext, useEffect } from "react";
+
 import {
    csi,
-   // evalES,
-   // evalFile,
-   // openLinkInBrowser,
-   // subscribeBackgroundColor,
    evalTS,
 } from "../../../lib/utils/bolt";
-// import { render } from "react-dom";
 import { StartContext } from '../../Context';
 
 import Colors from './Colors';
 import { Preloader } from './Preloader'
 import { hexToRgb } from '../../../functionModule/function';
-// import {writeData} from '../../../functionModule/function';
-// import {readData} from '../../../functionModule/function';
 import { rgbToHexOne } from '../../../functionModule/function';
 
 

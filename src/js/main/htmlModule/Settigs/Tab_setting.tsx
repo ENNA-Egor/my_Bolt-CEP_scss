@@ -1,15 +1,8 @@
 import React, {useContext} from 'react';
-// import { os, path, fs } from '../../../lib/cep/node';
-import { 
-   //    csi,
-   //  evalES, 
+import {  
     evalTS
     } from '../../../lib/utils/bolt';
 import { StartContext } from '../../Context';
-
-// import { writeData } from '../../../functionModule/function';
-// import { readData } from '../../../functionModule/function';
-
 
 
 function Tab_setting () {
