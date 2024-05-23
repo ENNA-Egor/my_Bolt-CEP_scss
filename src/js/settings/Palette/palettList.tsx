@@ -5,21 +5,25 @@ import { PaletteContext } from '../PalettContext';
 
 
 function renderPalett(COLORS_PALLETE: any) {
-  const {delEndApp, fixetGroup}=  useContext(PaletteContext);
+  const {delGroup, fixetGroup, appGroupIn}=  useContext(PaletteContext);
   
   const delEndAppOn = (e:any)=>{
     let nameTar:string = e.target.id;
-    switch (nameTar) {
-        case 'Standart':
-        case 'Start':
-        case 'Bright':
-        case 'Arbitrary':
-          fixetGroup();
-          break;
-        default:
-          delEndApp( [e.target.id]  );
-          break;
-      }
+    if (e.ctrlKey) {
+      switch (nameTar) {
+          case 'Standart':
+          case 'Start':
+          case 'Bright':
+          case 'Arbitrary':
+            fixetGroup();
+            break;
+          default:
+            delGroup( [e.target.id]  );
+            break;
+        }
+    } else {
+      appGroupIn();
+    }
     }
 
 
@@ -30,14 +34,14 @@ function renderPalett(COLORS_PALLETE: any) {
       if (key==('Custom')){
         return (
           <div key={key}>
-              <h1 className="blok_group">{key}</h1>
+              <h1 className="blok_group  stic">{key}</h1>
               <div className="blok_palet2">{renderPalett(value)}</div>
             </div>
           )
         } else if (key==('Default')){
           return (
             <div key={key}>
-              <h1 className="blok_group">{key}</h1>
+              <h1 className="blok_group stic ">{key}</h1>
               <div className="blok_palet2">{renderPalett(value)}</div>
             </div>
           )

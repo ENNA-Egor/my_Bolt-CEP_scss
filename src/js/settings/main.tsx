@@ -29,8 +29,8 @@ const Main = () => {
     <div>
         <fieldset className="field_1">
             <legend className="legend">Add Preset</legend>
-            <button className="button_bt btn2" onClick={plusPal}>+</button>
-            <input className="setName" type="text" placeholder="Enter a group name"/>
+            <button className="button_bt btn2  stic" onClick={plusPal}>+</button>
+            <input className="setName  stic" type="text" placeholder="Enter a group name"/>
 
         </fieldset>
     </div>

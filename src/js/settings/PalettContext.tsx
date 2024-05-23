@@ -24,8 +24,11 @@ export const Context = (props) => {
     )
     
 
-    const delEndApp = (targetName: string) => {
-            alert('Yes');
+    const delGroup = (targetName: string) => {
+            alert('Delete');
+    };
+    const appGroupIn = (targetName: string) => {
+            alert('In');
     };
 
     const fixetGroup = () => {
@@ -34,8 +37,9 @@ export const Context = (props) => {
 
     const valueData = {
         customPalett,
-        delEndApp,
+        delGroup,
         fixetGroup,
+        appGroupIn,
 
     }
 
