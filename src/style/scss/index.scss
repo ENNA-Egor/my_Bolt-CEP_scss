@@ -19,7 +19,6 @@
 
 .app{
   display: flex;
-  // justify-content: flex-end;
   justify-content: center;
   max-width: $max_width;
   min-width: $min_width;
@@ -65,7 +64,6 @@
   display: flex;
   justify-content: center;
   max-width: $max_width;
-  // min-width: $min_width;
 }
 
 .button{
@@ -96,8 +94,6 @@
   display: flex;
   justify-content:center;
   max-width: $max_width;
-  // min-width: $min_width;
-  // border: 1px solid $highlight;
 }
 
 .tab-circle , .tab-polygon, .tab-color, .settings{
@@ -106,7 +102,6 @@
   min-width: $min_width;
   border: 1px solid $highlight;
   border-radius: 3px;
-  // display: none;
   overflow: hidden;
  
 
@@ -127,9 +122,7 @@ legend{
   justify-content:center;
 }
 
-// .n_points{
-//   margin: 2px 10px;
-// }
+
 
 .inp{
   width: 15px;
