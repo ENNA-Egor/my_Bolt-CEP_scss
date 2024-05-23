@@ -18,7 +18,7 @@ export const Context = (props) => {
                 "Новый 6":["d5e390","628f2e","14dcdc","fafa98","1f8a70","bedb39","ffff1a","7f7fff","c1faec","d5e390","628f2e","14dcdc","fafa98","1f8a70","bedb39"],
                 "Start":["7f44eb","628f2e","92fce3"],
                 "monocromRed":["fbc9c9","fb9797","fb6464","fb3232","fb0000"],
-                "Новый":["5b82b3","86cab9","d5e390","fafa98","fabb86"]
+                "Новый":["5b82b3","86cab9","d5e390","fafa98","fabb86"],
             }
         }
     )
