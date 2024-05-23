@@ -1,5 +1,19 @@
 import {hexToRgb} from '../../../js/functionModule/function'
 
+const delEndAppOn = (e:any)=>{
+  let nameTar:string = e.target.id;
+  switch (nameTar) {
+    case 'Standart':
+    case 'Start':
+    case 'Bright':
+    case 'Arbitrary':
+      alert('No')
+      break;
+    default:
+      alert('Yes')
+      break;
+  }
+}
 
 function renderPalett(COLORS_PALLETE: any) {
     return Object.keys(COLORS_PALLETE).map((key) => {
@@ -23,7 +37,7 @@ function renderPalett(COLORS_PALLETE: any) {
          else {
           return (
             <div key={key}>
-              <h1 className="blok_group_group">{key}</h1>
+              <h1 className="blok_group_group" onClick={delEndAppOn} id={key}>{key}</h1>
               <div className="blok_palet2">{renderPalett(value)}</div>
             </div>
           );
