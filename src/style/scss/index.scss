@@ -64,6 +64,7 @@
   display: flex;
   justify-content: center;
   max-width: $max_width;
+  min-width: $min_width;
 }
 
 .button{
@@ -145,6 +146,7 @@ legend{
   justify-content: center;
   flex-wrap: wrap;
   max-width: $max_width;
+  min-width: $min_width;
   .palette{
     width: $size_elem;
     height: $size_elem;
@@ -160,6 +162,7 @@ legend{
   justify-content: center;
   flex-wrap: wrap;
   max-width: $max_width;
+  min-width: $min_width;
   .palette2{
     width: $size_elem2;
     height: $size_elem2;
