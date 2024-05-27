@@ -14,8 +14,12 @@ const Main = () => {
       subscribeBackgroundColor(setBgColor);
     }
   }, []);
+  const {customPalett, writeColorContext}=  useContext(PaletteContext);
 
-    const {customPalett}=  useContext(PaletteContext);
+  useEffect(() => {
+    setTimeout(writeColorContext, 10 , customPalett);
+    }, [customPalett]);
+
     const COLORS_PALLETE = customPalett;
 
     const plusPal=()=> {

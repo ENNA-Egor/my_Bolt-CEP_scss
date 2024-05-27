@@ -1,4 +1,5 @@
 import React, { createContext, useState } from "react";
+import {writeData} from '../../js/functionModule/function'
 
 export const PaletteContext = createContext<any>(0);
 
@@ -37,11 +38,21 @@ export const Context = (props) => {
             alert('This group cannot be edited');
     };
 
+
+    const pathWriteEndReadContext: string =
+        '/public/settingsData/colorsPalett.json';
+
+
+    const writeColorContext = (dataStartContext) => {
+        writeData(dataStartContext, pathWriteEndReadContext)
+    }
+
     const valueData = {
         customPalett,
         removeGroup,
         fixetGroup,
         appGroupIn,
+        writeColorContext,
 
     }
 
