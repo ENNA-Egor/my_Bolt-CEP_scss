@@ -24,8 +24,8 @@ export const Context = (props) => {
     )
     
 
-    const delGroup = (targetName: string) => {
-            alert('Delete');
+    const removeGroup = (targetName: string) => {
+            alert('Remove');
     };
     const appGroupIn = (targetName: string) => {
             alert('In');
@@ -37,7 +37,7 @@ export const Context = (props) => {
 
     const valueData = {
         customPalett,
-        delGroup,
+        removeGroup,
         fixetGroup,
         appGroupIn,
 

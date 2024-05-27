@@ -5,7 +5,7 @@ import { PaletteContext } from '../PalettContext';
 
 
 function renderPalett(COLORS_PALLETE: any) {
-  const {delGroup, fixetGroup, appGroupIn}=  useContext(PaletteContext);
+  const {removeGroup, fixetGroup, appGroupIn}=  useContext(PaletteContext);
   
   const delEndAppOn = (e:any)=>{
     let nameTar:string = e.target.id;
@@ -18,7 +18,7 @@ function renderPalett(COLORS_PALLETE: any) {
             fixetGroup();
             break;
           default:
-            delGroup( [e.target.id]  );
+            removeGroup( [e.target.id]  );
             break;
         }
     } else {
