@@ -15,23 +15,31 @@ export const Context = (props) => {
             } ,
             Custom:{
                 Glow:["9a9afa","c9b1f4","91a679"],
-                Золотой:["5b82b3","86cab9","d5e390","fafa98","c1faec"],
-                Новый_6:["d5e390","628f2e","14dcdc","fafa98","1f8a70","bedb39","ffff1a","7f7fff","c1faec","d5e390","628f2e","14dcdc","fafa98","1f8a70","bedb39"],
+                Gold:["5b82b3","86cab9","d5e390","fafa98","c1faec"],
+                New_6:["d5e390","628f2e","14dcdc","fafa98","1f8a70","bedb39","ffff1a","7f7fff","c1faec","d5e390","628f2e","14dcdc","fafa98","1f8a70","bedb39"],
                 Start2:["7f44eb","628f2e","92fce3"],
                 monocromRed:["fbc9c9","fb9797","fb6464","fb3232","fb0000"],
-                Новый:["5b82b3","86cab9","d5e390","fafa98","fabb86"],
+                New:["5b82b3","86cab9","d5e390","fafa98","fabb86"],
             }
         }
     )
     
 
     const removeGroup = (targetName: string) => {
+        const pathWriteColorContext: string =
+        '/public/settingsData/colorsPalett.json';
             const updatedCustomPalett = { ...customPalett };
            delete updatedCustomPalett['Custom'][targetName],
            setCustomPalett(updatedCustomPalett);
+           writeColorContext(updatedCustomPalett, pathWriteColorContext);
     };
     const appGroupIn = (targetName: string) => {
-            alert('In');
+            Object.keys(customPalett).map((key) => {
+                const value = customPalett[key];
+                if(value[targetName] !== undefined){
+                    alert(value[targetName]);
+                }
+            })
     };
 
     const fixetGroup = () => {
@@ -39,12 +47,12 @@ export const Context = (props) => {
     };
 
 
-    const pathWriteEndReadContext: string =
-        '/public/settingsData/colorsPalett.json';
+    // const pathWriteColorContext: string =
+    //     '/public/settingsData/colorsPalett.json';
 
 
-    const writeColorContext = (dataStartContext) => {
-        writeData(dataStartContext, pathWriteEndReadContext)
+    const writeColorContext = (newPalett, pathWrite) => {
+        writeData(newPalett, pathWrite)
     }
 
     const valueData = {
@@ -52,7 +60,7 @@ export const Context = (props) => {
         removeGroup,
         fixetGroup,
         appGroupIn,
-        writeColorContext,
+        // writeColorContext,
 
     }
 

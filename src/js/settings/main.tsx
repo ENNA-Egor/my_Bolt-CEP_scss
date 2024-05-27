@@ -16,9 +16,9 @@ const Main = () => {
   }, []);
   const {customPalett, writeColorContext}=  useContext(PaletteContext);
 
-  useEffect(() => {
-    setTimeout(writeColorContext, 10 , customPalett);
-    }, [customPalett]);
+  // useEffect(() => {
+  //   setTimeout(writeColorContext, 10 , customPalett);
+  //   }, [customPalett]);
 
     const COLORS_PALLETE = customPalett;
 

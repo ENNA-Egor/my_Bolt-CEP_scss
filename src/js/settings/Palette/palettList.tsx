@@ -22,7 +22,7 @@ function renderPalett(COLORS_PALLETE: any) {
             break;
         }
     } else {
-      appGroupIn();
+      appGroupIn( [e.target.id] );
     }
     }
 
