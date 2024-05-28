@@ -7,6 +7,7 @@ export const PaletteContext = createContext<any>(0);
 export const Context = (props) => {
     const [customPalett, setCustomPalett] = useState(
         {
+            pathWriteContext:'/public/settingsData/colorsPalett.json',
             Default:{
                 Standart:["5b82b3","86cab9","d5e390","fafa98","fabb86","9a9afa","c9b1f4","91a679","c1faec","ba8db6"],
                 Start:["004358","1f8a70","bedb39","ffff1a","7f7fff"],
@@ -26,8 +27,8 @@ export const Context = (props) => {
     
 
     const removeGroup = (targetName: string) => {
-        const pathWriteColorContext: string =
-        '/public/settingsData/colorsPalett.json';
+        alert(customPalett.pathWriteContext);
+        const pathWriteColorContext: string = customPalett.pathWriteContext;
             const updatedCustomPalett = { ...customPalett };
            delete updatedCustomPalett['Custom'][targetName],
            setCustomPalett(updatedCustomPalett);
