@@ -64,6 +64,14 @@ function Tab_color() {
       });
    };
 
+   
+
+   // useEffect(() => {
+   //    let tabH = document.getElementsByClassName('preload');
+   //    setTimeout(()=>{tabH[0].classList.add('hide')}, 5000);
+   // }, []);
+
+
    useEffect(() => {
       if (customData.autoFill === true) {
          evalTS("colorSetTS", customData.colors).then((res) => {
@@ -86,13 +94,14 @@ function Tab_color() {
                <p>ColorPicker_AE</p>
                <input type="checkbox" checked={customData.checkColorpicer} onChange={handleColorpickerChangeOn} className="n_points  check" name="checkColorpicer" />
             </div>
-            {
-               customData.colors.length ? (
+            {/* { */}
+               // customData.colors.length ? (
                   <div className="blok_palet">
                      <Colors colors={customData.colors} replaceAndMinusColor={replaceAndMinusColor} />
                   </div>
-               ) : <Preloader />
-            }
+               // ) : 
+               <Preloader/>
+            {/*  } */}
             <div className="colorP">
                <p>AutoFill</p>
                <input type="checkbox" checked={customData.autoFill} onChange={handleColorpickerChangeOn} className="n_points  check" name="autoFill" />
