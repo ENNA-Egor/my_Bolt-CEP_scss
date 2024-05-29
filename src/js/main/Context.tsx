@@ -67,7 +67,7 @@ export const Context = (props) => {
         setCustomData((prevState) => {
             return {
                 ...prevState,
-                pathWriteContextData: stateData.pathWriteContextData,
+                // pathWriteContextData: stateData.pathWriteContextData,
                 checkColorpicer: stateData.checkColorpicer,
                 colors: stateData.colors,
                 oldColor: stateData.oldColor,
@@ -85,11 +85,11 @@ export const Context = (props) => {
         });
     }
 
-    // const pathWriteEndReadContext: string =
-    //     '/public/settingsData/dataContext.json';
+    const pathWriteEndReadContext: string =
+        '/public/settingsData/dataContext.json';
 
     const writeDataContext = (dataStartContext) => {
-        writeData(dataStartContext, dataStartContext.pathWriteContextData)
+        writeData(dataStartContext, pathWriteEndReadContext)
     }
 
     const valueData = {
