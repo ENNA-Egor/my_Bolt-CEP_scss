@@ -51,6 +51,28 @@ export const Context = (props) => {
     // const pathWriteColorContext: string =
     //     '/public/settingsData/colorsPalett.json';
 
+    const startColors = (stateData) => {
+        alert(stateData.Default.Standart)
+        setCustomPalett((prevState) => {
+            return {
+                ...prevState,
+                // pathWriteContextData: stateData.pathWriteContextData,
+                pathWriteContextColor: '',
+                oldColor: stateData.oldColor,
+                autoFill: stateData.autoFill,
+                num_element: stateData.num_element,
+                resolution_w: stateData.resolution_w,
+                resolution_h: stateData.resolution_h,
+                framerate: stateData.framerate,
+                duration: stateData.duration,
+                influence: stateData.influence,
+                durLock: stateData.durLock,
+                loading: stateData.loading,
+                num_points: stateData.num_points,
+            };
+        });
+    }
+
 
     const writeColorContext = (newPalett, pathWrite) => {
         writeData(newPalett, pathWrite)
@@ -61,6 +83,7 @@ export const Context = (props) => {
         removeGroup,
         fixetGroup,
         appGroupIn,
+        startColors,
         // writeColorContext,
 
     }

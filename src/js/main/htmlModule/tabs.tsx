@@ -8,14 +8,14 @@ import { StartContext } from "../Context";
 
 function Tabs() {
   const pathWriteEndReadContext: string =
-      '/public/settingsData/dataContext.json';
+      '/public/settingsData/allDataContent.json';
 
       const {customData,startData, writeDataContext, readDataContext} = useContext (StartContext);
 
   useEffect(() => {
     let dataContext = readData(pathWriteEndReadContext);
       const dataStartContext:any = JSON.parse(dataContext);
-      startData(dataStartContext)
+      startData(dataStartContext.customData)
     }, []);
 
     useEffect(() => {

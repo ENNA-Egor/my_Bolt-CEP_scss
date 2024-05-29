@@ -5,16 +5,23 @@ import {
 } from "../lib/utils/bolt";
 import PalettList from './Palette/palettList'
 import { PaletteContext } from './PalettContext';
+import {readData} from '../functionModule/function'
 
 const Main = () => {
   const [bgColor, setBgColor] = useState("#282c34");
+
+  const pathWriteEndReadContext: string =
+      '/public/settingsData/allDataContent.json';
   
   useEffect(() => {
     if (window.cep) {
       subscribeBackgroundColor(setBgColor);
+      let dataContext = readData(pathWriteEndReadContext);
+      const dataStartContext:any = JSON.parse(dataContext);
+      startColors(dataStartContext.customPalett)
     }
   }, []);
-  const {customPalett, writeColorContext}=  useContext(PaletteContext);
+  const {customPalett, writeColorContext, startColors}=  useContext(PaletteContext);
 
   // useEffect(() => {
   //   setTimeout(writeColorContext, 10 , customPalett);
