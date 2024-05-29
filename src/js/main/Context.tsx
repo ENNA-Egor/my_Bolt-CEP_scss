@@ -6,6 +6,7 @@ export const StartContext = createContext<any>(0);
 export const Context = (props) => {
     const [customData, setCustomData] = useState(
         {
+            pathWriteContextData: "",
             checkColorpicer: true,
             colors: [""],
             oldColor: "",
@@ -66,6 +67,7 @@ export const Context = (props) => {
         setCustomData((prevState) => {
             return {
                 ...prevState,
+                pathWriteContextData: stateData.pathWriteContextData,
                 checkColorpicer: stateData.checkColorpicer,
                 colors: stateData.colors,
                 oldColor: stateData.oldColor,
@@ -83,11 +85,11 @@ export const Context = (props) => {
         });
     }
 
-    const pathWriteEndReadContext: string =
-        '/public/settingsData/dataContext.json';
+    // const pathWriteEndReadContext: string =
+    //     '/public/settingsData/dataContext.json';
 
     const writeDataContext = (dataStartContext) => {
-        writeData(dataStartContext, pathWriteEndReadContext)
+        writeData(dataStartContext, dataStartContext.pathWriteContextData)
     }
 
     const valueData = {
