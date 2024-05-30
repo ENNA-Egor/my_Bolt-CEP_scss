@@ -61,7 +61,7 @@ export const Context = (props) => {
                 // pathWriteContextData: stateData.pathWriteContextData, 
                 return {
                     ...prevState,
-                    newObj,
+                    // newObj,
                 };
             })
         });
