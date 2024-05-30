@@ -15,12 +15,12 @@ export const Context = (props) => {
                 Arbitrary:["2f6b6b","2f5151","104646","6cb7b7","80b7b7","7f7fff","c1faec","ba8db6","7f44eb","004358","ffff1a","1f8a70","bedb39","ffff1a","7f7fff"]
             } ,
             Custom:{
-                Glow: ["9a9afa", "c9b1f4", "91a679"],
-                Gol: ["5b82b3", "86cab9", "d5e390", "fafa98", "c1faec"],
-                 New_6: ["d5e390", "628f2e", "14dcdc", "fafa98", "1f8a70", "bedb39", "ffff1a", "7f7fff", "c1faec", "d5e390", "628f2e", "14dcdc", "fafa98", "1f8a70", "bedb39"],
-                 Start2: ["7f44eb", "628f2e", "92fce3"],
-                 monocromRed: ["fbc9c9", "fb9797", "fb6464", "fb3232", "fb0000"],
-                 New: ["5b82b3", "86cab9", "d5e390", "fafa98", "fabb86"]
+                // Glow: ["9a9afa", "c9b1f4", "91a679"],
+                // Gol: ["5b82b3", "86cab9", "d5e390", "fafa98", "c1faec"],
+                //  New_6: ["d5e390", "628f2e", "14dcdc", "fafa98", "1f8a70", "bedb39", "ffff1a", "7f7fff", "c1faec", "d5e390", "628f2e", "14dcdc", "fafa98", "1f8a70", "bedb39"],
+                //  Start2: ["7f44eb", "628f2e", "92fce3"],
+                //  monocromRed: ["fbc9c9", "fb9797", "fb6464", "fb3232", "fb0000"],
+                //  New: ["5b82b3", "86cab9", "d5e390", "fafa98", "fabb86"]
             }
         }
     )
@@ -48,22 +48,24 @@ export const Context = (props) => {
     };
 
 
-    // const pathWriteColorContext: string =
-    //     '/public/settingsData/colorsPalett.json';
+    const pathWriteColorContext: string =
+        '/public/settingsData/colorsPalett.json';
 
-    // const startColors = (stateData) => {
-    //     Object.keys(stateData).map((key) => {
-    //         const value = stateData[key];  
-    //         setCustomPalett((prevState) => {
-    //             // pathWriteContextData: stateData.pathWriteContextData, 
-
-    //             return {
-    //                 ...prevState,
-    //                 key:  value,
-    //             };
-    //         })
-    //     });
-    // }
+    const startColors = (stateData) => {
+        Object.keys(stateData).map((key) => {
+            const value = stateData[key]; 
+            let newObj;
+            newObj.key=value;
+            alert(newObj) 
+            setCustomPalett((prevState) => {
+                // pathWriteContextData: stateData.pathWriteContextData, 
+                return {
+                    ...prevState,
+                    newObj,
+                };
+            })
+        });
+    }
 
 
     const writeColorContext = (newPalett, pathWrite) => {
@@ -75,7 +77,7 @@ export const Context = (props) => {
         removeGroup,
         fixetGroup,
         appGroupIn,
-        // startColors,
+        startColors,
         // writeColorContext,
 
     }
