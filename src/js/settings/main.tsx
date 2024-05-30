@@ -11,7 +11,7 @@ const Main = () => {
   const [bgColor, setBgColor] = useState("#282c34");
 
   const pathWriteEndReadContext: string =
-      '/public/settingsData/colorsPalett.json';
+      '/public/settingsData/allDataContent.json';
   
   useEffect(() => {
     if (window.cep) {
