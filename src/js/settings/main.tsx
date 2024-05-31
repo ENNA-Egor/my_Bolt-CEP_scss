@@ -18,7 +18,7 @@ const Main = () => {
       subscribeBackgroundColor(setBgColor);
       let dataContext = readData(pathWriteEndReadContext);
       const dataStartContext:any = JSON.parse(dataContext);
-      startColors(dataStartContext.customPalett)
+      startColors(dataStartContext.customPalett.Custom);
     }
   }, []);
   const {customPalett, writeColorContext, startColors}=  useContext(PaletteContext);

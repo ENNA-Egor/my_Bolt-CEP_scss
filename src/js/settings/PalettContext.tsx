@@ -52,7 +52,7 @@ export const Context = (props) => {
     //     '/public/settingsData/colorsPalett.json';
 
     const startColors = (stateData) => {
-        alert(stateData.Default.Standart)
+        alert(stateData.Standart);
         setCustomPalett((prevState) => {
             return {
                 ...prevState,
