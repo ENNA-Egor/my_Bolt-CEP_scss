@@ -2,6 +2,7 @@ import { HtmlHTMLAttributes, useEffect, useState } from "react";
 import {
   subscribeBackgroundColor,
 } from "../lib/utils/bolt";
+import { Preloader } from '../main/htmlModule/TabColor/Preloader';
 import circle from "../assets/png/Circle-01.png";
 import polygon from "../assets/png/Polygon-01.png";
 import color from "../assets/png/Color.png";
@@ -43,6 +44,7 @@ const Main = () => {
 
   return (
        <div className="app" >
+        <Preloader/>
          <div className="tabs-head">
             <div className="tab-h tab-c" data-tab ="0" onClick={activeButt}>
             </div>
