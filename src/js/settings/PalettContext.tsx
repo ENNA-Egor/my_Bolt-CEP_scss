@@ -10,46 +10,47 @@ export const Context = (props) => {
             pathWriteContextColor:'/public/settingsData/colorsPalett.json',
             colorsPal :[
 
-        {   "name":  "Standart",
-            "group": "Default",
-            "colors": [ "5b82b3", "86cab9","d5e390","fafa98","fabb86","9a9afa","c9b1f4","91a679","c1faec","ba8db6"]
+        {   id: 1,
+            name:  "Standart",
+            group: "Default",
+            colors: [ "5b82b3", "86cab9","d5e390","fafa98","fabb86","9a9afa","c9b1f4","91a679","c1faec","ba8db6"]
         },
-        {   "name":  "Start",
-            "group": "",
-            "colors": [ "004358", "1f8a70","bedb39","ffff1a","7f7fff"]
+        {   name:  "Start",
+            group: "",
+            colors: [ "004358", "1f8a70","bedb39","ffff1a","7f7fff"]
         },
             
-        {   "name":  "Bright",
-            "group": "",
-            "colors":[ "7f44eb","628f2e","92fce3", "ff00ff" ]
+        {   name:  "Bright",
+            group: "",
+            colors:[ "7f44eb","628f2e","92fce3", "ff00ff" ]
         }, 
-        {   "name":  "Arbitrary",
-            "group": "",
-            "colors": ["2f6b6b","2f5151","104646","6cb7b7","80b7b7","7f7fff","c1faec","ba8db6", "7f44eb","004358","ffff1a","1f8a70","bedb39","ffff1a","7f7fff"]
+        {   name:  "Arbitrary",
+            group: "",
+            colors: ["2f6b6b","2f5151","104646","6cb7b7","80b7b7","7f7fff","c1faec","ba8db6", "7f44eb","004358","ffff1a","1f8a70","bedb39","ffff1a","7f7fff"]
         }, 
-        {   "name":  "Glow",
-            "group": "",
-            "colors":[ "9a9afa", "c9b1f4","91a679"]
+        {   name:  "Glow",
+            group: "",
+            colors:[ "9a9afa", "c9b1f4","91a679"]
         },
-        {   "name":  "Gold",
-            "group": "",
-            "colors":[ "5b82b3", "86cab9","d5e390","fafa98","c1faec"]
+        {   name:  "Gold",
+            group: "",
+            colors:[ "5b82b3", "86cab9","d5e390","fafa98","c1faec"]
         },
-        {   "name":  "New_6",
-            "group": "",
-            "colors":[ "d5e390","628f2e","14dcdc","fafa98","1f8a70","bedb39","ffff1a","7f7fff","c1faec","d5e390","628f2e","14dcdc","fafa98","1f8a70","bedb39"]
+        {   name:  "New_6",
+            group: "",
+            colors:[ "d5e390","628f2e","14dcdc","fafa98","1f8a70","bedb39","ffff1a","7f7fff","c1faec","d5e390","628f2e","14dcdc","fafa98","1f8a70","bedb39"]
         },
-        {   "name":  "Start2",
-            "group": "",
-            "colors": [ "7f44eb","628f2e","92fce3"]
+        {   name:  "Start2",
+            group: "",
+            colors: [ "7f44eb","628f2e","92fce3"]
         },
-        {   "name":  "monocromRed",
-            "group": "",
-            "colors":["fbc9c9","fb9797","fb6464", "fb3232","fb0000"]
+        {   name:  "monocromRed",
+            group: "",
+            colors:["fbc9c9","fb9797","fb6464", "fb3232","fb0000"]
         },
-        {   "name":  "New",
-            "group": "",
-            "colors":[ "5b82b3","86cab9","d5e390","fafa98","fabb86"]
+        {   name:  "New",
+            group: "",
+            colors:[ "5b82b3","86cab9","d5e390","fafa98","fabb86"]
         }
     ]
         }
