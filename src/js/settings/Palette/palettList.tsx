@@ -29,8 +29,8 @@ function renderPalett(COLORS_PALLETE: any) {
 
 
   return Object.keys(COLORS_PALLETE).map((key) => {
-    alert(key)
     const value = COLORS_PALLETE[key];
+    console.log(value)
     if (typeof value === "object") {
       if (key==('Custom')){
         return (

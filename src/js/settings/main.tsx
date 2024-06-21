@@ -27,7 +27,7 @@ const Main = () => {
   //   setTimeout(writeColorContext, 10 , customPalett);
   //   }, [customPalett]);
 
-    const COLORS_PALLETE = customPalett;
+    const COLORS_PALLETE = customPalett.colorsPal;
 
     const plusPal=()=> {
       alert ('Ok');
