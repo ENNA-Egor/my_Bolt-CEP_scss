@@ -2,6 +2,15 @@ import {  useContext } from "react";
 
 import {hexToRgb} from '../../../js/functionModule/function'
 import { PaletteContext } from '../PalettContext';
+import Palets from "./palets";
+
+
+interface ColorData {
+  id:number
+  name: string;
+  group: string;
+  colors: string[];
+}
 
 
 function renderPalett(COLORS_PALLETE: any) {
@@ -26,7 +35,7 @@ function renderPalett(COLORS_PALLETE: any) {
     }
     }
 
-    const groupedData = {};
+    const groupedData: { [key: string]: ColorData[] } = {};
 
     COLORS_PALLETE.forEach(item => {
       const group = item.group;
@@ -39,10 +48,45 @@ function renderPalett(COLORS_PALLETE: any) {
     
     // console.log(groupedData);
 
-  return Object.keys(groupedData).map((key) => {
-    const value = groupedData[key];
-        console.log(key);
-        console.log(value);
+    for (const groupName in groupedData) {
+      console.log( groupName);
+      groupedData[groupName].forEach(item => {
+        // console.log(item.name);
+        // console.log([item.id],);
+      });
+    }
+
+    return (
+      <div>
+        {Object.entries(groupedData).map(([groupName, groupItems]) => (
+          <div key={groupName}>
+            <div className="blok_group  stic">"{groupName}"</div>
+            {groupItems.map((item, id) => (
+              <div key={id}>
+                <div className="blok_group_group">"{item.name}"</div>
+                <div className="blok_palet2">
+                {item.colors.map((hexColor, index) => (
+                <div 
+                  key={index} 
+                  className={'palette2'} 
+                  style={{ backgroundColor: hexToRgb(hexColor) }}
+                ></div>
+              ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
+    );
+  // return Object.keys(groupedData).map((key) => {
+  //   const value = groupedData[key];
+        // console.log(key);
+        // console.log(value[0].name);
+        // console.log(value[0].colors);
+        // value.forEach(item => {
+        //   console.log(item.name);
+        // }); 
 
     // for (const groupName in groupedData) {
     //   // console.log(groupName);
@@ -61,12 +105,13 @@ function renderPalett(COLORS_PALLETE: any) {
         //     </div>
         //   )
       //   } else if (key==('Default')){
-          return (
-            <div key={key}>
-              <h1 className="blok_group stic ">{key}</h1>
-              {/* <div className="blok_palet2">{renderPalett(key)}</div> */}
-            </div>
-          )
+          // return (
+          //   <div key={key}>
+          //     <h1 className="blok_group stic ">{key}</h1>
+          //     <div className="blok_group_group">{value[2].name}</div>
+          //     {/* < Palets/> */}
+          //   </div>
+          // )
       //   }
       //   else {
       //     return (
@@ -81,7 +126,7 @@ function renderPalett(COLORS_PALLETE: any) {
       //   const colorToRgb = hexToRgb(value);
       //   return <div key={key} className= {'palette2'} style ={{backgroundColor:colorToRgb}}></div>;
       // }
-    });
+    // });
   }
   
   
@@ -89,7 +134,9 @@ function renderPalett(COLORS_PALLETE: any) {
   
   
   function PalettList  (props:any) {
-    return <div className="blok_palet">{renderPalett(props.palets)}</div>;
+    return <div className="blok_palet2">{renderPalett(props.palets)}
+    </div>;
+
   };
 
 
