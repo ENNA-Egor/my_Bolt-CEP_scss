@@ -11,14 +11,14 @@ const Main = () => {
   const [bgColor, setBgColor] = useState("#282c34");
 
   const pathWriteEndReadContext: string =
-      '/public/settingsData/allDataContent.json';
+      '/public/settingsData/dataContext.json';
   
   useEffect(() => {
     if (window.cep) {
       subscribeBackgroundColor(setBgColor);
-      let dataContext = readData(pathWriteEndReadContext);
-      const dataStartContext:any = JSON.parse(dataContext);
-      startColors(dataStartContext.customPalett.Custom);
+      // let dataContext = readData(pathWriteEndReadContext);
+      // const dataStartContext:any = JSON.parse(dataContext);
+      // startColors(dataStartContext.customPalett.Custom);
     }
   }, []);
   const {customPalett, writeColorContext, startColors}=  useContext(PaletteContext);

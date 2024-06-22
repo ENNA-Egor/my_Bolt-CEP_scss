@@ -64,7 +64,7 @@ function renderPalett(COLORS_PALLETE: any) {
           return (
             <div key={key}>
               <h1 className="blok_group stic ">{key}</h1>
-              {/* <div className="blok_palet2">{renderPalett(value)}</div> */}
+              {/* <div className="blok_palet2">{renderPalett(key)}</div> */}
             </div>
           )
       //   }
