@@ -27,7 +27,7 @@ const Main = () => {
   //   setTimeout(writeColorContext, 10 , customPalett);
   //   }, [customPalett]);
 
-    const COLORS_PALLETE = customPalett.colorsPal;
+    const COLORS_PALLETE = customPalett;
 
     const plusPal=()=> {
       alert ('Ok');
@@ -45,7 +45,7 @@ const Main = () => {
 
         </fieldset>
     </div>
-     <PalettList palets={COLORS_PALLETE}/>
+     <PalettList palets={COLORS_PALLETE.colorsPal}/>
   </div>
   );
 };
