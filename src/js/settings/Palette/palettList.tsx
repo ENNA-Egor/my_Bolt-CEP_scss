@@ -15,22 +15,27 @@ interface ColorData {
 function renderPalett(COLORS_PALLETE: any) {
   const {removeGroup, fixetGroup, appGroupIn}=  useContext(PaletteContext);
   
-  const delEndAppOn = (e:any)=>{
-    let nameTar:string = e.target.id;
-    if (e.ctrlKey) {
-      switch (nameTar) {
-          case 'Standart':
-          case 'Start':
-          case 'Bright':
-          case 'Arbitrary':
-            fixetGroup();
-            break;
-          default:
-            removeGroup( [e.target.id]  );
-            break;
-        }
-    } else {
-      appGroupIn( [e.target.id] );
+  function delEndAppOn(event: React.MouseEvent<HTMLDivElement>) {
+    const target = event.target as HTMLDivElement; 
+    const keyValue = target.getAttribute('data-key'); 
+    if (event.ctrlKey) {
+      // alert('Remove');
+      alert(keyValue);
+      console.log(keyValue);
+      //   switch (nameTar) {
+        //       case 'Standart':
+        //       case 'Start':
+        //       case 'Bright':
+        //       case 'Arbitrary':
+        //         fixetGroup();
+        //         break;
+        //       default:
+        // removeGroup( [e.target.id]  );
+        // break;
+        // }
+      } else {
+      alert('App');
+      // appGroupIn( [e.target.id] );
     }
     }
 
@@ -46,7 +51,7 @@ function renderPalett(COLORS_PALLETE: any) {
     });
 
     for (const groupName in groupedData) {
-      console.log( groupName);
+      // console.log( groupName);
       groupedData[groupName].forEach(item => {
       });
     }
@@ -55,10 +60,10 @@ function renderPalett(COLORS_PALLETE: any) {
       <div>
         {Object.entries(groupedData).map(([groupName, groupItems]) => (
           <div key={groupName}>
-            <div className="blok_group  stic">"{groupName}"</div>
+            <div className="blok_group  stic">{groupName}</div>
             {groupItems.map((item, id) => (
-              <div key={id}>
-                <div className="blok_group_group">"{item.name}"</div>
+              <div key={item.id}>{+item.id}
+                <div className="blok_group_group" onClick={delEndAppOn} data-key={+item.id}>{item.name}</div>
                 <div className="blok_palet2">
                 {item.colors.map((hexColor, index) => (
                 <div 
