@@ -68,13 +68,20 @@ export const Context = (props) => {
     )
     
 
-    const removeGroup = (targetName: string) => {
-        alert(customPalett.pathWriteContextColor);
-        const pathWriteColorContext: string = customPalett.pathWriteContextColor;
-            const updatedCustomPalett = { ...customPalett };
-           delete updatedCustomPalett['Custom'][targetName],
-           setCustomPalett(updatedCustomPalett);
-           writeColorContext(updatedCustomPalett, pathWriteColorContext);
+    const removeGroup = (targetName: number) => {
+        // console.log(customPalett['colorsPal'][targetName]);
+        const updatedCustomPalett = { ...customPalett };
+        console.log(updatedCustomPalett['colorsPal']);
+        console.log(targetName);
+        // updatedCustomPalett['colorsPal'].map((elem)=>{
+        //     if(elem.id === targetName ){
+        //         console.log(elem);
+        //     }
+        // })
+        // const pathWriteColorContext: string = customPalett.pathWriteContextColor;
+        //    delete updatedCustomPalett['colorsPal'][targetName],
+        //    setCustomPalett(updatedCustomPalett);
+        //    writeColorContext(updatedCustomPalett, pathWriteColorContext);
     };
     const appGroupIn = (targetName: string) => {
             Object.keys(customPalett).map((key) => {

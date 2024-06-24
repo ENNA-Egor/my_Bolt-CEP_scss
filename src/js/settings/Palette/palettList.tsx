@@ -20,8 +20,8 @@ function renderPalett(COLORS_PALLETE: any) {
     const keyValue = target.getAttribute('data-key'); 
     if (event.ctrlKey) {
       // alert('Remove');
-      alert(keyValue);
-      console.log(keyValue);
+      // alert(keyValue);
+      // console.log(keyValue);
       //   switch (nameTar) {
         //       case 'Standart':
         //       case 'Start':
@@ -30,7 +30,7 @@ function renderPalett(COLORS_PALLETE: any) {
         //         fixetGroup();
         //         break;
         //       default:
-        // removeGroup( [e.target.id]  );
+        removeGroup(keyValue);
         // break;
         // }
       } else {
@@ -62,8 +62,8 @@ function renderPalett(COLORS_PALLETE: any) {
           <div key={groupName}>
             <div className="blok_group  stic">{groupName}</div>
             {groupItems.map((item, id) => (
-              <div key={item.id}>{+item.id}
-                <div className="blok_group_group" onClick={delEndAppOn} data-key={+item.id}>{item.name}</div>
+              <div key={item.id}>{item.id}
+                <div className="blok_group_group" onClick={delEndAppOn} data-key={item.id}>{item.name}</div>
                 <div className="blok_palet2">
                 {item.colors.map((hexColor, index) => (
                 <div 
