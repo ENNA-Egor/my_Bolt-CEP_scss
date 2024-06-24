@@ -73,6 +73,15 @@ export const Context = (props) => {
         const updatedCustomPalett = { ...customPalett };
         console.log(updatedCustomPalett['colorsPal']);
         console.log(targetName);
+        const newColors = updatedCustomPalett['colorsPal'];
+        newColors.splice(arrIndex, 1);
+        setCustomPalett((prevState) => {
+            return {
+                ...prevState,
+                newColors,
+            };
+        });
+
         // updatedCustomPalett['colorsPal'].map((elem)=>{
         //     if(elem.id === targetName ){
         //         console.log(elem);
