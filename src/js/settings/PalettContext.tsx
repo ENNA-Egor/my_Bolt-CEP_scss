@@ -95,12 +95,13 @@ export const Context = (props) => {
             // }
         // });
         // const newColors = updatedCustomPalett;
-        updatedCustomPalett.splice(arrIndex, 1);
+        let newArr =updatedCustomPalett.splice(arrIndex, 1);
         console.log(updatedCustomPalett);
+        setCustomPalett(updatedCustomPalett);
         // setCustomPalett((prevState) => {
         //     return {
         //         ...prevState,
-        //         updatedCustomPalett,
+        //         newArr,
         //     };
         // });
 
