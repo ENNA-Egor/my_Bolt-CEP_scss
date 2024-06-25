@@ -67,13 +67,7 @@ export const Context = (props) => {
     
     
     const removeGroup = (targetName: number) => {
-        // console.log(customPalett[targetName]);
         let updatedCustomPalett = [...customPalett] ;
-        console.log(customPalett);
-        // console.log(targetName);
-        // indexObj(targetName)
-        
-        ///////////////
 
         
         function indexObj(AObj) {
@@ -86,34 +80,10 @@ export const Context = (props) => {
     indexObj({id: targetName});
     const arrIndex = indexObj({id: targetName});
     console.log(arrIndex);
-
-        //////////////////////////////
-        // const newColors = updatedCustomPalett.map((elem) => {
-            // console.log(elem.id);
-            // if (elem.id ===targetName){
-            //     alert( 'delete element' + targetName);
-            // }
-        // });
-        // const newColors = updatedCustomPalett;
-        let newArr =updatedCustomPalett.splice(arrIndex, 1);
+        updatedCustomPalett.splice(arrIndex, 1);
         console.log(updatedCustomPalett);
         setCustomPalett(updatedCustomPalett);
-        // setCustomPalett((prevState) => {
-        //     return {
-        //         ...prevState,
-        //         newArr,
-        //     };
-        // });
-
-        // updatedCustomPalett['colorsPal'].map((elem)=>{
-        //     if(elem.id === targetName ){
-        //         console.log(elem);
-        //     }
-        // })
-        // const pathWriteColorContext: string = customPalett.pathWriteContextColor;
-        //    delete updatedCustomPalett['colorsPal'][targetName],
-        //    setCustomPalett(updatedCustomPalett);
-        //    writeColorContext(updatedCustomPalett, pathWriteColorContext);
+  
     };
     const appGroupIn = (targetName: string) => {
             Object.keys(customPalett).map((key) => {
@@ -129,15 +99,12 @@ export const Context = (props) => {
     };
 
 
-    // const pathWriteColorContext: string =
-    //     '/public/settingsData/colorsPalett.json';
 
     const startColors = (stateData) => {
         alert(stateData.Standart);
         setCustomPalett((prevState) => {
             return {
                 ...prevState,
-                // pathWriteContextData: stateData.pathWriteContextData,
                 pathWriteContextColor: '',
                 oldColor: stateData.oldColor,
                 autoFill: stateData.autoFill,
