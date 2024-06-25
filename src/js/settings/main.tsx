@@ -45,7 +45,7 @@ const Main = () => {
 
         </fieldset>
     </div>
-     <PalettList palets={COLORS_PALLETE.colorsPal}/>
+     <PalettList palets={COLORS_PALLETE}/>
   </div>
   );
 };

@@ -20,7 +20,7 @@ function renderPalett(COLORS_PALLETE: any) {
     const keyValue = target.getAttribute('data-key'); 
     if (event.ctrlKey) {
       // alert('Remove');
-      // alert(keyValue);
+      alert(keyValue);
       // console.log(keyValue);
       //   switch (nameTar) {
         //       case 'Standart':

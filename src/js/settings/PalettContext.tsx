@@ -6,12 +6,10 @@ export const PaletteContext = createContext<any>(0);
 
 export const Context = (props) => {
     const [customPalett, setCustomPalett] = useState(
-        {
-            pathWriteContextColor:'/public/settingsData/colorsPalett.json',
-            colorsPal :[
+        [
 
         {  
-            id: 1,
+            id: 10,
              name:  "Standart",
             group: "Default",
             colors: [ "5b82b3", "86cab9","d5e390","fafa98","fabb86","9a9afa","c9b1f4","91a679","c1faec","ba8db6"]
@@ -64,23 +62,29 @@ export const Context = (props) => {
             colors:[ "5b82b3","86cab9","d5e390","fafa98","fabb86"]
         }
     ]
-        }
+        
     )
     
 
     const removeGroup = (targetName: number) => {
-        // console.log(customPalett['colorsPal'][targetName]);
+        console.log(customPalett[targetName-1]);
         const updatedCustomPalett = { ...customPalett };
-        console.log(updatedCustomPalett['colorsPal']);
+        console.log(updatedCustomPalett);
         console.log(targetName);
-        const newColors = updatedCustomPalett['colorsPal'];
-        newColors.splice(arrIndex, 1);
-        setCustomPalett((prevState) => {
-            return {
-                ...prevState,
-                newColors,
-            };
+        const newColors = updatedCustomPalett.map((elem) => {
+            // console.log(elem.id);
+            // if (elem.id ===targetName){
+            //     alert( 'delete element' + targetName);
+            // }
         });
+        // const newColors = updatedCustomPalett;
+        // updatedCustomPalett.splice(arrIndex, 1);
+        // setCustomPalett((prevState) => {
+        //     return {
+        //         ...prevState,
+        //         updatedCustomPalett,
+        //     };
+        // });
 
         // updatedCustomPalett['colorsPal'].map((elem)=>{
         //     if(elem.id === targetName ){
