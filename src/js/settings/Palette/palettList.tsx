@@ -35,6 +35,7 @@ function renderPalett(COLORS_PALLETE: any) {
         // }
       } else {
       alert('App');
+      console.log(PaletteContext);
       // appGroupIn( [e.target.id] );
     }
     }

@@ -65,35 +65,27 @@ export const Context = (props) => {
         
     )
     
-
+    
     const removeGroup = (targetName: number) => {
         // console.log(customPalett[targetName]);
-        const updatedCustomPalett = { ...customPalett };
-        console.log(updatedCustomPalett);
+        let updatedCustomPalett = [...customPalett] ;
+        console.log(customPalett);
         // console.log(targetName);
         // indexObj(targetName)
         
         ///////////////
 
-        var arrayId = [  ////Добавил идею
-            {id: 12, test: 11},
-            {id: 12, test: 11},
-            {id: 12, test: 11},
-            {id: 123, test: 13},
-            {id: 126, test: 11},
-            {id: 1, test: 11},
-            {id: 15, test: 11},
-            {id: 33, test: 118}
-          ];
-          
+        
         function indexObj(AObj) {
-            for (var i = 0; i < arrayId.length; i++) {
-              if (arrayId[i].test == AObj.test)
+            for (var i = 0; i < customPalett.length; i++) {
+                if (customPalett[i].id == AObj.id)
                 return i;
             }
             return -1;
           }
-    console.log(indexObj({test: 118}));
+    indexObj({id: targetName});
+    const arrIndex = indexObj({id: targetName});
+    console.log(arrIndex);
 
         //////////////////////////////
         // const newColors = updatedCustomPalett.map((elem) => {
@@ -103,7 +95,8 @@ export const Context = (props) => {
             // }
         // });
         // const newColors = updatedCustomPalett;
-        // updatedCustomPalett.splice(arrIndex, 1);
+        updatedCustomPalett.splice(arrIndex, 1);
+        console.log(updatedCustomPalett);
         // setCustomPalett((prevState) => {
         //     return {
         //         ...prevState,
