@@ -70,7 +70,28 @@ export const Context = (props) => {
         console.log(customPalett[targetName-1]);
         const updatedCustomPalett = { ...customPalett };
         console.log(updatedCustomPalett);
-        console.log(targetName);
+        console.log(targetName);///////////////
+
+        // var arrayId = [  ////Добавил идею
+        //     {id: 12},
+        //     {id: 12},
+        //     {id: 12},
+        //     {id: 123},
+        //     {id: 126},
+        //     {id: 1},
+        //     {id: 15},
+        //     {id: 33}
+        //   ];
+          
+        //   function indexObj(AObj) {
+        //     for (var i = 0; i < arrayId.length; i++) {
+        //       if (arrayId[i].id == AObj.id)
+        //         return i;
+        //     }
+        //     return -1;
+        //   }
+
+        //////////////////////////////
         const newColors = updatedCustomPalett.map((elem) => {
             // console.log(elem.id);
             // if (elem.id ===targetName){
