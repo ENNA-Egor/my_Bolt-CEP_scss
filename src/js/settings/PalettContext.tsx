@@ -9,7 +9,7 @@ export const Context = (props) => {
         [
 
         {  
-            id: 10,
+            id: 1,
              name:  "Standart",
             group: "Default",
             colors: [ "5b82b3", "86cab9","d5e390","fafa98","fabb86","9a9afa","c9b1f4","91a679","c1faec","ba8db6"]
@@ -67,37 +67,41 @@ export const Context = (props) => {
     
 
     const removeGroup = (targetName: number) => {
-        console.log(customPalett[targetName-1]);
+        // console.log(customPalett[targetName]);
         const updatedCustomPalett = { ...customPalett };
         console.log(updatedCustomPalett);
-        console.log(targetName);///////////////
+        // console.log(targetName);
+        // indexObj(targetName)
+        
+        ///////////////
 
-        // var arrayId = [  ////Добавил идею
-        //     {id: 12},
-        //     {id: 12},
-        //     {id: 12},
-        //     {id: 123},
-        //     {id: 126},
-        //     {id: 1},
-        //     {id: 15},
-        //     {id: 33}
-        //   ];
+        var arrayId = [  ////Добавил идею
+            {id: 12, test: 11},
+            {id: 12, test: 11},
+            {id: 12, test: 11},
+            {id: 123, test: 13},
+            {id: 126, test: 11},
+            {id: 1, test: 11},
+            {id: 15, test: 11},
+            {id: 33, test: 118}
+          ];
           
-        //   function indexObj(AObj) {
-        //     for (var i = 0; i < arrayId.length; i++) {
-        //       if (arrayId[i].id == AObj.id)
-        //         return i;
-        //     }
-        //     return -1;
-        //   }
+        function indexObj(AObj) {
+            for (var i = 0; i < arrayId.length; i++) {
+              if (arrayId[i].test == AObj.test)
+                return i;
+            }
+            return -1;
+          }
+    console.log(indexObj({test: 118}));
 
         //////////////////////////////
-        const newColors = updatedCustomPalett.map((elem) => {
+        // const newColors = updatedCustomPalett.map((elem) => {
             // console.log(elem.id);
             // if (elem.id ===targetName){
             //     alert( 'delete element' + targetName);
             // }
-        });
+        // });
         // const newColors = updatedCustomPalett;
         // updatedCustomPalett.splice(arrIndex, 1);
         // setCustomPalett((prevState) => {
