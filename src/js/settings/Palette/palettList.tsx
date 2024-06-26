@@ -19,20 +19,8 @@ function renderPalett(COLORS_PALLETE: any) {
     const target = event.target as HTMLDivElement; 
     const keyValue = target.getAttribute('data-key'); 
     if (event.ctrlKey) {
-      // alert('Remove');
-      alert(keyValue);
-      // console.log(keyValue);
-      //   switch (nameTar) {
-        //       case 'Standart':
-        //       case 'Start':
-        //       case 'Bright':
-        //       case 'Arbitrary':
-        //         fixetGroup();
-        //         break;
-        //       default:
+
         removeGroup(keyValue);
-        // break;
-        // }
       } else {
       alert('App');
       console.log(PaletteContext);
