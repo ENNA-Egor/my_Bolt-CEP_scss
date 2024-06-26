@@ -78,9 +78,9 @@ export const Context = (props) => {
     console.log(arrIndex);
     return arrIndex;
     }
+    const updatedCustomPalett = [...customPalett]; 
 
     const removeGroup = (targetName: number) => { ///Удаление набора
-        let updatedCustomPalett = [...customPalett]; 
      const indexPal = numberIdPallet(targetName);
         updatedCustomPalett.splice(indexPal, 1);
         console.log(updatedCustomPalett);
@@ -88,7 +88,6 @@ export const Context = (props) => {
   
     };
     const appGroupIn = (targetName: number) => { /// Добавление набора в окно колор
-        let updatedCustomPalett = [...customPalett];
         const indexPal = numberIdPallet(targetName);
         console.log(updatedCustomPalett[indexPal].colors);
     };
