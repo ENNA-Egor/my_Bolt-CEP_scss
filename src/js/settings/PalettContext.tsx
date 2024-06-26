@@ -53,7 +53,7 @@ export const Context = (props) => {
         },
         {   id: 9,
             name:  "monocromRed",
-            group: "Custom",
+            group: "Main",
             colors:["fbc9c9","fb9797","fb6464", "fb3232","fb0000"]
         },
         {   id: 10,
@@ -65,11 +65,7 @@ export const Context = (props) => {
         
     )
     
-    
-    const removeGroup = (targetName: number) => {
-        let updatedCustomPalett = [...customPalett] ;
-
-        
+    const numberIdPallet = (nymberId:number)=>{ ///Получение индекса элемента массива
         function indexObj(AObj) {
             for (var i = 0; i < customPalett.length; i++) {
                 if (customPalett[i].id == AObj.id)
@@ -77,26 +73,27 @@ export const Context = (props) => {
             }
             return -1;
           }
-    indexObj({id: targetName});
-    const arrIndex = indexObj({id: targetName});
+    indexObj({id: nymberId});
+    const arrIndex = indexObj({id: nymberId});
     console.log(arrIndex);
-        updatedCustomPalett.splice(arrIndex, 1);
+    return arrIndex;
+    }
+
+    const removeGroup = (targetName: number) => { ///Удаление набора
+        let updatedCustomPalett = [...customPalett]; 
+     const indexPal = numberIdPallet(targetName);
+        updatedCustomPalett.splice(indexPal, 1);
         console.log(updatedCustomPalett);
         setCustomPalett(updatedCustomPalett);
   
     };
-    const appGroupIn = (targetName: string) => {
-            Object.keys(customPalett).map((key) => {
-                const value = customPalett[key];
-                if(value[targetName] !== undefined){
-                    alert(value[targetName]);
-                }
-            })
+    const appGroupIn = (targetName: number) => { /// Добавление набора в окно колор
+        let updatedCustomPalett = [...customPalett];
+        const indexPal = numberIdPallet(targetName);
+        console.log(updatedCustomPalett[indexPal].colors);
     };
 
-    const fixetGroup = () => {
-            alert('This group cannot be edited');
-    };
+
 
 
 
@@ -129,7 +126,6 @@ export const Context = (props) => {
     const valueData = {
         customPalett,
         removeGroup,
-        fixetGroup,
         appGroupIn,
         startColors,
         // writeColorContext,

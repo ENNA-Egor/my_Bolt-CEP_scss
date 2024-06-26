@@ -13,24 +13,24 @@ interface ColorData {
 
 
 function renderPalett(COLORS_PALLETE: any) {
-  const {removeGroup, fixetGroup, appGroupIn}=  useContext(PaletteContext);
+  const {removeGroup, appGroupIn}=  useContext(PaletteContext);
   
-  function delEndAppOn(event: React.MouseEvent<HTMLDivElement>) {
+  function delEndAppOn(event: React.MouseEvent<HTMLDivElement>) { ///Добавление набора в окно колор и удаление его с клавишей Ctrl
     const target = event.target as HTMLDivElement; 
     const keyValue = target.getAttribute('data-key'); 
     if (event.ctrlKey) {
 
         removeGroup(keyValue);
+
       } else {
-      alert('App');
-      console.log(PaletteContext);
-      // appGroupIn( [e.target.id] );
+
+      appGroupIn(keyValue);
     }
     }
 
     const groupedData: { [key: string]: ColorData[] } = {};
 
-    COLORS_PALLETE.forEach(item => {
+    COLORS_PALLETE.forEach(item => { ///Отрисовка интерфейса цветовых наборов
       const group = item.group;
       if (groupedData[group]) {
         groupedData[group].push(item);
@@ -40,7 +40,6 @@ function renderPalett(COLORS_PALLETE: any) {
     });
 
     for (const groupName in groupedData) {
-      // console.log( groupName);
       groupedData[groupName].forEach(item => {
       });
     }
