@@ -2,6 +2,6 @@
 
 export function Preloader (){
     return <div>
-        <h3 className="preload">Preloader</h3>
+        <h1 className="preload">Preloader</h1>
     </div>
 }

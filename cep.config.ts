@@ -5,7 +5,7 @@ import { version } from "./package.json";
 const config: CEP_Config = {
   version,
   id: "com.Bolt-CEP_Test.cep",
-  displayName: "Bolt Cep scss",
+  displayName: "TSCreator v.4",
   symlink: "local",
   port: 3000,
   servePort: 5000,
@@ -28,7 +28,7 @@ const config: CEP_Config = {
     {
       mainPath: "./main/index.html",
       name: "main",
-      panelDisplayName: "Bolt Cep scss",
+      panelDisplayName: "TSCreator v.4",
       autoVisible: true,
       width: 600,
       height: 650,
@@ -36,7 +36,7 @@ const config: CEP_Config = {
     {
       mainPath: "./settings/index.html",
       name: "settings",
-      panelDisplayName: "Color Palette",
+      panelDisplayName: "Colors",
       autoVisible: true,
       width: 300,
       height: 650,
