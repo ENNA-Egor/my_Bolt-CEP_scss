@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { initBolt } from "../lib/utils/bolt";
 import "../../style/css/min/index.min.css";
 import Main from "./main";
-import {Context} from './PalettContext'
+import { Context } from './hooks/PalettContext'
 
 
 initBolt();
@@ -11,7 +11,7 @@ initBolt();
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <Context>
-    <Main/>
+      <Main />
     </Context>
   </React.StrictMode>
 );

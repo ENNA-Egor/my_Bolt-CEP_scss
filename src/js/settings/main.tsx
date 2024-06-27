@@ -4,49 +4,49 @@ import {
   subscribeBackgroundColor,
 } from "../lib/utils/bolt";
 import PalettList from './Palette/palettList'
-import { PaletteContext } from './PalettContext';
-import {readData} from '../functionModule/function'
+import { PaletteContext } from './hooks/PalettContext';
+import { readData } from '../functionModule/function'
 
 const Main = () => {
   const [bgColor, setBgColor] = useState("#282c34");
 
   const pathWriteEndReadColorsPalett: string =
-      '/public/settingsData/colorsPalett.json';
-  
+    '/public/settingsData/colorsPalett.json';
+
   useEffect(() => {
     if (window.cep) {
       subscribeBackgroundColor(setBgColor);
       let colorsPalett = readData(pathWriteEndReadColorsPalett);
-      const dataStartColorsPalett:any = JSON.parse(colorsPalett);
+      const dataStartColorsPalett: any = JSON.parse(colorsPalett);
       startColors(dataStartColorsPalett);
     }
   }, []);
-  const {customPalett, writeColorContext, startColors}=  useContext(PaletteContext);
+  const { customPalett, writeColorContext, startColors } = useContext(PaletteContext);
 
   // useEffect(() => {
   //   setTimeout(writeColorContext, 10 , customPalett);
   //   }, [customPalett]);
 
-    const COLORS_PALLETE = customPalett;
+  const COLORS_PALLETE = customPalett;
 
-    const plusPal=()=> {
-      alert ('Ok');
-    }
+  const plusPal = () => {
+    alert('Ok');
+  }
 
-    
-    return (
-      <div className="boddy2">
-    <p>COLOR PALETTE</p> 
-    <div>
+
+  return (
+    <div className="boddy2">
+      <p>COLOR PALETTE</p>
+      <div>
         <fieldset className="field_1">
-            <legend className="legend">Add Preset</legend>
-            <button className="button_bt btn2  stic" onClick={plusPal}>+</button>
-            <input className="setName  stic" type="text" placeholder="Enter a group name"/>
+          <legend className="legend">Add Preset</legend>
+          <button className="button_bt btn2  stic" onClick={plusPal}>+</button>
+          <input className="setName  stic" type="text" placeholder="Enter a group name" />
 
         </fieldset>
+      </div>
+      <PalettList palets={COLORS_PALLETE} />
     </div>
-     <PalettList palets={COLORS_PALLETE}/>
-  </div>
   );
 };
 
