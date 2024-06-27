@@ -1,6 +1,6 @@
 import { useContext } from "react";
 
-import { hexToRgb } from '../../../js/functionModule/function'
+import { hexToRgb } from '../../functionModule/function'
 import { PaletteContext } from '../hooks/PalettContext';
 
 

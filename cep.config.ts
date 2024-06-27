@@ -34,8 +34,8 @@ const config: CEP_Config = {
       height: 650,
     },
     {
-      mainPath: "./settings/index.html",
-      name: "settings",
+      mainPath: "./colorsPalett/index.html",
+      name: "colorsPalett",
       panelDisplayName: "Colors",
       autoVisible: true,
       width: 300,
