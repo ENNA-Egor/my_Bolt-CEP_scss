@@ -12,11 +12,12 @@ const Main = () => {
 
   const pathWriteEndReadColorsPalett: string =
     '/public/settingsData/colorsPalett.json';
+    // const { pathWriteEndRead } = useContext(PaletteContext);
 
   useEffect(() => {
     if (window.cep) {
       subscribeBackgroundColor(setBgColor);
-      let colorsPalett = readData(pathWriteEndReadColorsPalett);
+      let colorsPalett = readData(pathWriteEndReadColorsPalett); //pathWriteEndRead.pathColors
       const dataStartColorsPalett: any = JSON.parse(colorsPalett);
       startColors(dataStartColorsPalett);
     }
