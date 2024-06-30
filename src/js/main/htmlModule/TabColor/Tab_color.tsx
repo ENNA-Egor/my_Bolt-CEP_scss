@@ -82,7 +82,7 @@ function Tab_color() {
 
 
    function openPanel(): void {
-      csi.requestOpenExtension('com.Bolt-CEP_Test.cep.settings', 0);
+      csi.requestOpenExtension('com.Bolt-CEP_Test.cep.colorsPalett', 0);
    }
 
 

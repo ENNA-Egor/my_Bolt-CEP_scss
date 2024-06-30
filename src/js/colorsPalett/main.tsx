@@ -10,14 +10,14 @@ import { readData } from '../functionModule/function'
 const Main = () => {
   const [bgColor, setBgColor] = useState("#282c34");
 
-  const pathWriteEndReadColorsPalett: string =
-    '/public/settingsData/colorsPalett.json';
-    // const { pathWriteEndRead } = useContext(PaletteContext);
+  // const pathWriteEndReadColorsPalett: string =
+  //   '/public/settingsData/colorsPalett.json';
+    const { pathWriteEndRead } = useContext(PaletteContext);
 
   useEffect(() => {
     if (window.cep) {
       subscribeBackgroundColor(setBgColor);
-      let colorsPalett = readData(pathWriteEndReadColorsPalett); //pathWriteEndRead.pathColors
+      let colorsPalett = readData(pathWriteEndRead.pathColors); //pathWriteEndRead.pathColors
       const dataStartColorsPalett: any = JSON.parse(colorsPalett);
       startColors(dataStartColorsPalett);
     }
