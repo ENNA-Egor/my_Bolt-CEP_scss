@@ -51,7 +51,7 @@ function renderPalett(COLORS_PALLETE: any) {
         <div key={groupName}>
           <div className="blok_group  stic">{groupName}</div>
           {groupItems.map((item, id) => (
-            <div key={item.id}>{item.id}
+            <div key={item.id}>
               <div className="blok_group_group" onClick={delEndAppOn} data-key={item.id}>{item.name}</div>
               <div className="blok_palet2">
                 {item.colors.map((hexColor, index) => (
